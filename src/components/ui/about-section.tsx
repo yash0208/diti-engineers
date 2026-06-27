@@ -1,4 +1,4 @@
-import { ArrowRight, Factory, Mail, ShieldCheck } from "lucide-react";
+import { ArrowRight, Factory, Mail, Package, ShieldCheck } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -9,7 +9,42 @@ import { cn } from "@/lib/utils";
 
 type AboutSectionProps = {
   className?: string;
+  variant?: "about" | "services";
 };
+
+type HeroVariantConfig = {
+  translationPrefix: string;
+  videoSrc: string;
+  videoPoster: string;
+  quickLinks: readonly {
+    icon: typeof Factory;
+    href: string;
+    labelKey: string;
+  }[];
+};
+
+const heroVariants = {
+  about: {
+    translationPrefix: "pages.about.heroSection",
+    videoSrc: imageRegistry.showcase.aboutHero,
+    videoPoster: imageRegistry.showcase.aboutHeroPoster,
+    quickLinks: [
+      { icon: Factory, href: "/services", labelKey: "pages.about.heroSection.links.services" },
+      { icon: ShieldCheck, href: "/certificate", labelKey: "pages.about.heroSection.links.certificate" },
+      { icon: Mail, href: "/contact", labelKey: "pages.about.heroSection.links.contact" },
+    ],
+  },
+  services: {
+    translationPrefix: "pages.services.heroSection",
+    videoSrc: imageRegistry.platformVideo.ci,
+    videoPoster: imageRegistry.platform.ci,
+    quickLinks: [
+      { icon: Package, href: "/products", labelKey: "pages.services.heroSection.links.products" },
+      { icon: Factory, href: "/machinery", labelKey: "pages.services.heroSection.links.machinery" },
+      { icon: Mail, href: "/contact", labelKey: "pages.services.heroSection.links.contact" },
+    ],
+  },
+} as const satisfies Record<NonNullable<AboutSectionProps["variant"]>, HeroVariantConfig>;
 
 const revealVariants = {
   visible: (index: number) => ({
@@ -43,39 +78,38 @@ const scaleVariants = {
   },
 };
 
-const quickLinks = [
-  { icon: Factory, href: "/services", labelKey: "pages.about.heroSection.links.services" },
-  { icon: ShieldCheck, href: "/certificate", labelKey: "pages.about.heroSection.links.certificate" },
-  { icon: Mail, href: "/contact", labelKey: "pages.about.heroSection.links.contact" },
-] as const;
-
 function QuoteResponseLabel({
   highlightClassName,
   restClassName,
   wrapperClassName,
+  translationPrefix,
 }: {
   highlightClassName: string;
   restClassName: string;
   wrapperClassName?: string;
+  translationPrefix: string;
 }) {
   const { t } = useTranslation();
 
   return (
     <div className={cn("flex flex-col uppercase leading-[0.95]", wrapperClassName)}>
       <span className={highlightClassName}>
-        {t("pages.about.heroSection.stats.quoteResponse.labelHighlight")}
+        {t(`${translationPrefix}.stats.quoteResponse.labelHighlight`)}
       </span>
       <span className={restClassName}>
-        {t("pages.about.heroSection.stats.quoteResponse.labelRest")}
+        {t(`${translationPrefix}.stats.quoteResponse.labelRest`)}
       </span>
     </div>
   );
 }
 
-export function AboutSection({ className }: AboutSectionProps) {
+export function AboutSection({ className, variant = "about" }: AboutSectionProps) {
   const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const config = heroVariants[variant];
+  const translationPrefix = config.translationPrefix;
+  const clipPathId = `${variant}-hero-clip`;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -107,12 +141,12 @@ export function AboutSection({ className }: AboutSectionProps) {
                 customVariants={revealVariants}
                 className="text-eyebrow text-text-muted"
               >
-                {t("pages.about.heroSection.eyebrow")}
+                {t(`${translationPrefix}.eyebrow`)}
               </TimelineContent>
             </div>
 
             <div className="flex gap-3 sm:gap-4">
-              {quickLinks.map(({ icon: Icon, href, labelKey }, index) => (
+              {config.quickLinks.map(({ icon: Icon, href, labelKey }, index) => (
                 <TimelineContent
                   key={href}
                   as={Link}
@@ -138,25 +172,25 @@ export function AboutSection({ className }: AboutSectionProps) {
           >
             <svg className="aspect-[5/2] w-full" viewBox="0 0 100 40">
               <defs>
-                <clipPath id="about-hero-clip" clipPathUnits="objectBoundingBox">
+                <clipPath id={clipPathId} clipPathUnits="objectBoundingBox">
                   <path
                     d="M0.0998072 1H0.422076H0.749756C0.767072 1 0.774207 0.961783 0.77561 0.942675V0.807325C0.777053 0.743631 0.791844 0.731953 0.799059 0.734076H0.969813C0.996268 0.730255 1.00088 0.693206 0.999875 0.675159V0.0700637C0.999875 0.0254777 0.985045 0.00477707 0.977629 0H0.902473C0.854975 0 0.890448 0.138535 0.850165 0.138535H0.0204424C0.00408849 0.142357 0 0.180467 0 0.199045V0.410828C0 0.449045 0.0136283 0.46603 0.0204424 0.469745H0.0523086C0.0696245 0.471019 0.0735527 0.497877 0.0733523 0.511146V0.915605C0.0723903 0.983121 0.090588 1 0.0998072 1Z"
                     fill="#D9D9D9"
                   />
                 </clipPath>
               </defs>
-              <g clipPath="url(#about-hero-clip)">
+              <g clipPath={`url(#${clipPathId})`}>
                 <foreignObject width="100%" height="100%">
                   <video
                     ref={videoRef}
-                    src={imageRegistry.showcase.aboutHero}
-                    poster={imageRegistry.showcase.aboutHeroPoster}
+                    src={config.videoSrc}
+                    poster={config.videoPoster}
                     autoPlay
                     muted
                     loop
                     playsInline
                     className="h-full w-full object-cover"
-                    aria-label={t("pages.about.heroSection.imageAlt")}
+                    aria-label={t(`${translationPrefix}.imageAlt`)}
                   />
                 </foreignObject>
               </g>
@@ -170,6 +204,7 @@ export function AboutSection({ className }: AboutSectionProps) {
                 customVariants={revealVariants}
               >
                 <QuoteResponseLabel
+                  translationPrefix={translationPrefix}
                   highlightClassName="text-right text-3xl font-semibold text-accent-primary lg:text-4xl xl:text-[2.75rem]"
                   restClassName="text-right text-2xl text-text-primary-light lg:text-3xl xl:text-4xl"
                   wrapperClassName="items-end text-right"
@@ -186,6 +221,7 @@ export function AboutSection({ className }: AboutSectionProps) {
             className="mt-4 md:hidden"
           >
             <QuoteResponseLabel
+              translationPrefix={translationPrefix}
               highlightClassName="text-2xl font-semibold text-accent-primary"
               restClassName="text-xl text-text-primary-light"
               wrapperClassName="flex-row items-baseline gap-2"
@@ -202,19 +238,19 @@ export function AboutSection({ className }: AboutSectionProps) {
             >
               <div className="flex items-center gap-2 text-sm sm:text-base">
                 <span className="font-bold text-accent-primary">
-                  {t("pages.about.heroSection.stats.experience.value")}
+                  {t(`${translationPrefix}.stats.experience.value`)}
                 </span>
                 <span className="text-text-primary-light">
-                  {t("pages.about.heroSection.stats.experience.label")}
+                  {t(`${translationPrefix}.stats.experience.label`)}
                 </span>
               </div>
               <div className="hidden h-4 w-px bg-border-light sm:block" aria-hidden />
               <div className="flex items-center gap-2 text-sm sm:text-base">
                 <span className="font-bold text-accent-primary">
-                  {t("pages.about.heroSection.stats.turnover.value")}
+                  {t(`${translationPrefix}.stats.turnover.value`)}
                 </span>
                 <span className="text-text-primary-light">
-                  {t("pages.about.heroSection.stats.turnover.label")}
+                  {t(`${translationPrefix}.stats.turnover.label`)}
                 </span>
               </div>
             </TimelineContent>
@@ -236,7 +272,7 @@ export function AboutSection({ className }: AboutSectionProps) {
                   delay: 0.8,
                 }}
               >
-                {t("pages.about.heroSection.headline")}
+                {t(`${translationPrefix}.headline`)}
               </VerticalCutReveal>
             </h1>
 
@@ -255,7 +291,7 @@ export function AboutSection({ className }: AboutSectionProps) {
                 className="text-sm sm:text-base"
               >
                 <p className="leading-relaxed sm:text-justify">
-                  {t("pages.about.heroSection.body1")}
+                  {t(`${translationPrefix}.body1`)}
                 </p>
               </TimelineContent>
               <TimelineContent
@@ -266,7 +302,7 @@ export function AboutSection({ className }: AboutSectionProps) {
                 className="text-sm sm:text-base"
               >
                 <p className="leading-relaxed sm:text-justify">
-                  {t("pages.about.heroSection.body2")}
+                  {t(`${translationPrefix}.body2`)}
                 </p>
               </TimelineContent>
             </TimelineContent>
@@ -281,7 +317,7 @@ export function AboutSection({ className }: AboutSectionProps) {
                 customVariants={revealVariants}
                 className="mb-2 font-display text-2xl font-bold text-accent-primary"
               >
-                {t("pages.about.heroSection.companyName")}
+                {t(`${translationPrefix}.companyName`)}
               </TimelineContent>
               <TimelineContent
                 as="div"
@@ -290,7 +326,7 @@ export function AboutSection({ className }: AboutSectionProps) {
                 customVariants={revealVariants}
                 className="mb-8 text-sm text-text-muted"
               >
-                {t("pages.about.heroSection.role")}
+                {t(`${translationPrefix}.role`)}
               </TimelineContent>
 
               <TimelineContent
@@ -301,7 +337,7 @@ export function AboutSection({ className }: AboutSectionProps) {
                 className="mb-6"
               >
                 <p className="font-medium text-text-heading-light">
-                  {t("pages.about.heroSection.ctaPrompt")}
+                  {t(`${translationPrefix}.ctaPrompt`)}
                 </p>
               </TimelineContent>
 
@@ -313,7 +349,7 @@ export function AboutSection({ className }: AboutSectionProps) {
                 to="/contact"
                 className="mb-6 flex w-full items-center justify-center gap-2 rounded-base border border-border-light bg-text-heading-light px-5 py-3 font-semibold text-text-on-dark shadow-elevation transition-[transform,background-color,gap] duration-[160ms] ease-out hover:gap-3 hover:bg-canvas-dark active:scale-[0.97] md:ml-auto md:w-fit"
               >
-                {t("pages.about.heroSection.ctaButton")}
+                {t(`${translationPrefix}.ctaButton`)}
                 <ArrowRight aria-hidden />
               </TimelineContent>
             </div>

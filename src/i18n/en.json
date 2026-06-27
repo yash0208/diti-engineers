@@ -19,9 +19,24 @@
       "machinery": "Machinery",
       "certificate": "Certificate",
       "testimonials": "Buyers",
+      "factoryTour": "Factory tour",
       "contact": "Contact"
     },
-    "servicesOverview": "All services"
+    "servicesOverview": "All services",
+    "companyOverview": "About us",
+    "megaMenu": {
+      "company": "Company",
+      "descriptions": {
+        "about": "Our story, team and manufacturing philosophy in Rajkot.",
+        "blog": "News, casting insights and updates from the shop floor.",
+        "machinery": "CNC, casting and inspection equipment on our floor.",
+        "certificate": "Quality certifications and compliance documentation.",
+        "servicesOverview": "Browse every casting and machining service we offer.",
+        "companyOverview": "Company overview, story and manufacturing philosophy.",
+        "testimonials": "Buyer stories and OEM partnerships across Gujarat.",
+        "factoryTour": "Watch our Rajkot factory floor in production."
+      }
+    }
   },
   "controls": {
     "prev": "Previous slide",
@@ -253,6 +268,42 @@
       "aluminum-motor-body-parts": {
         "name": "Aluminum Motor Body Parts",
         "description": "Aluminum cast motor body and housing components."
+      },
+      "automobile-casting": {
+        "name": "Automobile Casting",
+        "description": "Automobile sector castings in various materials and grades."
+      },
+      "aluminum-casting": {
+        "name": "Aluminum Casting",
+        "description": "General aluminum casting for industrial components."
+      },
+      "electric-motor-parts": {
+        "name": "Electric Motor Parts",
+        "description": "Cast and fabricated parts for electric motor production."
+      },
+      "motorbody-casting": {
+        "name": "Motorbody Casting",
+        "description": "Motor body and frame castings."
+      },
+      "electric-motor-body-casting": {
+        "name": "Electric Motor Body Casting",
+        "description": "Dedicated electric motor body casting solutions."
+      },
+      "pump-parts-casting": {
+        "name": "Pump Parts Casting",
+        "description": "Castings for pump housings, impellers, and related parts."
+      },
+      "grill-design-casting": {
+        "name": "Grill Design Casting",
+        "description": "Decorative and functional grill design castings."
+      },
+      "casting": {
+        "name": "Casting",
+        "description": "General casting services across materials and applications."
+      },
+      "electric-motor-parts-casting": {
+        "name": "Electric Motor Parts Casting",
+        "description": "End-to-end casting for electric motor component lines."
       }
     }
   },
@@ -467,6 +518,21 @@
         "headlineLine1": "Complete product",
         "headlineLine2": "portfolio",
         "subtitle": "Browse our full range of casting products for motors, pumps, automotive and general industrial use."
+      },
+      "gallery": {
+        "badge": "Product range",
+        "headline": "Cast components for every application",
+        "subtitle": "Motor bodies, pump parts, auto components and industrial castings — across CI, aluminum and pressure die.",
+        "filterAll": "All",
+        "filtersAriaLabel": "Product categories",
+        "itemsAriaLabel": "Product items",
+        "viewDetailsAria": "View details for {{title}}",
+        "closeDialog": "Close product dialog",
+        "prevImage": "View previous product",
+        "nextImage": "View next product"
+      },
+      "card": {
+        "applicationLabel": "Application"
       }
     },
     "services": {
@@ -475,6 +541,36 @@
         "headlineLine1": "Precision casting",
         "headlineLine2": "solutions",
         "subtitle": "Delivering customized components and innovative solutions for automotive, agriculture and industrial machinery sectors."
+      },
+      "heroSection": {
+        "eyebrow": "Services",
+        "headline": "Precision casting solutions for OEM programs",
+        "imageAlt": "CI casting production at Diti Engineers",
+        "stats": {
+          "experience": {
+            "value": "6",
+            "label": "casting processes"
+          },
+          "turnover": {
+            "value": "24 hr",
+            "label": "quote response"
+          },
+          "quoteResponse": {
+            "labelHighlight": "Casting",
+            "labelRest": "Services"
+          }
+        },
+        "body1": "From cast iron motor bodies to high-pressure aluminum die parts, Diti Engineers covers the full casting workflow — from tooling discussion through production dispatch.",
+        "body2": "Dedicated lines for motor, pump and automotive components with consistent material grades, in-process inspection and repeat-order reliability for domestic and export buyers.",
+        "companyName": "Full-stack casting",
+        "role": "CI · Aluminum · Pressure Die",
+        "ctaPrompt": "Need a casting partner for your next program?",
+        "ctaButton": "Get a free quote",
+        "links": {
+          "products": "View products",
+          "machinery": "View machinery",
+          "contact": "Contact us"
+        }
       },
       "intro": {
         "eyebrow": "What we do",

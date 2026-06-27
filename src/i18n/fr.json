@@ -19,9 +19,24 @@
       "machinery": "Machines",
       "certificate": "Certificats",
       "testimonials": "Clients",
+      "factoryTour": "Visite usine",
       "contact": "Contact"
     },
-    "servicesOverview": "Tous les services"
+    "servicesOverview": "Tous les services",
+    "companyOverview": "À propos",
+    "megaMenu": {
+      "company": "Entreprise",
+      "descriptions": {
+        "about": "Notre histoire, notre équipe et notre savoir-faire à Rajkot.",
+        "blog": "Actualités, conseils de fonderie et nouvelles de l'atelier.",
+        "machinery": "Équipements CNC, fonderie et contrôle sur notre site.",
+        "certificate": "Certifications qualité et documentation de conformité.",
+        "servicesOverview": "Parcourez l'ensemble de nos services de fonderie et usinage.",
+        "companyOverview": "Présentation, histoire et philosophie de fabrication.",
+        "testimonials": "Témoignages d'acheteurs OEM au Gujarat et au-delà.",
+        "factoryTour": "Découvrez notre atelier de Rajkot en production."
+      }
+    }
   },
   "controls": {
     "prev": "Diapositive précédente",
@@ -253,6 +268,42 @@
       "aluminum-motor-body-parts": {
         "name": "Corps de moteur en aluminium",
         "description": "Corps et boîtiers de moteurs en aluminium moulé."
+      },
+      "automobile-casting": {
+        "name": "Pièces moulées automobile",
+        "description": "Pièces moulées pour le secteur automobile, divers matériaux et nuances."
+      },
+      "aluminum-casting": {
+        "name": "Moulage aluminium",
+        "description": "Moulage aluminium général pour composants industriels."
+      },
+      "electric-motor-parts": {
+        "name": "Pièces pour moteurs électriques",
+        "description": "Pièces moulées et usinées pour la production de moteurs électriques."
+      },
+      "motorbody-casting": {
+        "name": "Moulage de corps de moteur",
+        "description": "Corps et cadres de moteurs moulés."
+      },
+      "electric-motor-body-casting": {
+        "name": "Moulage de corps de moteur électrique",
+        "description": "Solutions dédiées au moulage de corps de moteurs électriques."
+      },
+      "pump-parts-casting": {
+        "name": "Moulage de pièces de pompe",
+        "description": "Pièces moulées pour carters, roues et composants de pompes."
+      },
+      "grill-design-casting": {
+        "name": "Moulage de grilles décoratives",
+        "description": "Pièces moulées pour grilles décoratives et fonctionnelles."
+      },
+      "casting": {
+        "name": "Moulage",
+        "description": "Services de moulage généraux, tous matériaux et applications."
+      },
+      "electric-motor-parts-casting": {
+        "name": "Moulage de pièces pour moteurs électriques",
+        "description": "Moulage complet pour lignes de composants de moteurs électriques."
       }
     }
   },
@@ -467,6 +518,21 @@
         "headlineLine1": "Portfolio produit",
         "headlineLine2": "complet",
         "subtitle": "Parcourez notre gamme complète de pièces moulées pour moteurs, pompes, automobile et industrie."
+      },
+      "gallery": {
+        "badge": "Gamme produits",
+        "headline": "Pièces moulées pour chaque application",
+        "subtitle": "Corps de moteur, pièces de pompe, composants auto et pièces industrielles — fonte, aluminium et sous pression.",
+        "filterAll": "Tous",
+        "filtersAriaLabel": "Catégories produits",
+        "itemsAriaLabel": "Articles produits",
+        "viewDetailsAria": "Voir les détails de {{title}}",
+        "closeDialog": "Fermer la fenêtre produit",
+        "prevImage": "Produit précédent",
+        "nextImage": "Produit suivant"
+      },
+      "card": {
+        "applicationLabel": "Application"
       }
     },
     "services": {
@@ -475,6 +541,36 @@
         "headlineLine1": "Solutions de moulage",
         "headlineLine2": "de précision",
         "subtitle": "Composants sur mesure et solutions innovantes pour automobile, agriculture et machines industrielles."
+      },
+      "heroSection": {
+        "eyebrow": "Services",
+        "headline": "Solutions de moulage de précision pour programmes OEM",
+        "imageAlt": "Production fonte chez Diti Engineers",
+        "stats": {
+          "experience": {
+            "value": "6",
+            "label": "procédés de fonderie"
+          },
+          "turnover": {
+            "value": "24 h",
+            "label": "réponse devis"
+          },
+          "quoteResponse": {
+            "labelHighlight": "Services",
+            "labelRest": "Fonderie"
+          }
+        },
+        "body1": "Des corps moteur en fonte aux pièces aluminium sous pression, Diti Engineers couvre tout le flux — de l'étude outillage à l'expédition production.",
+        "body2": "Lignes dédiées moteur, pompe et automobile avec grades matériaux constants, contrôle en cours de fabrication et fiabilité sur commandes récurrentes.",
+        "companyName": "Fonderie complète",
+        "role": "Fonte · Aluminium · Sous pression",
+        "ctaPrompt": "Besoin d'un partenaire fonderie pour votre prochain programme ?",
+        "ctaButton": "Devis gratuit",
+        "links": {
+          "products": "Voir les produits",
+          "machinery": "Voir les machines",
+          "contact": "Nous contacter"
+        }
       },
       "intro": {
         "eyebrow": "Ce que nous faisons",

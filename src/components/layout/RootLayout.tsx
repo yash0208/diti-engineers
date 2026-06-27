@@ -5,9 +5,13 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { cn } from "@/lib/utils";
 
+const FOOTERLESS_ROUTES = ["/about", "/machinery", "/products"] as const;
+const LOCKED_SCROLL_ROUTES = ["/machinery", "/products"] as const;
+
 export function RootLayout() {
   const { pathname } = useLocation();
-  const hideFooter = pathname === "/about" || pathname === "/machinery";
+  const hideFooter = FOOTERLESS_ROUTES.some((route) => pathname === route);
+  const lockScroll = LOCKED_SCROLL_ROUTES.some((route) => pathname === route);
 
   return (
     <SmoothScrollProvider>
@@ -18,7 +22,7 @@ export function RootLayout() {
         id="main-content"
         className={cn(
           "w-full min-w-0 bg-canvas",
-          pathname === "/machinery" && "h-[100svh] overflow-hidden",
+          lockScroll && "h-[100svh] overflow-hidden",
         )}
       >
         <Outlet />

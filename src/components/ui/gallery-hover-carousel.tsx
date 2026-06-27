@@ -360,7 +360,7 @@ export function GalleryHoverCarousel({
   const headerBlock = hasHeader ? (
     <div
       className={cn(
-        "flex shrink-0 flex-col justify-between gap-6 md:flex-row md:items-end",
+        "flex shrink-0 flex-col justify-between gap-6 md:flex-row md:items-start",
         !fillViewport && "mb-8 md:mb-10",
       )}
     >
@@ -377,11 +377,13 @@ export function GalleryHoverCarousel({
             ) : null}
           </h2>
         ) : null}
-        {subtitle ? (
-          <p className="mt-6 text-body-lg text-text-primary-light">{subtitle}</p>
-        ) : null}
       </div>
-      <GalleryCarouselControls className="shrink-0" />
+      <div className="flex flex-col items-start gap-4 md:max-w-md md:items-end md:text-right">
+        {subtitle ? (
+          <p className="text-body-lg text-text-primary-light">{subtitle}</p>
+        ) : null}
+        <GalleryCarouselControls className="shrink-0" />
+      </div>
     </div>
   ) : (
     <div className={cn("flex shrink-0 justify-end", !fillViewport && "mb-6")}>

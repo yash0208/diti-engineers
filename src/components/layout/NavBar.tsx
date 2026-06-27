@@ -1,37 +1,81 @@
-import { useEffect, useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import {
+  Award,
+  Car,
+  Cog,
+  Droplets,
+  Factory,
+  Gauge,
+  Home,
+  Layers,
+  MenuIcon,
+  Newspaper,
+  Package,
+  Play,
+  Star,
+  Users,
+  XIcon,
+  Zap,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import { navLinks } from "@/data/navigation";
-import { serviceItems } from "@/data/services";
+import { useEffect, useMemo, useState } from "react";
+
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavGridCard,
+  NavItemMobile,
+  NavLargeItem,
+  NavSmallItem,
+  type NavItemType,
+} from "@/components/ui/navigation-menu";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { serviceItems } from "@/data/services";
 import { cn } from "@/lib/utils";
+
+const serviceIcons: Record<string, LucideIcon> = {
+  ciCasting: Factory,
+  aluminumDie: Layers,
+  pressureDie: Gauge,
+  motorParts: Zap,
+  pumpParts: Droplets,
+  autoParts: Car,
+};
+
+const companyIconById: Record<string, LucideIcon> = {
+  about: Users,
+  blog: Newspaper,
+  machinery: Cog,
+  certificate: Award,
+};
 
 export function NavBar() {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 80);
   });
-
-  useEffect(() => {
-    if (!mobileOpen) return;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [mobileOpen]);
-
-  useEffect(() => {
-    setMobileOpen(false);
-    setServicesOpen(false);
-  }, [location.pathname]);
 
   const toggleLang = () => {
     const next = i18n.language.startsWith("fr") ? "en" : "fr";
@@ -44,7 +88,77 @@ export function NavBar() {
     return location.pathname === path || location.pathname.startsWith(`${path}/`);
   };
 
-  const primaryLinks = navLinks.filter((link) => link.id !== "contact");
+  const serviceLinks = useMemo<NavItemType[]>(
+    () =>
+      serviceItems.map((service) => ({
+        title: t(service.nameKey),
+        href: `/services#${service.slug}`,
+        description: t(service.bodyKey),
+        icon: serviceIcons[service.id] ?? Factory,
+      })),
+    [t],
+  );
+
+  const companyLinks = useMemo<NavItemType[]>(
+    () => [
+      {
+        title: t("nav.links.about"),
+        href: "/about",
+        description: t("nav.megaMenu.descriptions.about"),
+        icon: companyIconById.about,
+      },
+      {
+        title: t("nav.links.blog"),
+        href: "/blog",
+        description: t("nav.megaMenu.descriptions.blog"),
+        icon: companyIconById.blog,
+      },
+      {
+        title: t("nav.links.machinery"),
+        href: "/machinery",
+        description: t("nav.megaMenu.descriptions.machinery"),
+        icon: companyIconById.machinery,
+      },
+    ],
+    [t],
+  );
+
+  const companySidebarLinks = useMemo<NavItemType[]>(
+    () => [
+      {
+        title: t("nav.links.certificate"),
+        href: "/certificate",
+        icon: companyIconById.certificate,
+      },
+      {
+        title: t("nav.links.testimonials"),
+        href: "/#testimonials",
+        icon: Star,
+      },
+      {
+        title: t("nav.links.factoryTour"),
+        href: "/#video",
+        icon: Play,
+      },
+    ],
+    [t],
+  );
+
+  const simpleLinks = useMemo<NavItemType[]>(
+    () => [
+      {
+        title: t("nav.links.home"),
+        href: "/",
+        icon: Home,
+      },
+      {
+        title: t("nav.links.products"),
+        href: "/products",
+        icon: Package,
+      },
+    ],
+    [t],
+  );
 
   return (
     <header
@@ -54,145 +168,245 @@ export function NavBar() {
       )}
     >
       <div className="container-main py-3 lg:py-4">
-        <div className="flex flex-wrap items-center justify-between gap-6 lg:gap-0">
-          <div className="flex w-full justify-between lg:w-auto">
-            <Link
-              to="/"
-              aria-label={t("brand.name")}
-              className="flex items-center font-display text-lg font-bold tracking-tight text-text-heading-light md:text-xl"
-            >
-              {t("brand.name")}
-            </Link>
-
-            <button
-              type="button"
-              onClick={() => setMobileOpen((open) => !open)}
-              aria-label={mobileOpen ? t("nav.close") : t("nav.open")}
-              aria-expanded={mobileOpen}
-              data-state={mobileOpen ? "active" : undefined}
-              className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-            >
-              <Menu
-                className={cn(
-                  "m-auto size-6 duration-200",
-                  mobileOpen && "rotate-180 scale-0 opacity-0",
-                )}
-              />
-              <X
-                className={cn(
-                  "absolute inset-0 m-auto size-6 duration-200",
-                  mobileOpen
-                    ? "rotate-0 scale-100 opacity-100"
-                    : "-rotate-180 scale-0 opacity-0",
-                )}
-              />
-            </button>
-          </div>
-
-          <div
-            data-state={mobileOpen ? "active" : undefined}
-            className={cn(
-              "mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border border-border-light bg-surface-card-light p-6 shadow-elevation-active md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none",
-              mobileOpen && "block",
-            )}
+        <div className="flex items-center justify-between gap-4">
+          <Link
+            to="/"
+            aria-label={t("brand.name")}
+            className="flex shrink-0 items-center font-display text-lg font-bold tracking-tight text-text-heading-light md:text-xl"
           >
-            <div className="lg:pr-4">
-              <nav aria-label={t("nav.primary")}>
-                <ul className="space-y-6 text-base lg:flex lg:gap-6 lg:space-y-0 lg:text-sm xl:gap-8">
-                  {primaryLinks.map((link) =>
-                    link.id === "services" ? (
-                      <li
-                        key={link.id}
-                        className="group/services relative"
-                        onMouseEnter={() => setServicesOpen(true)}
-                        onMouseLeave={() => setServicesOpen(false)}
-                      >
-                        <button
-                          type="button"
-                          onClick={() => setServicesOpen((open) => !open)}
-                          aria-expanded={servicesOpen}
-                          className={cn(
-                            "flex items-center gap-1 text-sm duration-150 interactive-opacity",
-                            isActive(link.path)
-                              ? "text-text-heading-light"
-                              : "text-text-muted hover:text-text-heading-light",
-                          )}
-                        >
-                          {t(link.labelKey)}
-                          <ChevronDown
-                            className={cn(
-                              "size-4 transition-transform",
-                              servicesOpen && "rotate-180",
-                            )}
-                            aria-hidden
-                          />
-                        </button>
-                        <ul
-                          className={cn(
-                            "space-y-2 rounded-base border border-border-light bg-surface-card-light p-3 shadow-elevation",
-                            "mt-3 lg:absolute lg:left-0 lg:top-full lg:mt-2 lg:min-w-56",
-                            servicesOpen
-                              ? "block"
-                              : "hidden lg:group-hover/services:block",
-                          )}
-                        >
-                          <li>
-                            <Link
-                              to="/services"
-                              onClick={() => setMobileOpen(false)}
-                              className="block rounded-sm px-3 py-2 text-sm text-text-heading-light interactive-opacity hover:bg-surface-muted"
-                            >
-                              {t("nav.servicesOverview")}
-                            </Link>
-                          </li>
-                          {serviceItems.map((service) => (
-                            <li key={service.id}>
-                              <Link
-                                to={`/services#${service.slug}`}
-                                onClick={() => setMobileOpen(false)}
-                                className="block rounded-sm px-3 py-2 text-sm text-text-primary-light interactive-opacity hover:bg-surface-muted hover:text-text-heading-light"
-                              >
-                                {t(service.nameKey)}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </li>
-                    ) : (
-                      <li key={link.id}>
-                        <Link
-                          to={link.href}
-                          onClick={() => setMobileOpen(false)}
-                          className={cn(
-                            "block text-sm duration-150 interactive-opacity",
-                            isActive(link.path)
-                              ? "text-text-heading-light"
-                              : "text-text-muted hover:text-text-heading-light",
-                          )}
-                        >
-                          {t(link.labelKey)}
-                        </Link>
-                      </li>
-                    ),
-                  )}
-                </ul>
-              </nav>
-            </div>
+            {t("brand.name")}
+          </Link>
 
-            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:border-border-light lg:pl-6">
-              <Button type="button" variant="outline" size="sm" onClick={toggleLang}>
-                {i18n.language.startsWith("fr") ? "EN" : "FR"}
-              </Button>
+          <DesktopMenu
+            simpleLinks={simpleLinks}
+            serviceLinks={serviceLinks}
+            companyLinks={companyLinks}
+            companySidebarLinks={companySidebarLinks}
+            isActive={isActive}
+          />
 
-              <Button asChild size="sm">
-                <Link to="/contact" onClick={() => setMobileOpen(false)}>
-                  {t("nav.cta")}
-                </Link>
-              </Button>
-            </div>
+          <div className="flex items-center gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={toggleLang}
+              className="hidden sm:inline-flex"
+            >
+              {i18n.language.startsWith("fr") ? "EN" : "FR"}
+            </Button>
+
+            <Button asChild size="sm" className="hidden sm:inline-flex">
+              <Link to="/contact">{t("nav.cta")}</Link>
+            </Button>
+
+            <MobileNav
+              simpleLinks={simpleLinks}
+              serviceLinks={serviceLinks}
+              companyLinks={companyLinks}
+              companySidebarLinks={companySidebarLinks}
+              onToggleLang={toggleLang}
+              langLabel={i18n.language.startsWith("fr") ? "EN" : "FR"}
+            />
           </div>
         </div>
       </div>
     </header>
+  );
+}
+
+type MenuProps = {
+  simpleLinks: NavItemType[];
+  serviceLinks: NavItemType[];
+  companyLinks: NavItemType[];
+  companySidebarLinks: NavItemType[];
+  isActive: (path: string) => boolean;
+};
+
+function DesktopMenu({
+  simpleLinks,
+  serviceLinks,
+  companyLinks,
+  companySidebarLinks,
+  isActive,
+}: MenuProps) {
+  const { t } = useTranslation();
+
+  return (
+    <NavigationMenu className="hidden lg:block">
+      <NavigationMenuList>
+        {simpleLinks.map((link) => (
+          <NavigationMenuItem key={link.href}>
+            <NavigationMenuLink asChild active={isActive(link.href)}>
+              <Link
+                to={link.href}
+                className="cursor-pointer text-text-muted hover:text-text-heading-light data-[active=true]:text-text-heading-light"
+              >
+                {link.title}
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        ))}
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>{t("nav.links.services")}</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <div className="grid w-full gap-4 p-4 md:w-3xl">
+              <ul className="grid grid-cols-2 gap-4">
+                {serviceLinks.slice(0, 2).map((link) => (
+                  <li key={link.href}>
+                    <NavGridCard link={link} className="min-h-36" />
+                  </li>
+                ))}
+              </ul>
+              <ul className="grid grid-cols-2 gap-4">
+                {serviceLinks.slice(2).map((link) => (
+                  <li key={link.href}>
+                    <NavLargeItem link={link} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>{t("nav.megaMenu.company")}</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <div className="grid w-full md:w-4xl md:grid-cols-[minmax(0,3fr)_220px]">
+              <ul className="grid gap-4 border-border-light p-4 md:grid-cols-3 md:border-r">
+                {companyLinks.map((link) => (
+                  <li key={link.href}>
+                    <NavGridCard link={link} />
+                  </li>
+                ))}
+              </ul>
+              <ul className="flex flex-col justify-center gap-0.5 p-3">
+                {companySidebarLinks.map((link) => (
+                  <li key={link.href}>
+                    <NavSmallItem item={link} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
+}
+
+type MobileNavProps = MenuProps & {
+  onToggleLang: () => void;
+  langLabel: string;
+};
+
+function MobileNav({
+  simpleLinks,
+  serviceLinks,
+  companyLinks,
+  companySidebarLinks,
+  onToggleLang,
+  langLabel,
+}: MobileNavProps) {
+  const { t } = useTranslation();
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  const sections = [
+    {
+      id: "services",
+      name: t("nav.links.services"),
+      list: [
+        {
+          title: t("nav.servicesOverview"),
+          href: "/services",
+          description: t("nav.megaMenu.descriptions.servicesOverview"),
+          icon: Factory,
+        },
+        ...serviceLinks,
+      ],
+    },
+    {
+      id: "company",
+      name: t("nav.megaMenu.company"),
+      list: [...companyLinks, ...companySidebarLinks],
+    },
+  ];
+
+  return (
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <Button
+          size="icon"
+          variant="ghost"
+          className="rounded-full lg:hidden"
+          aria-label={t("nav.open")}
+        >
+          <MenuIcon className="size-5" />
+        </Button>
+      </SheetTrigger>
+      <SheetContent
+        className="w-full gap-0 bg-surface-card-light/95 backdrop-blur-lg supports-[backdrop-filter]:bg-surface-card-light/80"
+        showClose={false}
+      >
+        <div className="flex h-14 items-center justify-end border-b border-border-light px-4">
+          <SheetClose asChild>
+            <Button size="icon" variant="ghost" className="rounded-full">
+              <XIcon className="size-5" />
+              <span className="sr-only">{t("nav.close")}</span>
+            </Button>
+          </SheetClose>
+        </div>
+
+        <div className="grid gap-y-2 overflow-y-auto px-4 pt-5 pb-12">
+          <ul className="mb-2 grid gap-1 border-b border-border-light pb-4">
+            {simpleLinks.map((link) => (
+              <li key={link.href}>
+                <SheetClose asChild>
+                  <NavItemMobile item={link} />
+                </SheetClose>
+              </li>
+            ))}
+          </ul>
+
+          <Accordion type="single" collapsible>
+            {sections.map((section) => (
+              <AccordionItem key={section.id} value={section.id}>
+                <AccordionTrigger className="capitalize hover:no-underline">
+                  {section.name}
+                </AccordionTrigger>
+                <AccordionContent className="space-y-1">
+                  <ul className="grid gap-1">
+                    {section.list.map((link) => (
+                      <li key={link.href}>
+                        <SheetClose asChild>
+                          <NavItemMobile item={link} />
+                        </SheetClose>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          <div className="mt-6 flex flex-col gap-3 border-t border-border-light pt-6">
+            <Button type="button" variant="outline" onClick={onToggleLang}>
+              {langLabel}
+            </Button>
+            <SheetClose asChild>
+              <Button asChild>
+                <Link to="/contact">{t("nav.cta")}</Link>
+              </Button>
+            </SheetClose>
+          </div>
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 }

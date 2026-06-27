@@ -13,6 +13,7 @@ type SectionHeaderProps = {
   tone?: SectionHeaderTone;
   size?: SectionHeaderSize;
   as?: "h1" | "h2";
+  headlineId?: string;
   className?: string;
   headlineClassName?: string;
   eyebrowClassName?: string;
@@ -34,6 +35,7 @@ export function SectionHeader({
   tone = "light",
   size = "section",
   as: Heading = "h2",
+  headlineId,
   className,
   headlineClassName,
   eyebrowClassName,
@@ -62,6 +64,7 @@ export function SectionHeader({
       ) : null}
 
       <Heading
+        id={headlineId}
         className={cn(
           headlineSizeClass[size],
           eyebrow ? "mt-4" : undefined,

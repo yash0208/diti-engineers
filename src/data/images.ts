@@ -58,8 +58,8 @@ export const imageRegistry = {
   machineryVideo: {
     ciLine: "/videos/platform-ci-casting.mp4",
     dieCasting: "/videos/platform-aluminium-die.mp4",
-    machining: "",
-    inspection: "",
+    machining: "/videos/CNC.mp4",
+    inspection: "/videos/Quality.mp4",
   },
   video: {
     poster: "/images/factory-floor.png",
@@ -74,6 +74,15 @@ export const imageRegistry = {
     "submersible-pump-parts-casting": "/images/product-pump-parts.png",
     "auto-parts-casting": "/images/product-auto-parts.png",
     "aluminum-motor-body-parts": "/images/product-aluminum-motor-body.png",
+    "automobile-casting": "/images/product-auto-parts.png",
+    "aluminum-casting": "/images/product-aluminum-die.png",
+    "electric-motor-parts": "/images/product-motor-body.png",
+    "motorbody-casting": "/images/product-motor-body.png",
+    "electric-motor-body-casting": "/images/product-aluminum-motor-body.png",
+    "pump-parts-casting": "/images/product-pump-parts.png",
+    "grill-design-casting": "/images/product-ci-casting.png",
+    "casting": "/images/product-ci-casting.png",
+    "electric-motor-parts-casting": "/images/product-motor-body.png",
   },
   showcase: {
     factory: "/images/factory-floor.png",
