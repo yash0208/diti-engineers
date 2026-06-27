@@ -89,7 +89,7 @@ export function ArrowLink({
     "inline-flex h-10 max-h-10 items-center justify-center gap-2 overflow-hidden rounded-xs px-4 text-base interactive-press interactive-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2",
     isLight
       ? "bg-accent-cta-light text-text-on-light focus-visible:ring-offset-canvas-dark"
-      : "bg-accent-primary text-text-on-dark focus-visible:ring-offset-canvas-dark",
+      : "bg-accent-gradient text-text-on-dark hover:brightness-105 focus-visible:ring-offset-canvas-dark",
     className,
   );
 

@@ -3,6 +3,48 @@ import { cn } from "@/lib/utils";
 
 type ScrollDirection = "left" | "right";
 
+/** Repeat the source set within each track segment so wide viewports stay filled. */
+const TRACK_SEGMENT_COPIES = 2;
+
+function buildSegmentImages(images: readonly string[]): string[] {
+  return Array.from({ length: TRACK_SEGMENT_COPIES }, () => images).flat();
+}
+
+type StripCardsProps = {
+  images: readonly string[];
+  sourceCount: number;
+  imageAlt: string;
+  cardClassName?: string;
+  segmentKey: string;
+};
+
+function StripCards({
+  images,
+  sourceCount,
+  imageAlt,
+  cardClassName,
+  segmentKey,
+}: StripCardsProps) {
+  return images.map((src, index) => (
+    <div
+      key={`${segmentKey}-${src}-${index}`}
+      className={cn(
+        "hero-strip-card shrink-0 overflow-hidden rounded-xl bg-surface-muted shadow-elevation-active",
+        cardClassName,
+      )}
+    >
+      <img
+        src={src}
+        alt={`${imageAlt} ${(index % sourceCount) + 1}`}
+        className="size-full object-cover"
+        loading="eager"
+        decoding="async"
+        fetchPriority="low"
+      />
+    </div>
+  ));
+}
+
 type ImageAutoSliderProps = {
   images: readonly string[];
   direction?: ScrollDirection;
@@ -20,7 +62,8 @@ export function ImageAutoSlider({
   className,
   cardClassName,
 }: ImageAutoSliderProps) {
-  const loopImages = [...images, ...images];
+  const segmentImages = buildSegmentImages(images);
+  const segmentClassName = "flex shrink-0 gap-4 md:gap-5";
 
   return (
     <div className={cn("hero-strip-mask overflow-hidden", className)}>
@@ -31,23 +74,24 @@ export function ImageAutoSlider({
         )}
         style={{ "--hero-strip-duration": `${duration}s` } as CSSProperties}
       >
-        {loopImages.map((src, index) => (
-          <div
-            key={`${src}-${index}`}
-            className={cn(
-              "hero-strip-card shrink-0 overflow-hidden rounded-xl shadow-elevation-active",
-              cardClassName,
-            )}
-          >
-            <img
-              src={src}
-              alt={`${imageAlt} ${(index % images.length) + 1}`}
-              className="size-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        ))}
+        <div className={segmentClassName}>
+          <StripCards
+            images={segmentImages}
+            sourceCount={images.length}
+            imageAlt={imageAlt}
+            cardClassName={cardClassName}
+            segmentKey="primary"
+          />
+        </div>
+        <div aria-hidden className={segmentClassName}>
+          <StripCards
+            images={segmentImages}
+            sourceCount={images.length}
+            imageAlt={imageAlt}
+            cardClassName={cardClassName}
+            segmentKey="loop"
+          />
+        </div>
       </div>
     </div>
   );

@@ -41,6 +41,7 @@
     "videoAlt": "Production de moulage de précision chez Diti Engineers"
   },
   "platform": {
+    "tabsAriaLabel": "Capacités",
     "tabs": {
       "ci": "01 fonte",
       "aluminum": "02 moulage alu",
@@ -70,6 +71,11 @@
       "ci": "Production fonte",
       "aluminum": "Ligne moulage aluminium",
       "die": "Processus moulage sous pression"
+    },
+    "videoAlt": {
+      "ci": "Vidéo production fonte",
+      "aluminum": "Vidéo ligne moulage aluminium",
+      "die": "Vidéo processus moulage sous pression"
     }
   },
   "marquee": {
@@ -88,6 +94,54 @@
     "eyebrow": "Partenaire de confiance",
     "headlineLine1": "Au service des acheteurs OEM en Inde.",
     "headlineLine2": "Conçu pour moteurs, pompes et automobile.",
+    "columnsAriaLabel": "Témoignages de confiance défilants",
+    "cards": {
+      "card1": {
+        "quote": "Qualité matériau constante et délais prévisibles — les deux choses qui comptent vraiment quand on monte en cadence sur une ligne moteur.",
+        "author": "Responsable achats",
+        "role": "OEM pompes submersibles, Gujarat"
+      },
+      "card2": {
+        "quote": "Nous avons remplacé deux ateliers fournisseurs par Diti Engineers. Source unique fonte et aluminium, moins de retards.",
+        "author": "Chef des achats",
+        "role": "Fabricant de moteurs électriques"
+      },
+      "card3": {
+        "quote": "Les séries récurrentes de corps moteur en fonte partent à l'heure. Un seul partenaire Rajkot de la coulée à l'expédition.",
+        "author": "Directeur d'usine",
+        "role": "OEM moteurs, ouest de l'Inde"
+      },
+      "card4": {
+        "quote": "Carter et corps de pompe arrivent dimensionnellement stables — notre ligne d'assemblage reste prévisible.",
+        "author": "Responsable opérations",
+        "role": "Fabricant de pompes, Gujarat"
+      },
+      "card5": {
+        "quote": "Les programmes auto exigent des tolérances serrées. Diti livre aluminium et sous pression sous un même toit.",
+        "author": "Responsable sourcing",
+        "role": "Fournisseur OEM automobile"
+      },
+      "card6": {
+        "quote": "Facturation TPS et documentation export dès le premier jour — la finance a validé notre onboarding fournisseur rapidement.",
+        "author": "Contrôleur financier",
+        "role": "OEM industriel, Inde"
+      },
+      "card7": {
+        "quote": "Trouvé Diti sur IndiaMART, resté pour 13+ ans de commandes récurrentes. Fabricant direct, sans marge de négoce.",
+        "author": "Développement fournisseurs",
+        "role": "OEM équipements électriques"
+      },
+      "card8": {
+        "quote": "Fonte et aluminium internes sous un seul système qualité — moins d'audits, moins de surprises en production.",
+        "author": "Responsable qualité",
+        "role": "OEM pompes et moteurs"
+      },
+      "card9": {
+        "quote": "Plan déposé lundi, prix indicatif mardi. Cette réactivité nous fait gagner des programmes.",
+        "author": "Ingénieur projet",
+        "role": "Acheteur composants auto"
+      }
+    },
     "items": {
       "motors": "OEM moteurs",
       "pumps": "Fabricants de pompes",
@@ -98,9 +152,10 @@
     }
   },
   "applications": {
-    "headline": "Développez votre chaîne d'approvisionnement avec un partenaire moulage conçu pour l'OEM",
-    "subtitle": "Des volumes récurrents au développement de nouvelles pièces — une usine Rajkot couvrant fonte, aluminium et sous pression sous un seul système qualité.",
     "eyebrow": "Applications",
+    "headlineLine1": "Développez votre chaîne d'approvisionnement",
+    "headlineLine2": "avec un partenaire moulage conçu pour l'OEM",
+    "subtitle": "Des volumes récurrents au développement de nouvelles pièces — une usine Rajkot couvrant fonte, aluminium et sous pression sous un seul système qualité.",
     "learnMore": "En savoir plus",
     "cards": {
       "oem": {
@@ -130,7 +185,9 @@
     }
   },
   "stats": {
-    "headline": "Capacité prouvée, résultats mesurables",
+    "eyebrow": "En chiffres",
+    "headlineLine1": "Capacité prouvée,",
+    "headlineLine2": "résultats mesurables",
     "items": {
       "years": {
         "label": "Années d'activité",
@@ -151,7 +208,9 @@
     }
   },
   "products": {
-    "headline": "Pièces moulées pour chaque application OEM",
+    "eyebrow": "Gamme produits",
+    "headlineLine1": "Pièces moulées pour",
+    "headlineLine2": "chaque application OEM",
     "subtitle": "Des corps de moteurs aux pièces de pompes et composants auto — fonte, aluminium et sous pression.",
     "tag": "Cas d'usage",
     "learnMore": "En savoir plus",
@@ -191,7 +250,9 @@
     }
   },
   "testimonials": {
-    "headline": "La confiance des acheteurs OEM au Gujarat et au-delà",
+    "eyebrow": "Témoignages clients",
+    "headlineLine1": "La confiance des acheteurs OEM",
+    "headlineLine2": "au Gujarat et au-delà",
     "counter": "{{current}} / {{total}}",
     "items": {
       "placeholder1": {
@@ -208,21 +269,26 @@
     "imageAlt": "Arrière-plan usine"
   },
   "video": {
-    "headline": "La précision en production",
+    "eyebrow": "Visite usine",
+    "headlineLine1": "La précision",
+    "headlineLine2": "en production",
     "subtitle": "Découvrez comment Diti Engineers livre fonte, aluminium et pièces sous pression — de l'atelier Rajkot à l'expédition OEM.",
     "play": "Voir la vidéo",
     "requestDemo": "Demander un devis",
     "imageAlt": "Affiche vidéo production usine"
   },
   "ctaBanner": {
-    "headline": "Prêt à lancer votre prochaine série moulée ?",
+    "eyebrow": "Commencer",
+    "headlineLine1": "Prêt à lancer",
+    "headlineLine2": "votre prochaine série moulée ?",
     "subtitle": "Discutons de la façon dont Diti Engineers peut fournir fonte, aluminium ou pièces sous pression — avec un devis sous 24 heures.",
     "cta": "Nous contacter",
     "galleryAlt": "Moulage de précision et fabrication chez Diti Engineers"
   },
   "contact": {
     "eyebrow": "Demande de devis",
-    "headline": "Parlez-nous de votre pièce.",
+    "headlineLine1": "Parlez-nous de votre pièce.",
+    "headlineLine2": "Réponse sous 24 heures.",
     "subtitle": "Quatre étapes courtes. Réponse sous 24 heures.",
     "openCta": "Démarrer une demande de devis",
     "stepLabel": "Étape {{current}} sur {{total}}",

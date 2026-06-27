@@ -9,7 +9,7 @@ import {
   fadeSlideExit,
 } from "@/lib/motion-presets";
 import { RevealOnScroll } from "@/components/motion";
-import { SlideControls } from "@/components/ui";
+import { SectionHeader, SlideControls } from "@/components/ui";
 import { imageRegistry } from "@/data/images";
 
 const testimonialKeys = ["placeholder1", "placeholder2"] as const;
@@ -41,7 +41,7 @@ export function TestimonialsSection() {
   const counterTotal = String(testimonialKeys.length).padStart(2, "0");
 
   return (
-    <section id="testimonials" className="relative overflow-hidden bg-canvas">
+    <section id="testimonials" className="relative overflow-hidden border-y border-border-light bg-canvas">
       <div className="absolute right-0 top-0 hidden h-full w-1/2 lg:block">
         <img
           src={imageRegistry.testimonial.bg}
@@ -53,11 +53,13 @@ export function TestimonialsSection() {
 
       <div className="container-main relative grid min-h-[544px] grid-cols-1 items-stretch lg:grid-cols-2">
         <RevealOnScroll className="flex flex-col justify-between py-16 md:py-24 lg:pr-12">
-          <div>
-            <h2 className="max-w-[580px] text-h1 text-text-heading-light">
-              {t("testimonials.headline")}
-            </h2>
-          </div>
+          <SectionHeader
+            align="left"
+            eyebrow={t("testimonials.eyebrow")}
+            headlineLine1={t("testimonials.headlineLine1")}
+            headlineLine2={t("testimonials.headlineLine2")}
+            className="max-w-[580px]"
+          />
           <div className="mt-12 flex items-center justify-between lg:mt-0">
             <p className="font-mono-label text-sm text-text-muted">
               {t("testimonials.counter", {
@@ -92,7 +94,7 @@ export function TestimonialsSection() {
                 }
                 transition={enterTransition(reduced)}
               >
-                <blockquote className="font-display text-2xl leading-snug text-text-heading-light md:text-3xl">
+                <blockquote className="text-section-title text-text-heading-light">
                   "{t(`testimonials.items.${key}.quote`)}"
                 </blockquote>
                 <div className="mt-10 flex items-center gap-5">

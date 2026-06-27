@@ -91,7 +91,7 @@ export function NavBar() {
                         href={link.href}
                         onClick={() => setMobileOpen(false)}
                         className={cn(
-                          "block duration-150 interactive-opacity",
+                          "block text-sm duration-150 interactive-opacity",
                           activeId === link.id
                             ? "text-text-heading-light"
                             : "text-text-muted hover:text-text-heading-light",

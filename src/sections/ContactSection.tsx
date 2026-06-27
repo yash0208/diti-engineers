@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { RevealOnScroll } from "@/components/motion";
-import { ArrowLink } from "@/components/ui";
+import { ArrowLink, SectionHeader } from "@/components/ui";
 import { QuoteSheet } from "@/components/contact/QuoteSheet";
 import { businessProfile } from "@/data/profile";
 
@@ -17,15 +17,13 @@ export function ContactSection() {
       <div className="container-main">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <RevealOnScroll className="text-eyebrow text-accent-primary">
-              {t("contact.eyebrow")}
-            </RevealOnScroll>
-            <RevealOnScroll
-              as="div"
-              className="mt-5 text-h1 text-text-heading-light"
-              delay={0.08}
-            >
-              {t("contact.headline")}
+            <RevealOnScroll>
+              <SectionHeader
+                align="left"
+                eyebrow={t("contact.eyebrow")}
+                headlineLine1={t("contact.headlineLine1")}
+                headlineLine2={t("contact.headlineLine2")}
+              />
             </RevealOnScroll>
             <RevealOnScroll
               as="p"
@@ -46,7 +44,7 @@ export function ContactSection() {
           >
             <dl className="space-y-5 text-sm">
               <div>
-                <dt className="text-xs uppercase tracking-wider text-text-muted">
+                <dt className="text-eyebrow text-text-muted">
                   {t("footer.addressLabel")}
                 </dt>
                 <dd className="mt-1.5 font-display text-lg font-semibold text-text-heading-light">
@@ -54,7 +52,7 @@ export function ContactSection() {
                 </dd>
               </div>
               <div>
-                <dt className="text-xs uppercase tracking-wider text-text-muted">
+                <dt className="text-eyebrow text-text-muted">
                   {t("footer.gstLabel")}
                 </dt>
                 <dd className="mt-1.5 font-mono text-sm text-text-primary-light">
@@ -62,7 +60,7 @@ export function ContactSection() {
                 </dd>
               </div>
               <div>
-                <dt className="text-xs uppercase tracking-wider text-text-muted">
+                <dt className="text-eyebrow text-text-muted">
                   {businessProfile.company.proprietor.title}
                 </dt>
                 <dd className="mt-1.5 text-sm text-text-primary-light">

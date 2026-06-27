@@ -12,6 +12,8 @@
   --color-surface-card-dark: #171717;
   --color-surface-muted: #f0f0f0;
   --color-accent-primary: #4d00e5;
+  --color-accent-gradient-start: #4d00e5;
+  --color-accent-gradient-end: #7c3aed;
   --color-accent-cta-light: #ffffff;
   --color-accent-secondary: #4d00e5;
   --color-accent-steel: #677489;
@@ -72,8 +74,7 @@
   }
 
   body {
-    @apply w-full overflow-x-hidden bg-canvas font-body text-text-on-light antialiased;
-    color: var(--color-text-on-light);
+    @apply w-full overflow-x-hidden bg-canvas font-body text-text-primary-light antialiased;
   }
 
   #root {
@@ -87,8 +88,12 @@
   h4 {
     font-family: var(--font-display);
     color: var(--color-text-heading-light);
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-weight: 700;
   }
 
   section[id] {
@@ -206,6 +211,25 @@
     text-transform: uppercase;
   }
 
+  .text-accent-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-accent-gradient-start) 0%,
+      var(--color-accent-gradient-end) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-accent-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-accent-gradient-start) 0%,
+      var(--color-accent-gradient-end) 100%
+    );
+  }
+
   .skip-link {
     @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-xs focus:bg-accent-primary focus:px-4 focus:py-2 focus:text-text-on-dark;
   }
@@ -276,28 +300,30 @@
 
   @keyframes hero-strip-scroll-left {
     from {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
     to {
-      transform: translateX(-50%);
+      transform: translate3d(-50%, 0, 0);
     }
   }
 
   @keyframes hero-strip-scroll-right {
     from {
-      transform: translateX(-50%);
+      transform: translate3d(-50%, 0, 0);
     }
     to {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
   }
 
   .hero-strip-scroll-left {
     animation: hero-strip-scroll-left var(--hero-strip-duration, 32s) linear infinite;
+    will-change: transform;
   }
 
   .hero-strip-scroll-right {
     animation: hero-strip-scroll-right var(--hero-strip-duration, 36s) linear infinite;
+    will-change: transform;
   }
 
   .hero-strip-mask {
@@ -374,7 +400,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xs bg-accent-primary px-6 py-3 text-sm font-semibold text-text-on-dark;
+    @apply inline-flex items-center justify-center rounded-xs bg-accent-gradient px-6 py-3 text-sm font-semibold text-text-on-dark;
     transition: var(--transition-press), var(--transition-surface);
     box-shadow: var(--shadow-elevation);
   }
@@ -385,6 +411,7 @@
 
   @media (hover: hover) and (pointer: fine) {
     .btn-primary:hover {
+      filter: brightness(1.06);
       box-shadow: var(--shadow-elevation-active);
     }
   }

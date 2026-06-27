@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { RevealOnScroll } from "@/components/motion";
-import { ArrowLink } from "@/components/ui";
+import { ArrowLink, SectionHeader } from "@/components/ui";
 import { imageRegistry } from "@/data/images";
 
 type ApplicationCardProps = {
@@ -36,10 +36,7 @@ function ApplicationCard({
         </div>
       </div>
       <div className="flex flex-1 flex-col px-5 pb-5">
-        <p className="text-xs uppercase tracking-widest text-text-muted">
-          {t("applications.eyebrow")}
-        </p>
-        <h3 className="mt-4 text-h3 text-text-heading-light">
+        <h3 className="text-h3 text-text-heading-light">
           {t(`${prefix}.title`)}
         </h3>
         <p className="mt-4 flex-1 text-sm leading-relaxed text-text-primary-light">
@@ -48,7 +45,7 @@ function ApplicationCard({
         <div className="mt-6">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 text-sm font-medium text-text-heading-light interactive-opacity"
+            className="inline-flex items-center gap-2 font-mono-label text-sm text-text-heading-light interactive-opacity"
           >
             {t("applications.learnMore")}
             <span aria-hidden>{">>"}</span>
@@ -79,15 +76,15 @@ export function ApplicationsSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="applications" className="bg-canvas section-padding">
+    <section id="applications" className="border-y border-border-light bg-canvas section-padding">
       <div className="container-main">
-        <RevealOnScroll className="mx-auto max-w-[856px] text-center">
-          <h2 className="text-display text-text-heading-light">
-            {t("applications.headline")}
-          </h2>
-          <p className="mx-auto mt-6 max-w-[776px] text-body-lg text-text-primary-light">
-            {t("applications.subtitle")}
-          </p>
+        <RevealOnScroll>
+          <SectionHeader
+            eyebrow={t("applications.eyebrow")}
+            headlineLine1={t("applications.headlineLine1")}
+            headlineLine2={t("applications.headlineLine2")}
+            subtitle={t("applications.subtitle")}
+          />
         </RevealOnScroll>
 
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-12">

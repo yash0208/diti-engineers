@@ -41,6 +41,7 @@
     "videoAlt": "Precision casting production at Diti Engineers"
   },
   "platform": {
+    "tabsAriaLabel": "Capabilities",
     "tabs": {
       "ci": "01 ci casting",
       "aluminum": "02 aluminum die casting",
@@ -70,6 +71,11 @@
       "ci": "CI casting production",
       "aluminum": "Aluminum die casting line",
       "die": "Pressure die casting process"
+    },
+    "videoAlt": {
+      "ci": "CI casting production video",
+      "aluminum": "Aluminum die casting line video",
+      "die": "Pressure die casting process video"
     }
   },
   "marquee": {
@@ -88,6 +94,54 @@
     "eyebrow": "Trusted partner",
     "headlineLine1": "Serving OEM buyers across India.",
     "headlineLine2": "Built for motors, pumps and automotive.",
+    "columnsAriaLabel": "Scrolling buyer trust stories",
+    "cards": {
+      "card1": {
+        "quote": "Consistent material quality and predictable lead times — the two things that actually matter when you're scaling a motor line.",
+        "author": "Procurement Manager",
+        "role": "Submersible pump OEM, Gujarat"
+      },
+      "card2": {
+        "quote": "We replaced two job-shop suppliers with Diti Engineers. Single source for CI and aluminum, fewer late shipments.",
+        "author": "Purchase Head",
+        "role": "Electric motor manufacturer"
+      },
+      "card3": {
+        "quote": "Repeat CI motor body runs ship on schedule. One Rajkot partner covers casting through dispatch.",
+        "author": "Plant Manager",
+        "role": "Motor OEM, western India"
+      },
+      "card4": {
+        "quote": "Pump housings and impeller castings arrive dimensionally stable — our assembly line stays predictable.",
+        "author": "Operations Lead",
+        "role": "Pump manufacturer, Gujarat"
+      },
+      "card5": {
+        "quote": "Automotive casting programs need tight tolerances. Diti delivers aluminum and pressure die from one roof.",
+        "author": "Sourcing Manager",
+        "role": "Automotive OEM supplier"
+      },
+      "card6": {
+        "quote": "GST-registered invoicing and export documentation from day one — finance cleared our vendor onboarding fast.",
+        "author": "Finance Controller",
+        "role": "Industrial OEM, India"
+      },
+      "card7": {
+        "quote": "Found Diti on IndiaMART, stayed for 13+ years of repeat orders. Direct manufacturer, no trading markup.",
+        "author": "Vendor Development",
+        "role": "Electrical equipment OEM"
+      },
+      "card8": {
+        "quote": "In-house CI and aluminum under one quality system — fewer audits, fewer surprises on the floor.",
+        "author": "Quality Head",
+        "role": "Pump and motor OEM"
+      },
+      "card9": {
+        "quote": "Submitted a drawing on Monday, had price guidance by Tuesday. That speed wins programs for us.",
+        "author": "Project Engineer",
+        "role": "Auto components buyer"
+      }
+    },
     "items": {
       "motors": "Motor OEM",
       "pumps": "Pump manufacturers",
@@ -98,9 +152,10 @@
     }
   },
   "applications": {
-    "headline": "Scale your supply chain with a casting partner built for OEM programs",
-    "subtitle": "From repeat production volumes to new part development — one Rajkot factory covering CI, aluminum and pressure die under a single quality system.",
     "eyebrow": "Applications",
+    "headlineLine1": "Scale your supply chain",
+    "headlineLine2": "with a casting partner built for OEM programs",
+    "subtitle": "From repeat production volumes to new part development — one Rajkot factory covering CI, aluminum and pressure die under a single quality system.",
     "learnMore": "Learn more",
     "cards": {
       "oem": {
@@ -130,7 +185,9 @@
     }
   },
   "stats": {
-    "headline": "Proven capability, measurable results",
+    "eyebrow": "By the numbers",
+    "headlineLine1": "Proven capability,",
+    "headlineLine2": "measurable results",
     "items": {
       "years": {
         "label": "Years in business",
@@ -151,7 +208,9 @@
     }
   },
   "products": {
-    "headline": "Castings for every OEM application",
+    "eyebrow": "Product range",
+    "headlineLine1": "Castings for every",
+    "headlineLine2": "OEM application",
     "subtitle": "From motor bodies to pump parts and auto components — precision castings across CI, aluminum and pressure die.",
     "tag": "Use cases",
     "learnMore": "Learn more",
@@ -191,7 +250,9 @@
     }
   },
   "testimonials": {
-    "headline": "Trusted by OEM buyers across Gujarat and beyond",
+    "eyebrow": "Buyer stories",
+    "headlineLine1": "Trusted by OEM buyers",
+    "headlineLine2": "across Gujarat and beyond",
     "counter": "{{current}} / {{total}}",
     "items": {
       "placeholder1": {
@@ -208,21 +269,26 @@
     "imageAlt": "Factory background"
   },
   "video": {
-    "headline": "See precision in production",
+    "eyebrow": "Factory tour",
+    "headlineLine1": "See precision",
+    "headlineLine2": "in production",
     "subtitle": "Watch how Diti Engineers delivers cast iron, aluminum and pressure die parts — from Rajkot factory floor to OEM shipment.",
     "play": "Play full video",
     "requestDemo": "Request a quote",
     "imageAlt": "Factory production video poster"
   },
   "ctaBanner": {
-    "headline": "Ready to source your next casting run?",
+    "eyebrow": "Get started",
+    "headlineLine1": "Ready to source",
+    "headlineLine2": "your next casting run?",
     "subtitle": "Let's discuss how Diti Engineers can supply CI, aluminum or pressure die parts — with a quote back in 24 hours.",
     "cta": "Get in touch",
     "galleryAlt": "Precision casting and manufacturing at Diti Engineers"
   },
   "contact": {
     "eyebrow": "Request a quote",
-    "headline": "Tell us about your part.",
+    "headlineLine1": "Tell us about your part.",
+    "headlineLine2": "We reply within 24 hours.",
     "subtitle": "Four short steps. We reply within 24 hours.",
     "openCta": "Start a quote request",
     "stepLabel": "Step {{current}} of {{total}}",

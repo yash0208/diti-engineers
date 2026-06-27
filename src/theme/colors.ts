@@ -16,6 +16,8 @@ export const colors = {
   surfaceCardDark: "#171717",
   surfaceMuted: "#f0f0f0",
   accentPrimary: "#4d00e5",
+  accentGradientStart: "#4d00e5",
+  accentGradientEnd: "#7c3aed",
   accentCtaLight: "#ffffff",
   accentSecondary: "#4d00e5",
   accentSteel: "#677489",

@@ -22,7 +22,9 @@ export {
 } from "./hero-gallery-scroll-animation";
 export { InfiniteSlider } from "./infinite-slider";
 export { ProgressiveBlur } from "./progressive-blur";
+export { SectionHeader } from "./SectionHeader";
 export { SlideControls } from "./SlideControls";
 export { Sparkles } from "./sparkles";
 export { SplitStat } from "./SplitStat";
+export { TestimonialV2 } from "./testimonial-v2";
 export { Threads } from "./threads";

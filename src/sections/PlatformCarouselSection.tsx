@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
 import { useReducedMotion } from "@/lib/motion";
@@ -12,7 +13,9 @@ import { ArrowLink, GlassPanel, SlideControls } from "@/components/ui";
 import {
   imageRegistry,
   isPlaceholderImage,
+  isPlaceholderVideo,
   type PlatformImageKey,
+  type PlatformVideoKey,
 } from "@/data/images";
 import { cn } from "@/lib/utils";
 
@@ -25,22 +28,82 @@ const slideImages: Record<SlideKey, PlatformImageKey> = {
   die: "die",
 };
 
-function SlideBackground({ slideKey }: { slideKey: SlideKey }) {
+const slideVideos: Record<SlideKey, PlatformVideoKey> = {
+  ci: "ci",
+  aluminum: "aluminum",
+  die: "die",
+};
+
+function SlideBackground({
+  slideKey,
+  isActive,
+}: {
+  slideKey: SlideKey;
+  isActive: boolean;
+}) {
   const { t } = useTranslation();
-  const src = imageRegistry.platform[slideImages[slideKey]];
-  const useMedia = !isPlaceholderImage(src);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(isActive);
+  const [isReady, setIsReady] = useState(false);
+
+  const posterSrc = imageRegistry.platform[slideImages[slideKey]];
+  const videoSrc = imageRegistry.platformVideo[slideVideos[slideKey]];
+  const useVideo = !isPlaceholderVideo(videoSrc);
+  const usePoster = !isPlaceholderImage(posterSrc);
+
+  useEffect(() => {
+    if (isActive) {
+      setShouldLoad(true);
+    }
+  }, [isActive]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldLoad) return;
+
+    if (isActive) {
+      void video.play().catch(() => undefined);
+      return;
+    }
+
+    video.pause();
+  }, [isActive, shouldLoad]);
 
   return (
     <div className="relative h-full w-screen shrink-0 bg-canvas-dark">
-      {useMedia ? (
+      {usePoster ? (
         <img
-          src={src}
-          alt={t(`platform.imageAlt.${slideKey}`)}
-          className="h-full w-full object-cover"
+          src={posterSrc}
+          alt=""
+          aria-hidden
+          className={cn(
+            "absolute inset-0 h-full w-full object-cover transition-opacity duration-700",
+            useVideo && isReady ? "opacity-0" : "opacity-100",
+          )}
         />
       ) : (
         <div aria-hidden className="absolute inset-0 bg-hero-ambient" />
       )}
+
+      {useVideo && shouldLoad ? (
+        <video
+          ref={videoRef}
+          src={videoSrc}
+          poster={usePoster ? posterSrc : undefined}
+          autoPlay={isActive}
+          muted
+          loop
+          playsInline
+          preload={isActive ? "auto" : "metadata"}
+          onCanPlay={() => setIsReady(true)}
+          className={cn(
+            "h-full w-full object-cover transition-opacity duration-700",
+            isReady ? "opacity-100" : "opacity-0",
+          )}
+          aria-label={t(`platform.videoAlt.${slideKey}`)}
+        />
+      ) : null}
+
       <div
         aria-hidden
         className="absolute inset-0 bg-gradient-to-t from-canvas-dark/80 via-canvas-dark/25 to-canvas-dark/10"
@@ -76,13 +139,13 @@ function ActiveSlideContent({
         }
         transition={enterTransition(reduced)}
       >
-        <p className="text-eyebrow text-text-on-dark">
+        <p className="text-eyebrow text-text-primary-dark">
           {t(`platform.slides.${slideKey}.eyebrow`)}
         </p>
         <h2 className="mt-10 text-section-title text-text-on-dark md:mt-12">
           {t(`platform.slides.${slideKey}.title`)}
         </h2>
-        <p className="mt-6 text-sm leading-relaxed text-text-on-dark md:text-base">
+        <p className="mt-6 text-body-lg text-text-primary-dark">
           {t(`platform.slides.${slideKey}.body`)}
         </p>
         <div className="mt-6 flex items-center justify-between gap-4">
@@ -127,30 +190,47 @@ export function PlatformCarouselSection() {
         style={enabled ? { x: backgroundX } : undefined}
       >
         {(enabled ? slideKeys : [activeKey]).map((key) => (
-          <SlideBackground key={key} slideKey={key} />
+          <SlideBackground
+            key={key}
+            slideKey={key}
+            isActive={key === activeKey}
+          />
         ))}
       </motion.div>
 
       <div className="container-main relative z-10 flex h-full flex-col pt-24 md:pt-28">
-        <div className="flex max-w-[800px] flex-wrap gap-x-12 gap-y-2">
+        <div
+          className="inline-flex max-w-full flex-wrap items-stretch overflow-hidden rounded-xs border border-border-glass bg-surface-glass backdrop-blur-md"
+          role="tablist"
+          aria-label={t("platform.tabsAriaLabel")}
+        >
           {slideKeys.map((key, i) => (
-            <button
-              key={key}
-              type="button"
-              onClick={() => scrollToSlide(i)}
-              className={cn(
-                "font-mono-label interactive-opacity interactive-press px-1 text-sm uppercase",
-                i === index
-                  ? "text-text-on-dark opacity-100"
-                  : "text-text-on-dark opacity-20 hover:opacity-40",
-              )}
-            >
-              {t(`platform.tabs.${key}`)}
-            </button>
+            <div key={key} className="flex items-stretch">
+              {i > 0 ? (
+                <span
+                  aria-hidden
+                  className="w-px shrink-0 self-stretch bg-border-glass"
+                />
+              ) : null}
+              <button
+                type="button"
+                role="tab"
+                aria-selected={i === index}
+                onClick={() => scrollToSlide(i)}
+                className={cn(
+                  "font-mono-label interactive-opacity interactive-press px-4 py-2.5 text-sm uppercase transition-colors md:px-5",
+                  i === index
+                    ? "bg-white/10 text-text-on-dark opacity-100"
+                    : "text-text-on-dark opacity-20 hover:bg-white/5 hover:opacity-40",
+                )}
+              >
+                {t(`platform.tabs.${key}`)}
+              </button>
+            </div>
           ))}
         </div>
 
-        <div className="mt-auto pb-16 md:pb-20">
+        <div className="mt-auto mb-24 pb-6 md:mb-32 md:pb-8">
           <GlassPanel className="max-w-[452px]">
             <ActiveSlideContent
               slideKey={activeKey}

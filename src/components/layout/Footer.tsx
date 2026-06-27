@@ -20,7 +20,7 @@ export function Footer() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.08}>
-            <p className="text-xs font-medium uppercase tracking-wider text-text-muted">
+            <p className="text-eyebrow text-text-muted">
               {t("footer.navHeading")}
             </p>
             <nav className="mt-4 flex flex-col gap-3" aria-label={t("footer.navHeading")}>
@@ -37,7 +37,7 @@ export function Footer() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.14}>
-            <p className="text-xs font-medium uppercase tracking-wider text-text-muted">
+            <p className="text-eyebrow text-text-muted">
               {t("footer.contactHeading")}
             </p>
             <div className="mt-4 space-y-2 text-sm text-text-primary-light">

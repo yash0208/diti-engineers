@@ -42,7 +42,7 @@ export function HeroSection6({ className }: HeroSection6Props) {
               href="#capabilities"
               className="mx-auto flex w-fit items-center gap-2 rounded-base border border-border-light bg-surface-card-light p-1 pr-3 interactive-colors lg:ml-0"
             >
-              <span className="rounded-sm bg-surface-muted px-2 py-1 text-xs font-medium text-text-heading-light">
+              <span className="rounded-sm bg-surface-muted px-2 py-1 font-mono-label text-xs text-text-muted">
                 {t("hero.badgeLabel")}
               </span>
               <span className="text-sm text-text-primary-light">{t("hero.badgeText")}</span>
@@ -50,12 +50,12 @@ export function HeroSection6({ className }: HeroSection6Props) {
               <ArrowRight className="size-4 text-text-muted" aria-hidden />
             </a>
 
-            <h1 className="mt-10 text-balance text-4xl font-bold text-text-heading-light md:text-5xl xl:text-5xl">
-              <span className="block">{t("hero.titleLine1")}</span>
+            <h1 className="mt-10 text-balance text-h1 text-text-heading-light">
+              <span className="block text-accent-primary">{t("hero.titleLine1")}</span>
               <span className="block">{t("hero.titleLine2")}</span>
             </h1>
 
-            <p className="mt-8 text-text-primary-light">
+            <p className="mt-8 text-body-lg text-text-primary-light">
               <span className="block">{t("hero.subtitleLine1")}</span>
               <span className="block">{t("hero.subtitleLine2")}</span>
             </p>
@@ -66,7 +66,7 @@ export function HeroSection6({ className }: HeroSection6Props) {
                 className="mx-auto my-10 max-w-sm lg:my-12 lg:ml-0 lg:mr-auto"
                 onSubmit={(event) => event.preventDefault()}
               >
-                <div className="relative grid grid-cols-[1fr_auto] items-center rounded-base border border-border-light bg-surface-card-light pr-1 shadow-elevation has-[input:focus]:ring-2 has-[input:focus]:ring-accent-primary/30">
+                <div className="relative grid grid-cols-[1fr_auto] items-center rounded-base border border-border-light bg-surface-card-light pr-2 shadow-elevation has-[input:focus]:ring-2 has-[input:focus]:ring-accent-primary/30">
                   <Mail
                     className="pointer-events-none absolute inset-y-0 left-5 my-auto size-5 text-text-muted"
                     aria-hidden
@@ -80,22 +80,20 @@ export function HeroSection6({ className }: HeroSection6Props) {
                     aria-label={t("hero.emailPlaceholder")}
                   />
 
-                  <div className="md:pr-1.5 lg:pr-0">
-                    <Button asChild aria-label={t("hero.submitAria")}>
-                      <a href="#contact">
-                        <span className="hidden md:block">{t("hero.submitLabel")}</span>
-                        <SendHorizonal
-                          className="relative mx-auto size-5 md:hidden"
-                          strokeWidth={2}
-                          aria-hidden
-                        />
-                      </a>
-                    </Button>
-                  </div>
+                  <Button asChild aria-label={t("hero.submitAria")}>
+                    <a href="#contact">
+                      <span className="hidden md:block">{t("hero.submitLabel")}</span>
+                      <SendHorizonal
+                        className="relative mx-auto size-5 md:hidden"
+                        strokeWidth={2}
+                        aria-hidden
+                      />
+                    </a>
+                  </Button>
                 </div>
               </form>
 
-              <ul className="list-inside list-disc space-y-2 text-sm text-text-primary-light">
+              <ul className="list-inside list-disc space-y-2 text-sm text-text-muted">
                 <li>{t("hero.bullet1")}</li>
                 <li>{t("hero.bullet2")}</li>
                 <li>{t("hero.bullet3")}</li>

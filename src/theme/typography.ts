@@ -13,7 +13,7 @@ export const typography = {
     h3: "1.5rem",
     body: "1rem",
     bodyLg: "1.125rem",
-    eyebrow: "0.875rem",
+    eyebrow: "1rem",
     monoLabel: "1rem",
     caption: "0.75rem",
   },
@@ -67,4 +67,6 @@ export const elevation = {
     "0 2px 6px -1px rgba(0, 0, 0, 0.16), 0 1px 4px -1px rgba(0, 0, 0, 0.04)",
   active:
     "0 0 8px -2px rgba(0, 0, 0, 0.1), 0 6px 20px -3px rgba(0, 0, 0, 0.2)",
+  cardHover:
+    "0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05)",
 } as const;

@@ -60,7 +60,7 @@ export function SlideControls({
         aria-hidden
         className={cn(
           "block h-1.5 w-1.5",
-          light ? "bg-text-on-dark" : "bg-accent-primary",
+          light ? "bg-text-on-dark" : "bg-accent-gradient",
         )}
       />
       <button

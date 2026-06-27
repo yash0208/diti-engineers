@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { CountUp, RevealOnScroll } from "@/components/motion";
-import { SplitStat } from "@/components/ui";
+import { SectionHeader, SplitStat } from "@/components/ui";
 import { businessProfile } from "@/data/profile";
 
 type StatKey = "years" | "turnover" | "gstYear" | "products";
@@ -26,12 +26,14 @@ export function StatsSection() {
   ];
 
   return (
-    <section id="stats" className="bg-canvas section-padding">
+    <section id="stats" className="border-y border-border-light bg-canvas section-padding">
       <div className="container-main">
-        <RevealOnScroll className="mx-auto max-w-[818px] text-center">
-          <h2 className="text-h2 text-text-heading-light">
-            {t("stats.headline")}
-          </h2>
+        <RevealOnScroll>
+          <SectionHeader
+            eyebrow={t("stats.eyebrow")}
+            headlineLine1={t("stats.headlineLine1")}
+            headlineLine2={t("stats.headlineLine2")}
+          />
         </RevealOnScroll>
 
         <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">

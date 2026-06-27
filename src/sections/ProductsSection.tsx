@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { getMotionTransition, useReducedMotion } from "@/lib/motion";
 import { RevealOnScroll } from "@/components/motion";
-import { SlideControls } from "@/components/ui";
+import { SectionHeader, SlideControls } from "@/components/ui";
 import { businessProfile } from "@/data/profile";
 import { imageRegistry, type ProductImageKey } from "@/data/images";
 
@@ -22,12 +22,11 @@ function ProductCarouselCard({ id }: { id: ProductImageKey }) {
           loading="lazy"
           className="h-full w-full object-cover"
         />
-        <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-border-light bg-surface-card-light/90 px-4 py-1.5 text-xs uppercase tracking-wider text-text-heading-light">
-          <span aria-hidden className="h-2 w-2 rounded-full bg-accent-primary" />
+        <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-base border border-border-light bg-surface-card-light/90 px-4 py-1.5 font-mono-label text-xs text-text-muted">
           {t("products.tag")}
         </span>
       </div>
-      <h3 className="mt-4 text-xl font-semibold text-text-heading-light">
+      <h3 className="mt-4 text-h3 text-text-heading-light">
         {t(`products.items.${id}.name`)}
       </h3>
       <p className="mt-3 text-sm leading-relaxed text-text-primary-light">
@@ -35,7 +34,7 @@ function ProductCarouselCard({ id }: { id: ProductImageKey }) {
       </p>
       <a
         href="#contact"
-        className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-text-heading-light interactive-opacity"
+        className="mt-6 inline-flex items-center gap-2 font-mono-label text-sm text-text-heading-light interactive-opacity"
       >
         {t("products.learnMore")}
         <span aria-hidden>{">>"}</span>
@@ -65,13 +64,17 @@ export function ProductsSection() {
   const slideTransition = getMotionTransition(reduced, "normal", "out");
 
   return (
-    <section id="products" className="overflow-hidden bg-canvas section-padding">
+    <section id="products" className="overflow-hidden border-y border-border-light bg-canvas section-padding">
       <div className="container-main">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <RevealOnScroll>
-            <h2 className="max-w-3xl text-h1 text-text-heading-light">
-              {t("products.headline")}
-            </h2>
+            <SectionHeader
+              align="left"
+              eyebrow={t("products.eyebrow")}
+              headlineLine1={t("products.headlineLine1")}
+              headlineLine2={t("products.headlineLine2")}
+              className="max-w-3xl"
+            />
           </RevealOnScroll>
           <RevealOnScroll delay={0.08}>
             <p className="max-w-md text-body-lg text-text-primary-light">

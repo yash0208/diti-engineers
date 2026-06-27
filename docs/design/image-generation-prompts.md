@@ -19,6 +19,46 @@ Use with **Midjourney**, **DALL·E**, **Ideogram**, **Flux**, or **Cursor Genera
 
 ---
 
+## Platform carousel background videos (required — 3 slots)
+
+The **Capabilities** sticky carousel (`PlatformCarouselSection`, `#capabilities`) uses one full-viewport looping background per slide. Generate all three before shipping that section with real media.
+
+Recommended tools: **Runway Gen-3**, **Kling**, **Pika**, **Luma Dream Machine**, or licensed **Pexels / Artgrid** factory B-roll.
+
+**Global video suffix** (append to every prompt):
+```
+, cinematic industrial B2B footage, slow smooth camera movement, realistic foundry lighting, slightly desaturated for dark website overlay, no text, no logos, no watermarks, no identifiable faces, 16:9 landscape, 5–8 second seamless loop, suitable for muted autoplay website background
+```
+
+**Avoid in all video prompts:** handheld shaky cam, fast cuts, sci-fi UI, purple neon, cartoon CGI, stock “happy workers” waving at camera, readable signage or brand names.
+
+| Slot key | File path | Aspect / size | Duration |
+|----------|-----------|---------------|----------|
+| `platformVideo.ci` | `public/videos/platform-ci-casting.mp4` | 16:9 / 1920×1080 min | 5–8 s loop |
+| `platformVideo.aluminum` | `public/videos/platform-aluminum-die-casting.mp4` | 16:9 / 1920×1080 min | 5–8 s loop |
+| `platformVideo.die` | `public/videos/platform-pressure-die-casting.mp4` | 16:9 / 1920×1080 min | 5–8 s loop |
+
+Optional poster frames (fallback while video loads): reuse the matching product still from the sections below at `public/images/platform-ci-casting.webp`, `platform-aluminum-die-casting.webp`, `platform-pressure-die-casting.webp`.
+
+### 01 CI casting (`platformVideo.ci`)
+```
+Slow dolly through a cast iron foundry floor, gray CI motor body frames and pump housings cooling on steel racks, warm furnace glow in background, sand casting molds and molten metal pour silhouette in soft focus, editorial industrial cinematography, dark graphite and orange accent lighting
+```
+
+### 02 Aluminum die casting (`platformVideo.aluminum`)
+```
+Close tracking shot along a high-pressure aluminum die casting line, shiny silver motor end brackets and housings ejected from the die, hydraulic press cycle in slow motion, cool steel-blue factory lighting with metallic reflections, OEM precision manufacturing atmosphere
+```
+
+### 03 Pressure die casting (`platformVideo.die`)
+```
+Macro-to-wide reveal of pressure die casting for intricate aluminum parts, molten aluminum injected into a steel mold, complex thin-wall component released and inspected on conveyor, tight tolerances and clean factory environment, restrained cinematic motion for engineering audience
+```
+
+**After generation:** Export H.264 MP4 (≤ 8 MB per clip if possible). Place in `public/videos/`, register paths in `src/data/images.ts` under `platformVideo`, and add `platform.videoAlt.*` keys to `en.json` and `fr.json`.
+
+---
+
 ## Hero & background
 
 ### Dark hero ambient (abstract, no product)
@@ -149,6 +189,9 @@ This matches the phase plan in `claude-implementation-prompt.md`. Generate the i
 
 | Phase | Slot key | File path | Aspect / size | Prompt section |
 |-------|----------|-----------|---------------|----------------|
+| 2 | `platformVideo.ci` | `public/videos/platform-ci-casting.mp4` | 16:9 / 1920×1080 | "01 CI casting" (video) |
+| 2 | `platformVideo.aluminum` | `public/videos/platform-aluminum-die-casting.mp4` | 16:9 / 1920×1080 | "02 Aluminum die casting" (video) |
+| 2 | `platformVideo.die` | `public/videos/platform-pressure-die-casting.mp4` | 16:9 / 1920×1080 | "03 Pressure die casting" (video) |
 | 2 | `hero.ambient` | `public/images/hero-ambient.webp` | 16:9 / 1920×1080 | "Dark hero ambient" |
 | 2 | `hero.factoryOverlay` *(optional)* | `public/images/hero-factory.webp` | 16:9 / 1920×1080 | "Hero factory wide" |
 | 3 | `products.ciCasting` | `public/images/product-ci-casting.webp` | 4:3 / 1200×900 | "CI casting" |

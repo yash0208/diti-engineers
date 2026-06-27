@@ -135,14 +135,14 @@ export function QuoteSheet({ open, onClose }: QuoteSheetProps) {
           >
             <div className="flex items-center justify-between border-b border-border-light px-6 py-5 md:px-8">
               <div>
-                <p className="text-eyebrow text-accent-primary">
+                <p className="text-eyebrow text-text-muted">
                   {t("contact.eyebrow")}
                 </p>
                 <h2
                   id="quote-sheet-title"
                   className="mt-1 text-h3 text-text-heading-light"
                 >
-                  {t("contact.headline")}
+                  {t("contact.headlineLine1")}
                 </h2>
               </div>
               <button
@@ -164,7 +164,7 @@ export function QuoteSheet({ open, onClose }: QuoteSheetProps) {
 
             {step !== "done" && (
               <div className="border-b border-border-light px-6 py-4 md:px-8">
-                <p className="text-xs uppercase tracking-wider text-text-muted">
+                <p className="text-eyebrow text-text-muted">
                   {t("contact.stepLabel", {
                     current: visibleStepNum,
                     total: totalSteps,
@@ -248,7 +248,7 @@ export function QuoteSheet({ open, onClose }: QuoteSheetProps) {
                           </p>
                         </header>
                         <div>
-                          <p className="mb-3 text-xs uppercase tracking-wider text-text-muted">
+                          <p className="mb-3 text-eyebrow text-text-muted">
                             {t("contact.steps.volume.volumeLabel")}
                           </p>
                           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -275,7 +275,7 @@ export function QuoteSheet({ open, onClose }: QuoteSheetProps) {
                         <div>
                           <label
                             htmlFor="material"
-                            className="mb-2 block text-xs uppercase tracking-wider text-text-muted"
+                            className="mb-2 block text-eyebrow text-text-muted"
                           >
                             {t("contact.steps.volume.materialLabel")}
                           </label>
@@ -350,7 +350,7 @@ export function QuoteSheet({ open, onClose }: QuoteSheetProps) {
                           </p>
                         </header>
                         <div className="rounded-lg border border-border-light bg-surface-muted p-5">
-                          <p className="text-xs uppercase tracking-wider text-text-muted">
+                          <p className="text-eyebrow text-text-muted">
                             {t("contact.steps.review.summaryHeading")}
                           </p>
                           <dl className="mt-4 space-y-3 text-sm">
@@ -392,7 +392,7 @@ export function QuoteSheet({ open, onClose }: QuoteSheetProps) {
                             />
                           </svg>
                         </span>
-                        <h3 className="mt-6 text-h2 text-text-heading-light">
+                        <h3 className="mt-6 text-section-title text-text-heading-light">
                           {t("contact.steps.done.title")}
                         </h3>
                         <p className="mt-3 max-w-sm text-body-lg text-text-primary-light">
@@ -466,7 +466,7 @@ function Field({ id, label, placeholder, value, onChange, type = "text", require
     <div className="flex flex-col">
       <label
         htmlFor={id}
-        className="mb-2 text-xs uppercase tracking-wider text-text-muted"
+        className="mb-2 text-eyebrow text-text-muted"
       >
         {label}
       </label>
@@ -486,7 +486,7 @@ function Field({ id, label, placeholder, value, onChange, type = "text", require
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-baseline justify-between gap-4">
-      <dt className="text-xs uppercase tracking-wider text-text-muted">{label}</dt>
+      <dt className="text-eyebrow text-text-muted">{label}</dt>
       <dd className="text-right text-sm text-text-heading-light">{value}</dd>
     </div>
   );
