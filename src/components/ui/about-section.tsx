@@ -56,12 +56,12 @@ export function AboutSection({ className }: AboutSectionProps) {
   return (
     <section
       className={cn(
-        "border-b border-border-light bg-canvas px-4 pb-12 pt-nav md:pb-16 lg:pt-nav-lg",
+        "border-b border-border-light bg-canvas pt-nav lg:pt-nav-lg",
         className,
       )}
       ref={heroRef}
     >
-      <div className="container-main">
+      <div className="container-main pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="relative">
           <div className="absolute -top-3 z-10 mb-8 flex w-[85%] items-center justify-between sm:-top-2 md:top-0 lg:top-4">
             <div className="flex items-center gap-2 text-xl">
