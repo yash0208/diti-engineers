@@ -10,6 +10,7 @@ export {
 export { ArrowLink } from "./ArrowLink";
 export { Button, buttonVariants } from "./button";
 export { GlassPanel } from "./GlassPanel";
+export { HeroGalleryLayout } from "./hero-gallery-layout";
 export {
   HeroGalleryBackdrop,
   HeroGalleryCell,

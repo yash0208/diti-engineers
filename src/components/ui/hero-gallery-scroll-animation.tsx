@@ -43,6 +43,7 @@ const bentoGridVariants = cva(
 
 interface HeroGalleryScrollContextValue {
   scrollYProgress: MotionValue<number>;
+  containInSection: boolean;
 }
 
 const HeroGalleryScrollContext = React.createContext<
@@ -62,15 +63,18 @@ function useHeroGalleryScrollContext() {
 const HeroGalleryScroll = ({
   children,
   className,
+  containInSection = false,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) => {
+}: React.HTMLAttributes<HTMLDivElement> & {
+  containInSection?: boolean;
+}) => {
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: scrollRef,
   });
 
   return (
-    <HeroGalleryScrollContext.Provider value={{ scrollYProgress }}>
+    <HeroGalleryScrollContext.Provider value={{ scrollYProgress, containInSection }}>
       <div
         ref={scrollRef}
         className={cn("relative min-h-screen w-full", className)}
@@ -118,12 +122,26 @@ const HeroGalleryContent = React.forwardRef<
   HTMLDivElement,
   HTMLMotionProps<"div">
 >(({ className, style, ...props }, ref) => {
-  const { scrollYProgress } = useHeroGalleryScrollContext();
+  const { scrollYProgress, containInSection } = useHeroGalleryScrollContext();
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const position = useTransform(scrollYProgress, (pos) =>
     pos >= 0.6 ? "absolute" : "fixed",
   );
+
+  if (containInSection) {
+    return (
+      <motion.div
+        ref={ref}
+        className={cn(
+          "absolute inset-0 z-10 flex items-center justify-center px-4 text-center",
+          className,
+        )}
+        style={{ opacity, scale, ...style }}
+        {...props}
+      />
+    );
+  }
 
   return (
     <motion.div
@@ -147,11 +165,22 @@ const HeroGalleryBackdrop = React.forwardRef<
   HTMLDivElement,
   HTMLMotionProps<"div">
 >(({ className, style, ...props }, ref) => {
-  const { scrollYProgress } = useHeroGalleryScrollContext();
+  const { scrollYProgress, containInSection } = useHeroGalleryScrollContext();
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const position = useTransform(scrollYProgress, (pos) =>
     pos >= 0.6 ? "absolute" : "fixed",
   );
+
+  if (containInSection) {
+    return (
+      <motion.div
+        ref={ref}
+        className={cn("absolute inset-0 z-0", className)}
+        style={{ opacity, ...style }}
+        {...props}
+      />
+    );
+  }
 
   return (
     <motion.div

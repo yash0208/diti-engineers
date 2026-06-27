@@ -1,32 +1,23 @@
 import { useTranslation } from "react-i18next";
-import { RevealOnScroll } from "@/components/motion";
-import { ArrowLink } from "@/components/ui";
+import { HeroGalleryLayout } from "@/components/ui/hero-gallery-layout";
+import { heroGalleryImages } from "@/data/images";
 
 export function CtaBannerSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative overflow-hidden bg-canvas section-padding">
-      <div aria-hidden className="absolute inset-0 bg-cta-glow" />
-      <div className="container-main relative">
-        <div className="mx-auto max-w-[720px] text-center">
-          <RevealOnScroll as="div" className="text-display text-text-heading-light">
+    <section className="relative isolate z-0 w-full bg-canvas">
+      <HeroGalleryLayout
+        containInSection
+        images={heroGalleryImages}
+        galleryAlt={t("ctaBanner.galleryAlt")}
+      >
+        <div className="pointer-events-none mx-auto w-full max-w-2xl px-6 py-10 sm:px-10 sm:py-14 md:px-14 md:py-16">
+          <h2 className="text-hero-gallery-title mx-auto max-w-xl text-text-heading-light">
             {t("ctaBanner.headline")}
-          </RevealOnScroll>
-          <RevealOnScroll
-            as="p"
-            className="mx-auto mt-6 max-w-xl text-body-lg text-text-primary-light"
-            delay={0.1}
-          >
-            {t("ctaBanner.subtitle")}
-          </RevealOnScroll>
-          <RevealOnScroll className="mt-10 flex justify-center" delay={0.18}>
-            <ArrowLink href="#contact" variant="purple">
-              {t("ctaBanner.cta")}
-            </ArrowLink>
-          </RevealOnScroll>
+          </h2>
         </div>
-      </div>
+      </HeroGalleryLayout>
     </section>
   );
 }

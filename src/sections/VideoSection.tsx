@@ -42,7 +42,7 @@ export function VideoSection() {
   };
 
   return (
-    <section id="video" className="relative isolate w-full bg-canvas-dark">
+    <section id="video" className="relative isolate z-10 w-full bg-canvas-dark">
       <ContainerScroll className="h-[350vh]">
         <ContainerSticky className="flex h-svh flex-col items-center bg-canvas-dark px-6 pb-8 pt-20 text-text-on-dark md:px-8 md:pt-24">
           <ContainerAnimated className="w-full max-w-3xl shrink-0 space-y-2 text-center">
