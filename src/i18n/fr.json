@@ -649,21 +649,33 @@
         "headlineLine2": "et analyses"
       },
       "readMore": "Lire la suite",
+      "readFullArticle": "Lire l'article complet",
+      "featured": {
+        "category": "Fabrication",
+        "date": "LE 13 JUIL. 2025",
+        "title": "De l'atelier à l'approvisionnement OEM : la stratégie au service de la qualité",
+        "excerpt": "Découvrez comment fonte, moulage sous pression et usinage intégrés sous un même toit réduisent les risques fournisseur et améliorent les délais.",
+        "videoAlt": "Production de fonte dans l'atelier Diti Engineers"
+      },
       "posts": {
         "post1": {
           "category": "Fabrication",
+          "date": "LE 4 MAI 2025",
           "title": "Rajkot, hub mondial du moulage",
           "excerpt": "Rajkot reste une référence pour l'auto et l'industrie — fonderies modernes, main-d'œuvre qualifiée et production export compétitive."
         },
         "post2": {
           "category": "Moulage",
+          "date": "LE 18 MAI 2025",
           "title": "Fonte de précision au Gujarat",
           "excerpt": "Comment les fonderies de Rajkot livrent des pièces fonte de qualité pour moteurs et pompes avec équipements modernes."
         },
         "post3": {
           "category": "Approvisionnement OEM",
+          "date": "LE 17 JUIN 2025",
           "title": "Fabrication toujours précise",
-          "excerpt": "Pourquoi la précision dimensionnelle et la constance matière comptent pour choisir un partenaire fondeur en Inde."
+          "excerpt": "Pourquoi la précision dimensionnelle et la constance matière comptent pour choisir un partenaire fondeur en Inde.",
+          "imageAlt": "Contrôle qualité de composants moulés de précision"
         }
       }
     },

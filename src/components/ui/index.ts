@@ -14,6 +14,7 @@ export { Badge, badgeVariants } from "./badge";
 export { Button, buttonVariants } from "./button";
 export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./card";
 export { ProductCard12 } from "./card-12";
+export { BlogPostCard, type BlogPostCardProps } from "./card-18";
 export {
   Carousel,
   CarouselContent,

@@ -649,21 +649,33 @@
         "headlineLine2": "and insights"
       },
       "readMore": "Read more",
+      "readFullArticle": "Read the full article",
+      "featured": {
+        "category": "Manufacturing",
+        "date": "ON JUL 13, 2025",
+        "title": "From foundry floor to OEM supply: how strategy drives casting quality",
+        "excerpt": "Discover how integrated CI casting, die casting and machining under one roof helps OEM buyers reduce supplier risk and improve lead times.",
+        "videoAlt": "CI casting production on the Diti Engineers factory floor"
+      },
       "posts": {
         "post1": {
           "category": "Manufacturing",
+          "date": "ON MAY 4, 2025",
           "title": "Rajkot as a global casting hub",
           "excerpt": "Rajkot remains a powerhouse for auto and industrial manufacturing — with advanced foundries, skilled workers and competitive export-ready production."
         },
         "post2": {
           "category": "Casting",
+          "date": "ON MAY 18, 2025",
           "title": "Precision CI casting in Gujarat",
           "excerpt": "How Rajkot foundries deliver high-quality cast iron components for motors and pumps with modern equipment and process control."
         },
         "post3": {
           "category": "OEM sourcing",
+          "date": "ON JUN 17, 2025",
           "title": "Always precise manufacturing",
-          "excerpt": "Why dimensional accuracy and material consistency matter when OEM buyers select a long-term casting partner in India."
+          "excerpt": "Why dimensional accuracy and material consistency matter when OEM buyers select a long-term casting partner in India.",
+          "imageAlt": "Quality inspection for precision cast components"
         }
       }
     },

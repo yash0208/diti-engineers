@@ -1,71 +1,97 @@
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-import { RevealOnScroll } from "@/components/motion";
-import { PageHero } from "@/components/layout/PageHero";
-import { PageSection } from "@/components/pages/PageSection";
+
+import { BlogPostCard } from "@/components/ui/card-18";
 import { imageRegistry } from "@/data/images";
 
 const postKeys = ["post1", "post2", "post3"] as const;
+
+const postGridClasses: Record<(typeof postKeys)[number], string> = {
+  post1:
+    "relative z-0 min-h-0 h-full hover:z-10 lg:col-span-3 lg:row-start-2",
+  post2:
+    "relative z-0 min-h-0 h-full hover:z-10 lg:col-span-3 lg:row-start-3",
+  post3:
+    "relative z-0 min-h-0 h-full hover:z-10 md:col-span-2 lg:col-span-3 lg:col-start-4 lg:row-span-2 lg:row-start-2",
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 export function BlogPage() {
   const { t } = useTranslation();
 
   return (
-    <>
-      <PageHero
-        eyebrow={t("pages.blog.hero.eyebrow")}
-        headlineLine1={t("pages.blog.hero.headlineLine1")}
-        headlineLine2={t("pages.blog.hero.headlineLine2")}
-        subtitle={t("pages.blog.hero.subtitle")}
-      />
+    <section className="h-[100svh] overflow-hidden bg-canvas pt-nav lg:pt-nav-lg">
+      <div className="container-main flex h-full min-h-0 flex-col overflow-hidden py-6 md:py-8 lg:py-10">
+        <motion.div
+          className="isolate grid min-h-0 flex-1 grid-cols-1 gap-6 overflow-hidden md:grid-cols-2 lg:grid-cols-6 lg:grid-rows-[minmax(0,auto)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-8 lg:items-stretch"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div
+            variants={itemVariants}
+            className="relative z-[1] min-h-0 hover:z-10 md:col-span-2 lg:col-span-6 lg:row-start-1"
+          >
+            <BlogPostCard
+              variant="featured"
+              className="max-h-full"
+              tag={t("pages.blog.featured.category")}
+              date={t("pages.blog.featured.date")}
+              title={t("pages.blog.featured.title")}
+              description={t("pages.blog.featured.excerpt")}
+              href="/contact"
+              readMoreText={t("pages.blog.readFullArticle")}
+              videoUrl={imageRegistry.blog.featuredVideo}
+              videoPoster={imageRegistry.blog.featuredPoster}
+              mediaAlt={t("pages.blog.featured.videoAlt")}
+            />
+          </motion.div>
 
-      <PageSection
-        align="left"
-        eyebrow={t("pages.blog.latest.eyebrow")}
-        headlineLine1={t("pages.blog.latest.headlineLine1")}
-        headlineLine2={t("pages.blog.latest.headlineLine2")}
-      >
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {postKeys.map((key, index) => (
-            <RevealOnScroll key={key} delay={index * 0.06} className="h-full">
-              <article className="flex h-full flex-col overflow-hidden rounded-xs border border-border-light bg-surface-card-light shadow-elevation">
-                <div className="aspect-[16/10] bg-surface-muted">
-                  <img
-                    src={
-                      index === 0
-                        ? imageRegistry.showcase.factory
-                        : index === 1
-                          ? imageRegistry.product["ci-casting"]
-                          : imageRegistry.applications.production
-                    }
-                    alt={t(`pages.blog.posts.${key}.title`)}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <p className="text-eyebrow text-text-muted">
-                    {t(`pages.blog.posts.${key}.category`)}
-                  </p>
-                  <h3 className="mt-3 text-h3 text-text-heading-light">
-                    {t(`pages.blog.posts.${key}.title`)}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-text-primary-light">
-                    {t(`pages.blog.posts.${key}.excerpt`)}
-                  </p>
-                  <Link
-                    to="/contact"
-                    className="mt-6 inline-flex items-center gap-2 font-mono-label text-sm text-text-heading-light interactive-opacity"
-                  >
-                    {t("pages.blog.readMore")}
-                    <span aria-hidden>{">>"}</span>
-                  </Link>
-                </div>
-              </article>
-            </RevealOnScroll>
+          {postKeys.map((key) => (
+            <motion.div
+              key={key}
+              variants={itemVariants}
+              className={postGridClasses[key]}
+            >
+              <BlogPostCard
+                tag={t(`pages.blog.posts.${key}.category`)}
+                date={t(`pages.blog.posts.${key}.date`)}
+                title={t(`pages.blog.posts.${key}.title`)}
+                description={t(`pages.blog.posts.${key}.excerpt`)}
+                href="/contact"
+                readMoreText={t("pages.blog.readMore")}
+                imageUrl={
+                  key === "post3" ? imageRegistry.blog.post3Image : undefined
+                }
+                mediaAlt={
+                  key === "post3"
+                    ? t("pages.blog.posts.post3.imageAlt")
+                    : undefined
+                }
+              />
+            </motion.div>
           ))}
-        </div>
-      </PageSection>
-    </>
+        </motion.div>
+      </div>
+    </section>
   );
 }

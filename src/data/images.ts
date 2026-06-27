@@ -89,6 +89,11 @@ export const imageRegistry = {
     aboutHero: "/videos/about-hero.mp4",
     aboutHeroPoster: "/videos/about-hero-poster.jpg",
   },
+  blog: {
+    featuredVideo: "/videos/platform-ci-casting.mp4",
+    featuredPoster: "/videos/platform-ci-casting-poster.jpg",
+    post3Image: "/images/quality-inspection.png",
+  },
   social: {
     og: "/images/og-banner.png",
   },
