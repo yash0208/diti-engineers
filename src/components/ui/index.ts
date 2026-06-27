@@ -10,6 +10,16 @@ export {
 export { AboutSection } from "./about-section";
 export { ArrowLink } from "./ArrowLink";
 export { Button, buttonVariants } from "./button";
+export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./card";
+export {
+  Carousel,
+  CarouselContent,
+  CarouselIndicator,
+  CarouselItem,
+  CarouselNavigation,
+  useCarousel,
+} from "./carousel";
+export { GalleryHoverCarousel, type GalleryHoverCarouselItem, type GalleryMedia } from "./gallery-hover-carousel";
 export { GlassPanel } from "./GlassPanel";
 export { HeroGalleryLayout } from "./hero-gallery-layout";
 export { HeroImageStrips, ImageAutoSlider } from "./image-auto-slider";

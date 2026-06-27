@@ -572,42 +572,61 @@
       }
     },
     "machinery": {
-      "hero": {
-        "eyebrow": "Machines",
-        "headlineLine1": "Équipements modernes",
-        "headlineLine2": "pour une production précise",
-        "subtitle": "Notre usine de Rajkot est équipée pour fonte, moulage alu, usinage et contrôle qualité."
-      },
-      "intro": {
-        "eyebrow": "Capacité usine",
-        "headlineLine1": "Installation",
-        "headlineLine2": "de haute technologie",
-        "body": "Diti Engineers investit dans l'équipement et la discipline process pour volumes OEM récurrents — du four à la finition et l'inspection.",
-        "imageAlt": "Machines et atelier de production"
-      },
-      "equipment": {
-        "eyebrow": "Équipement",
-        "headlineLine1": "Lignes de production",
-        "headlineLine2": "et inspection",
-        "subtitle": "Machines principales pour nos programmes fonte, aluminium et sous pression.",
-        "items": {
-          "ciLine": {
-            "title": "Ligne fonte",
-            "body": "Équipement fonderie pour carters moteur, corps de pompe et composants industriels."
-          },
-          "dieCasting": {
-            "title": "Presses moulage",
-            "body": "Moulage aluminium haute pression pour carters moteur et pièces automobile."
-          },
-          "machining": {
-            "title": "Usinage & finition",
-            "body": "Usinage post-moulage et finition pour pièces prêtes à expédier."
-          },
-          "inspection": {
-            "title": "Contrôle qualité",
-            "body": "Contrôles en cours et inspection finale avant expédition aux acheteurs OEM."
-          }
+      "eyebrow": "Machines",
+      "headlineLine1": "Équipements modernes",
+      "headlineLine2": "pour une production précise",
+      "subtitle": "Notre usine de Rajkot est équipée pour fonte, moulage alu, usinage et contrôle qualité — un atelier intégré pour programmes OEM.",
+      "learnMore": "En savoir plus",
+      "slideCounter": "{{current}} / {{total}}",
+      "slidesAriaLabel": "Diapositives du carrousel machines",
+      "slideGoTo": "Aller à la diapositive {{number}}",
+      "cards": {
+        "ciLine": {
+          "title": "Ligne fonte",
+          "body": "Équipement fonderie pour carters moteur, corps de pompe et composants industriels — conçu pour volumes OEM récurrents avec grades matière constants.",
+          "stat1Value": "Fonte",
+          "stat1Suffix": "",
+          "stat1Label": "Ligne fonte grise",
+          "stat2Value": "13+",
+          "stat2Suffix": " ans",
+          "stat2Label": "Expérience production"
+        },
+        "dieCasting": {
+          "title": "Presses moulage",
+          "body": "Moulage aluminium haute pression pour carters moteur, pièces automobile et composants alu de précision.",
+          "stat1Value": "HPDC",
+          "stat1Suffix": "",
+          "stat1Label": "Aluminium haute pression",
+          "stat2Value": "OEM",
+          "stat2Suffix": "",
+          "stat2Label": "Programmes moteur & auto"
+        },
+        "machining": {
+          "title": "Usinage & finition",
+          "body": "Usinage post-moulage et finition pour pièces prêtes à expédier — réduisant les interlocuteurs pour les équipes achats.",
+          "stat1Value": "CNC",
+          "stat1Suffix": "",
+          "stat1Label": "Usinage post-moulage",
+          "stat2Value": "100%",
+          "stat2Suffix": "",
+          "stat2Label": "Finition interne"
+        },
+        "inspection": {
+          "title": "Contrôle qualité",
+          "body": "Contrôles en cours et inspection finale avant expédition aux acheteurs OEM — pour l'onboarding fournisseur et la confiance en commande récurrente.",
+          "stat1Value": "QC",
+          "stat1Suffix": "",
+          "stat1Label": "Inspection finale",
+          "stat2Value": "100%",
+          "stat2Suffix": "",
+          "stat2Label": "Contrôles pré-expédition"
         }
+      },
+      "imageAlt": {
+        "ciLine": "Ligne de production fonte",
+        "dieCasting": "Presses moulage aluminium",
+        "machining": "Usinage CNC et finition",
+        "inspection": "Poste de contrôle qualité"
       }
     },
     "certificate": {

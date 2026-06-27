@@ -43,6 +43,24 @@ export const imageRegistry = {
     oem: "/images/applications-oem.png",
     production: "/images/applications-production.png",
   },
+  machinery: {
+    ciLine: "/images/product-ci-casting.png",
+    dieCasting: "/images/product-aluminum-die.png",
+    machining: "/images/cnc-machining.png",
+    inspection: "/images/quality-inspection.png",
+  },
+  machineryPoster: {
+    ciLine: "/videos/platform-ci-casting-poster.jpg",
+    dieCasting: "/videos/platform-aluminium-die-poster.jpg",
+    machining: "/images/cnc-machining.png",
+    inspection: "/images/quality-inspection.png",
+  },
+  machineryVideo: {
+    ciLine: "/videos/platform-ci-casting.mp4",
+    dieCasting: "/videos/platform-aluminium-die.mp4",
+    machining: "",
+    inspection: "",
+  },
   video: {
     poster: "/images/factory-floor.png",
   },
@@ -59,6 +77,8 @@ export const imageRegistry = {
   },
   showcase: {
     factory: "/images/factory-floor.png",
+    aboutHero: "/videos/about-hero.mp4",
+    aboutHeroPoster: "/videos/about-hero-poster.jpg",
   },
   social: {
     og: "/images/og-banner.png",
@@ -80,6 +100,8 @@ export type ImageKey = keyof typeof imageRegistry;
 export type ProductImageKey = keyof typeof imageRegistry.product;
 export type PlatformImageKey = keyof typeof imageRegistry.platform;
 export type PlatformVideoKey = keyof typeof imageRegistry.platformVideo;
+export type MachineryVideoKey = keyof typeof imageRegistry.machineryVideo;
+export type MachineryPosterKey = keyof typeof imageRegistry.machineryPoster;
 
 export const marqueeLogoKeys = [
   "gst",

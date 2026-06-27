@@ -1,5 +1,5 @@
 import { ArrowRight, Factory, Mail, ShieldCheck } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { TimelineContent } from "@/components/ui/timeline-animation";
@@ -49,9 +49,41 @@ const quickLinks = [
   { icon: Mail, href: "/contact", labelKey: "pages.about.heroSection.links.contact" },
 ] as const;
 
+function QuoteResponseLabel({
+  highlightClassName,
+  restClassName,
+  wrapperClassName,
+}: {
+  highlightClassName: string;
+  restClassName: string;
+  wrapperClassName?: string;
+}) {
+  const { t } = useTranslation();
+
+  return (
+    <div className={cn("flex flex-col uppercase leading-[0.95]", wrapperClassName)}>
+      <span className={highlightClassName}>
+        {t("pages.about.heroSection.stats.quoteResponse.labelHighlight")}
+      </span>
+      <span className={restClassName}>
+        {t("pages.about.heroSection.stats.quoteResponse.labelRest")}
+      </span>
+    </div>
+  );
+}
+
 export function AboutSection({ className }: AboutSectionProps) {
   const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    void video.play().catch(() => undefined);
+  }, []);
 
   return (
     <section
@@ -63,7 +95,7 @@ export function AboutSection({ className }: AboutSectionProps) {
     >
       <div className="container-main pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="relative">
-          <div className="absolute -top-3 z-10 mb-8 flex w-[85%] items-center justify-between sm:-top-2 md:top-0 lg:top-4">
+          <div className="relative z-10 mb-4 flex w-full items-center justify-between md:absolute md:-top-3 md:mb-8 md:w-[85%] md:top-0 lg:top-4">
             <div className="flex items-center gap-2 text-xl">
               <span className="animate-spin text-accent-primary" aria-hidden>
                 ✱
@@ -89,7 +121,7 @@ export function AboutSection({ className }: AboutSectionProps) {
                   customVariants={revealVariants}
                   to={href}
                   aria-label={t(labelKey)}
-                  className="flex h-5 w-5 cursor-pointer items-center justify-center rounded-base border border-border-light bg-surface-card-light text-text-muted transition-colors hover:border-accent-primary/30 hover:text-accent-primary sm:h-6 sm:w-6 md:h-8 md:w-8"
+                  className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-base border border-border-light bg-surface-card-light text-text-muted transition-[transform,border-color,color] duration-[160ms] ease-out hover:border-accent-primary/30 hover:text-accent-primary active:scale-[0.97] sm:h-9 sm:w-9 md:h-10 md:w-10"
                 >
                   <Icon className="size-3.5 sm:size-4" aria-hidden />
                 </TimelineContent>
@@ -104,7 +136,7 @@ export function AboutSection({ className }: AboutSectionProps) {
             customVariants={scaleVariants}
             className="group relative"
           >
-            <svg className="w-full" width="100%" height="100%" viewBox="0 0 100 40">
+            <svg className="aspect-[5/2] w-full" viewBox="0 0 100 40">
               <defs>
                 <clipPath id="about-hero-clip" clipPathUnits="objectBoundingBox">
                   <path
@@ -113,54 +145,71 @@ export function AboutSection({ className }: AboutSectionProps) {
                   />
                 </clipPath>
               </defs>
-              <image
-                clipPath="url(#about-hero-clip)"
-                preserveAspectRatio="xMidYMid slice"
-                width="100%"
-                height="100%"
-                href={imageRegistry.showcase.factory}
-                aria-label={t("pages.about.heroSection.imageAlt")}
-              />
+              <g clipPath="url(#about-hero-clip)">
+                <foreignObject width="100%" height="100%">
+                  <video
+                    ref={videoRef}
+                    src={imageRegistry.showcase.aboutHero}
+                    poster={imageRegistry.showcase.aboutHeroPoster}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="h-full w-full object-cover"
+                    aria-label={t("pages.about.heroSection.imageAlt")}
+                  />
+                </foreignObject>
+              </g>
             </svg>
 
-            <div className="absolute bottom-[4%] right-[1.5%] z-10 flex max-w-[28%] flex-col items-end sm:max-w-[26%] lg:max-w-[24%]">
+            <div className="absolute bottom-[4%] right-[1.5%] z-10 hidden max-w-[24%] flex-col items-end md:flex lg:max-w-[22%]">
               <TimelineContent
                 as="div"
                 animationNum={6}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
-                className="flex flex-col items-end text-right uppercase leading-[0.95]"
               >
-                <span className="text-2xl font-semibold text-accent-primary sm:text-3xl lg:text-4xl xl:text-[2.75rem]">
-                  {t("pages.about.heroSection.stats.quoteResponse.labelHighlight")}
-                </span>
-                <span className="text-xl text-text-primary-light sm:text-2xl lg:text-3xl xl:text-4xl">
-                  {t("pages.about.heroSection.stats.quoteResponse.labelRest")}
-                </span>
+                <QuoteResponseLabel
+                  highlightClassName="text-right text-3xl font-semibold text-accent-primary lg:text-4xl xl:text-[2.75rem]"
+                  restClassName="text-right text-2xl text-text-primary-light lg:text-3xl xl:text-4xl"
+                  wrapperClassName="items-end text-right"
+                />
               </TimelineContent>
             </div>
           </TimelineContent>
 
-          <div className="flex flex-wrap items-center py-3 text-sm">
+          <TimelineContent
+            as="div"
+            animationNum={6}
+            timelineRef={heroRef}
+            customVariants={revealVariants}
+            className="mt-4 md:hidden"
+          >
+            <QuoteResponseLabel
+              highlightClassName="text-2xl font-semibold text-accent-primary"
+              restClassName="text-xl text-text-primary-light"
+              wrapperClassName="flex-row items-baseline gap-2"
+            />
+          </TimelineContent>
+
+          <div className="flex flex-col gap-2 py-3 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4 sm:gap-y-1">
             <TimelineContent
               as="div"
               animationNum={5}
               timelineRef={heroRef}
               customVariants={revealVariants}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-4"
             >
-              <div className="mb-2 flex items-center gap-2 text-xs sm:text-base">
+              <div className="flex items-center gap-2 text-sm sm:text-base">
                 <span className="font-bold text-accent-primary">
                   {t("pages.about.heroSection.stats.experience.value")}
                 </span>
                 <span className="text-text-primary-light">
                   {t("pages.about.heroSection.stats.experience.label")}
                 </span>
-                <span className="text-border-light" aria-hidden>
-                  |
-                </span>
               </div>
-              <div className="mb-2 flex items-center gap-2 text-xs sm:text-base">
+              <div className="hidden h-4 w-px bg-border-light sm:block" aria-hidden />
+              <div className="flex items-center gap-2 text-sm sm:text-base">
                 <span className="font-bold text-accent-primary">
                   {t("pages.about.heroSection.stats.turnover.value")}
                 </span>
@@ -172,9 +221,9 @@ export function AboutSection({ className }: AboutSectionProps) {
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="mt-6 grid gap-8 md:mt-0 md:grid-cols-3">
           <div className="md:col-span-2">
-            <h1 className="mb-8 text-2xl font-semibold !leading-[110%] text-text-heading-light sm:text-4xl md:text-5xl">
+            <h1 className="mb-6 text-2xl font-semibold !leading-[110%] text-text-heading-light sm:mb-8 sm:text-4xl md:text-5xl">
               <VerticalCutReveal
                 splitBy="words"
                 staggerDuration={0.1}
@@ -196,16 +245,16 @@ export function AboutSection({ className }: AboutSectionProps) {
               animationNum={9}
               timelineRef={heroRef}
               customVariants={revealVariants}
-              className="grid gap-8 text-text-primary-light md:grid-cols-2"
+              className="grid gap-6 text-text-primary-light sm:gap-8 md:grid-cols-2"
             >
               <TimelineContent
                 as="div"
                 animationNum={10}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
-                className="text-xs sm:text-base"
+                className="text-sm sm:text-base"
               >
-                <p className="text-justify leading-relaxed">
+                <p className="leading-relaxed sm:text-justify">
                   {t("pages.about.heroSection.body1")}
                 </p>
               </TimelineContent>
@@ -214,9 +263,9 @@ export function AboutSection({ className }: AboutSectionProps) {
                 animationNum={11}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
-                className="text-xs sm:text-base"
+                className="text-sm sm:text-base"
               >
-                <p className="text-justify leading-relaxed">
+                <p className="leading-relaxed sm:text-justify">
                   {t("pages.about.heroSection.body2")}
                 </p>
               </TimelineContent>
@@ -224,7 +273,7 @@ export function AboutSection({ className }: AboutSectionProps) {
           </div>
 
           <div className="md:col-span-1">
-            <div className="text-right">
+            <div className="border-t border-border-light pt-6 text-left md:border-t-0 md:pt-0 md:text-right">
               <TimelineContent
                 as="div"
                 animationNum={12}
@@ -262,7 +311,7 @@ export function AboutSection({ className }: AboutSectionProps) {
                 timelineRef={heroRef}
                 customVariants={revealVariants}
                 to="/contact"
-                className="ml-auto flex w-fit cursor-pointer items-center gap-2 rounded-base border border-border-light bg-text-heading-light px-5 py-3 font-semibold text-text-on-dark shadow-elevation transition-all duration-300 ease-in-out hover:gap-4 hover:bg-canvas-dark"
+                className="mb-6 flex w-full items-center justify-center gap-2 rounded-base border border-border-light bg-text-heading-light px-5 py-3 font-semibold text-text-on-dark shadow-elevation transition-[transform,background-color,gap] duration-[160ms] ease-out hover:gap-3 hover:bg-canvas-dark active:scale-[0.97] md:ml-auto md:w-fit"
               >
                 {t("pages.about.heroSection.ctaButton")}
                 <ArrowRight aria-hidden />

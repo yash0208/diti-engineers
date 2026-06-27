@@ -572,42 +572,61 @@
       }
     },
     "machinery": {
-      "hero": {
-        "eyebrow": "Machinery",
-        "headlineLine1": "Modern equipment",
-        "headlineLine2": "for precision output",
-        "subtitle": "Our Rajkot factory is equipped for CI casting, aluminum die casting, machining and quality inspection."
-      },
-      "intro": {
-        "eyebrow": "Factory capability",
-        "headlineLine1": "High-tech",
-        "headlineLine2": "manufacturing setup",
-        "body": "Diti Engineers invests in production equipment and process discipline to support repeat OEM volumes — from furnace and die casting lines through finishing and inspection.",
-        "imageAlt": "Factory machinery and production floor"
-      },
-      "equipment": {
-        "eyebrow": "Equipment",
-        "headlineLine1": "Production lines",
-        "headlineLine2": "and inspection",
-        "subtitle": "Core machinery supporting our CI, aluminum and pressure die casting programs.",
-        "items": {
-          "ciLine": {
-            "title": "CI casting line",
-            "body": "Foundry equipment for cast iron motor bodies, pump housings and industrial components."
-          },
-          "dieCasting": {
-            "title": "Die casting machines",
-            "body": "High-pressure aluminum die casting for motor enclosures and automotive parts."
-          },
-          "machining": {
-            "title": "Machining & finishing",
-            "body": "Post-casting machining and finishing for dimensionally accurate dispatch-ready parts."
-          },
-          "inspection": {
-            "title": "Quality inspection",
-            "body": "In-process checks and final inspection before shipment to OEM buyers."
-          }
+      "eyebrow": "Machinery",
+      "headlineLine1": "Modern equipment",
+      "headlineLine2": "for precision output",
+      "subtitle": "Our Rajkot factory is equipped for CI casting, aluminum die casting, machining and quality inspection — one integrated production floor for OEM programs.",
+      "learnMore": "Learn more",
+      "slideCounter": "{{current}} / {{total}}",
+      "slidesAriaLabel": "Machinery carousel slides",
+      "slideGoTo": "Go to slide {{number}}",
+      "cards": {
+        "ciLine": {
+          "title": "CI casting line",
+          "body": "Foundry equipment for cast iron motor bodies, pump housings and industrial components — built for repeat OEM volumes with consistent material grades.",
+          "stat1Value": "CI",
+          "stat1Suffix": "",
+          "stat1Label": "Cast iron foundry line",
+          "stat2Value": "13+",
+          "stat2Suffix": " yrs",
+          "stat2Label": "Production experience"
+        },
+        "dieCasting": {
+          "title": "Die casting machines",
+          "body": "High-pressure aluminum die casting for motor enclosures, automotive parts and precision aluminum components with tight dimensional control.",
+          "stat1Value": "HPDC",
+          "stat1Suffix": "",
+          "stat1Label": "High-pressure aluminum",
+          "stat2Value": "OEM",
+          "stat2Suffix": "",
+          "stat2Label": "Motor & auto programs"
+        },
+        "machining": {
+          "title": "Machining & finishing",
+          "body": "Post-casting machining and finishing for dimensionally accurate, dispatch-ready parts — reducing supplier touchpoints for procurement teams.",
+          "stat1Value": "CNC",
+          "stat1Suffix": "",
+          "stat1Label": "Post-cast machining",
+          "stat2Value": "100%",
+          "stat2Suffix": "",
+          "stat2Label": "In-house finishing"
+        },
+        "inspection": {
+          "title": "Quality inspection",
+          "body": "In-process checks and final inspection before shipment to OEM buyers — supporting vendor onboarding and repeat order confidence.",
+          "stat1Value": "QC",
+          "stat1Suffix": "",
+          "stat1Label": "Final inspection",
+          "stat2Value": "100%",
+          "stat2Suffix": "",
+          "stat2Label": "Pre-shipment checks"
         }
+      },
+      "imageAlt": {
+        "ciLine": "CI casting production line",
+        "dieCasting": "Aluminum die casting machines",
+        "machining": "CNC machining and finishing",
+        "inspection": "Quality inspection station"
       }
     },
     "certificate": {

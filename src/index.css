@@ -134,6 +134,15 @@
     @apply mx-auto w-full max-w-[1305px] px-4 md:px-6;
   }
 
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   .font-display {
     font-family: var(--font-display);
   }
