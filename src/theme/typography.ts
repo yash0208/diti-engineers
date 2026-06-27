@@ -4,6 +4,8 @@ export const typography = {
   mono: '"IBM Plex Mono", ui-monospace, monospace',
   size: {
     heroDisplay: "6.125rem",
+    heroGalleryTitle: "3.3rem",
+    heroGallerySubtitle: "0.9375rem",
     display: "4.5rem",
     sectionTitle: "1.92rem",
     h1: "3.5rem",

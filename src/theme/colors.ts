@@ -1,3 +1,13 @@
+function hexToRgbNormalized(hex: string): [number, number, number] {
+  const normalized = hex.replace("#", "");
+  const value = Number.parseInt(normalized, 16);
+  return [
+    ((value >> 16) & 255) / 255,
+    ((value >> 8) & 255) / 255,
+    (value & 255) / 255,
+  ];
+}
+
 export const colors = {
   canvas: "#fafafa",
   canvasDark: "#0a0a0a",
@@ -22,6 +32,11 @@ export const colors = {
   canvasDeep: "#1a1028",
   sparklesOnLight: "#677489",
   gradientAccent: "#4d00e5",
+  threadsLine: "#677489",
+} as const;
+
+export const effectColors = {
+  threadsLineRgb: hexToRgbNormalized(colors.threadsLine),
 } as const;
 
 export type ColorToken = keyof typeof colors;

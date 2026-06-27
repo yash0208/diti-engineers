@@ -1,3 +1,11 @@
+export const heroGalleryImages = [
+  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2388&auto=format&fit=crop&ixlib=rb-4.0.3",
+  "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2388&auto=format&fit=crop&ixlib=rb-4.0.3",
+  "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2388&auto=format&fit=crop&ixlib=rb-4.0.3",
+  "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2388&auto=format&fit=crop&ixlib=rb-4.0.3",
+  "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2388&auto=format&fit=crop&ixlib=rb-4.0.3",
+] as const;
+
 export const imageRegistry = {
   placeholder: "/images/placeholder.svg",
   heroAmbient: "/images/placeholder.svg",

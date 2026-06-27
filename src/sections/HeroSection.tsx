@@ -1,40 +1,61 @@
 import { useTranslation } from "react-i18next";
 import {
-  ContainerAnimated,
-  ContainerInset,
-  ContainerScroll,
-  ContainerSticky,
-  HeroVideo,
-} from "@/components/ui/animated-video-on-scroll";
-import { imageRegistry } from "@/data/images";
+  HeroGalleryBackdrop,
+  HeroGalleryCell,
+  HeroGalleryContent,
+  HeroGalleryGrid,
+  HeroGalleryScroll,
+} from "@/components/ui/hero-gallery-scroll-animation";
+import { Threads } from "@/components/ui/threads";
+import { heroGalleryImages } from "@/data/images";
+import { effectColors } from "@/theme/colors";
 
 export function HeroSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="top" className="relative isolate w-full">
-      <ContainerScroll className="h-[350vh]">
-        <ContainerSticky className="flex h-svh flex-col items-center bg-hero-ambient px-6 pb-8 pt-20 text-text-on-dark md:px-8 md:pt-24">
-          <ContainerAnimated className="w-full max-w-3xl shrink-0 space-y-2 text-center">
-            <h1 className="text-display text-text-on-dark">{t("hero.title")}</h1>
-            <p className="mx-auto max-w-[42ch] text-body-lg text-text-on-dark/80">
-              {t("hero.subtitle")}
-            </p>
-          </ContainerAnimated>
+    <section id="top" className="relative isolate w-full bg-canvas">
+      <HeroGalleryScroll className="h-[350vh]">
+        <HeroGalleryGrid className="sticky top-16 z-0 h-[calc(100svh-4rem)] w-full p-4 md:top-20 md:h-[calc(100svh-5rem)]">
+          {heroGalleryImages.map((imageUrl, index) => (
+            <HeroGalleryCell
+              key={imageUrl}
+              className="overflow-hidden rounded-xl shadow-elevation"
+            >
+              <img
+                className="size-full object-cover object-center"
+                src={imageUrl}
+                alt={t("hero.galleryAlt")}
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </HeroGalleryCell>
+          ))}
+        </HeroGalleryGrid>
 
-          <ContainerInset
-            insetYRange={[18, 0]}
-            insetXRange={[18, 0]}
-            className="mt-4 h-[min(54svh,520px)] w-full max-w-4xl shrink-0 md:mt-5"
-          >
-            <HeroVideo
-              src={imageRegistry.heroVideo}
-              aria-label={t("hero.videoAlt")}
-              scaleRange={[0.88, 1]}
-            />
-          </ContainerInset>
-        </ContainerSticky>
-      </ContainerScroll>
+        <HeroGalleryBackdrop aria-hidden>
+          <Threads
+            className="pointer-events-auto size-full"
+            color={effectColors.threadsLineRgb}
+            amplitude={0.85}
+            distance={0.08}
+            enableMouseInteraction
+          />
+        </HeroGalleryBackdrop>
+
+        <HeroGalleryContent className="z-10 px-4 text-center">
+          <div className="pointer-events-none mx-auto w-full max-w-2xl px-6 py-10 sm:px-10 sm:py-14 md:px-14 md:py-16">
+            <h1 className="text-hero-gallery-title mx-auto max-w-xl text-text-heading-light">
+              <span className="block">{t("hero.titleLine1")}</span>
+              <span className="block">{t("hero.titleLine2")}</span>
+            </h1>
+            <p className="text-hero-gallery-subtitle mx-auto mt-4 max-w-md text-text-primary-light">
+              <span className="block">{t("hero.subtitleLine1")}</span>
+              <span className="block">{t("hero.subtitleLine2")}</span>
+            </p>
+          </div>
+        </HeroGalleryContent>
+      </HeroGalleryScroll>
     </section>
   );
 }

@@ -31,15 +31,13 @@ export function NavBar() {
     localStorage.setItem("diti-engineers-lang", next);
   };
 
-  const onDark = !scrolled;
+  const onDark = false;
 
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-40 w-full interactive-colors",
-        scrolled
-          ? "border-b border-border-light bg-canvas/95 backdrop-blur-md"
-          : "bg-transparent",
+        "fixed inset-x-0 top-0 z-50 w-full border-b border-border-light bg-nav-bar backdrop-blur-md interactive-colors",
+        scrolled && "shadow-elevation-active",
       )}
     >
       <div className="container-main flex h-16 items-center justify-between md:h-20">
@@ -81,7 +79,7 @@ export function NavBar() {
           >
             {i18n.language.startsWith("fr") ? "EN" : "FR"}
           </button>
-          <ArrowLink href="#contact" variant={onDark ? "light" : "purple"}>
+          <ArrowLink href="#contact" variant="purple">
             {t("nav.cta")}
           </ArrowLink>
         </div>

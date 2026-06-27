@@ -21,10 +21,14 @@
     "next": "Diapositive suivante"
   },
   "hero": {
-    "title": "Pièces moulées pour OEM",
-    "subtitle": "Fonte, aluminium et moulage sous pression — un seul partenaire.",
+    "titleLine1": "Pièces moulées",
+    "titleLine2": "pour partenaires OEM",
+    "subtitleLine1": "Fonte, aluminium et moulage sous pression.",
+    "subtitleLine2": "Un seul toit. Un seul partenaire.",
     "cta": "Nous contacter",
+    "ctaSecondary": "En savoir plus",
     "imageAlt": "Atelier Diti Engineers",
+    "galleryAlt": "Moulage de précision et fabrication chez Diti Engineers",
     "videoAlt": "Production de moulage de précision chez Diti Engineers"
   },
   "platform": {

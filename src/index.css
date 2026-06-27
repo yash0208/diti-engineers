@@ -28,6 +28,7 @@
   --color-canvas-deep: #1a1028;
   --color-sparkles-on-light: #677489;
   --color-gradient-accent: #4d00e5;
+  --color-threads-line: #677489;
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -49,6 +50,17 @@
   --shadow-elevation-active:
     0 0 8px -2px rgba(0, 0, 0, 0.1),
     0 6px 20px -3px rgba(0, 0, 0, 0.2);
+
+  --transition-press:
+    transform var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+  --transition-surface:
+    background-color var(--duration-normal) var(--ease-out),
+    border-color var(--duration-normal) var(--ease-out),
+    color var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out);
+  --transition-fade: opacity var(--duration-fast) var(--ease-out);
+  --transition-move: transform var(--duration-normal) var(--ease-out);
 }
 
 @layer base {
@@ -113,6 +125,27 @@
     line-height: 1;
     font-weight: 700;
     letter-spacing: -0.03em;
+  }
+
+  .text-hero-gallery-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.1rem, 5.4vw, 3.3rem);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  .text-hero-gallery-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(0.8125rem, 2vw, 0.9375rem);
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+
+  .bg-nav-bar {
+    background-color: color-mix(in srgb, var(--color-canvas) 92%, transparent);
+    box-shadow: var(--shadow-elevation);
   }
 
   .text-display {
@@ -245,7 +278,7 @@
   }
 
   .interactive-opacity {
-    transition: opacity var(--duration-fast) var(--ease-out);
+    transition: var(--transition-fade);
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -255,9 +288,7 @@
   }
 
   .interactive-press {
-    transition:
-      transform var(--duration-fast) var(--ease-out),
-      opacity var(--duration-fast) var(--ease-out);
+    transition: var(--transition-press);
   }
 
   .interactive-press:active {
@@ -265,15 +296,11 @@
   }
 
   .interactive-colors {
-    transition:
-      background-color var(--duration-normal) var(--ease-out),
-      border-color var(--duration-normal) var(--ease-out),
-      color var(--duration-normal) var(--ease-out),
-      box-shadow var(--duration-normal) var(--ease-out);
+    transition: var(--transition-surface);
   }
 
   .interactive-transform {
-    transition: transform var(--duration-normal) var(--ease-out);
+    transition: var(--transition-move);
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -283,8 +310,13 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xs bg-accent-primary px-6 py-3 text-sm font-semibold text-text-on-dark interactive-press interactive-colors;
+    @apply inline-flex items-center justify-center rounded-xs bg-accent-primary px-6 py-3 text-sm font-semibold text-text-on-dark;
+    transition: var(--transition-press), var(--transition-surface);
     box-shadow: var(--shadow-elevation);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.97);
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -294,7 +326,12 @@
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-xs border border-border-light bg-surface-card-light px-5 py-3 text-sm font-semibold text-text-heading-light interactive-press interactive-colors;
+    @apply inline-flex items-center justify-center rounded-xs border border-border-light bg-surface-card-light px-5 py-3 text-sm font-semibold text-text-heading-light;
+    transition: var(--transition-press), var(--transition-surface);
+  }
+
+  .btn-secondary:active {
+    transform: scale(0.97);
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -304,11 +341,17 @@
   }
 
   .field-input {
-    @apply w-full rounded-lg border border-border-light bg-surface-card-light px-4 py-3 text-sm text-text-heading-light placeholder:text-text-muted focus:border-accent-primary focus:outline-none interactive-colors;
+    @apply w-full rounded-lg border border-border-light bg-surface-card-light px-4 py-3 text-sm text-text-heading-light placeholder:text-text-muted focus:border-accent-primary focus:outline-none;
+    transition: var(--transition-surface);
   }
 
   .choice-chip {
-    @apply rounded-lg border px-4 py-3 text-left text-sm font-medium interactive-colors interactive-press;
+    @apply rounded-lg border px-4 py-3 text-left text-sm font-medium;
+    transition: var(--transition-press), var(--transition-surface);
+  }
+
+  .choice-chip:active {
+    transform: scale(0.97);
   }
 
   .choice-chip-selected {

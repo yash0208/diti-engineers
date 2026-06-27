@@ -21,10 +21,14 @@
     "next": "Next slide"
   },
   "hero": {
-    "title": "Precision castings for OEMs",
-    "subtitle": "CI, aluminum and pressure die casting — one roof, one partner.",
+    "titleLine1": "Precision castings",
+    "titleLine2": "for OEM partners",
+    "subtitleLine1": "CI, aluminum and pressure die casting.",
+    "subtitleLine2": "One roof. One manufacturing partner.",
     "cta": "Contact us",
+    "ctaSecondary": "Learn more",
     "imageAlt": "Diti Engineers factory floor",
+    "galleryAlt": "Precision casting and manufacturing at Diti Engineers",
     "videoAlt": "Precision casting production at Diti Engineers"
   },
   "platform": {

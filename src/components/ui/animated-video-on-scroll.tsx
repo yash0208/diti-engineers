@@ -2,6 +2,7 @@ import * as React from "react";
 import {
   type HTMLMotionProps,
   type MotionValue,
+  type UseScrollOptions,
   type Variants,
   motion,
   useMotionTemplate,
@@ -58,7 +59,7 @@ function useContainerScrollContext() {
 
 export const ContainerScroll: React.FC<
   React.HTMLAttributes<HTMLDivElement> & {
-    scrollOffset?: [`${string} ${string}`, `${string} ${string}`];
+    scrollOffset?: NonNullable<UseScrollOptions["offset"]>;
   }
 > = ({
   children,
@@ -148,6 +149,11 @@ export const HeroVideo = React.forwardRef<
       className,
       progressRange = [0, 0.8],
       scaleRange = [0.7, 1],
+      autoPlay = true,
+      muted = true,
+      loop = true,
+      playsInline = true,
+      controls = false,
       ...props
     },
     ref,
@@ -162,10 +168,11 @@ export const HeroVideo = React.forwardRef<
           "relative z-10 h-full w-full object-cover",
           className,
         )}
-        autoPlay
-        muted
-        loop
-        playsInline
+        autoPlay={autoPlay}
+        muted={muted}
+        loop={loop}
+        playsInline={playsInline}
+        controls={controls}
         style={{ scale, ...style }}
         {...props}
       />
@@ -173,6 +180,54 @@ export const HeroVideo = React.forwardRef<
   },
 );
 HeroVideo.displayName = "HeroVideo";
+
+type VideoPlayOverlayProps = {
+  label: string;
+  onPlay: () => void;
+  className?: string;
+  revealAt?: number;
+  hideAt?: number;
+};
+
+export function VideoPlayOverlay({
+  label,
+  onPlay,
+  className,
+  revealAt = 0.48,
+  hideAt = 0.78,
+}: VideoPlayOverlayProps) {
+  const { scrollYProgress } = useContainerScrollContext();
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, revealAt - 0.06, revealAt, hideAt, hideAt + 0.08],
+    [0, 0, 1, 1, 0],
+  );
+  const scale = useTransform(scrollYProgress, [revealAt, revealAt + 0.12], [0.92, 1]);
+
+  return (
+    <motion.button
+      type="button"
+      aria-label={label}
+      onClick={onPlay}
+      style={{ opacity, scale }}
+      className={cn(
+        "pointer-events-auto absolute inset-0 z-20 flex flex-col items-center justify-center gap-3 text-text-on-dark interactive-press interactive-opacity",
+        className,
+      )}
+    >
+      <span
+        aria-hidden
+        className="flex h-14 w-14 items-center justify-center rounded-full border border-border-glass bg-surface-glass"
+      >
+        <svg width="16" height="18" viewBox="0 0 14 16" fill="none" aria-hidden>
+          <path d="M1 1L13 8L1 15V1Z" fill="currentColor" />
+        </svg>
+      </span>
+      <span className="font-mono-label normal-case">{label}</span>
+    </motion.button>
+  );
+}
+VideoPlayOverlay.displayName = "VideoPlayOverlay";
 
 type HeroButtonProps = HTMLMotionProps<"button"> & {
   href?: string;

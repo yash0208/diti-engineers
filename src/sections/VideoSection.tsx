@@ -1,59 +1,79 @@
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { RevealOnScroll } from "@/components/motion";
-import { ArrowLink } from "@/components/ui";
+import {
+  ContainerAnimated,
+  ContainerInset,
+  ContainerScroll,
+  ContainerSticky,
+  HeroVideo,
+  VideoPlayOverlay,
+} from "@/components/ui/animated-video-on-scroll";
 import { imageRegistry } from "@/data/images";
 
 export function VideoSection() {
   const { t } = useTranslation();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isFullPlay, setIsFullPlay] = useState(false);
+
+  const handlePlayFull = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = false;
+    video.loop = false;
+    video.currentTime = 0;
+    void video.play();
+    setIsFullPlay(true);
+
+    if (video.requestFullscreen) {
+      void video.requestFullscreen();
+    }
+  };
+
+  const handleVideoEnded = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.loop = true;
+    video.controls = false;
+    void video.play();
+    setIsFullPlay(false);
+  };
 
   return (
-    <section id="video" className="relative overflow-hidden bg-canvas-dark">
-      <div className="absolute inset-0">
-        <img
-          src={imageRegistry.video.poster}
-          alt={t("video.imageAlt")}
-          className="h-full w-full object-cover opacity-60"
-        />
-        <div aria-hidden className="absolute inset-0 bg-canvas-dark/50" />
-      </div>
+    <section id="video" className="relative isolate w-full bg-canvas-dark">
+      <ContainerScroll className="h-[350vh]">
+        <ContainerSticky className="flex h-svh flex-col items-center bg-canvas-dark px-6 pb-8 pt-20 text-text-on-dark md:px-8 md:pt-24">
+          <ContainerAnimated className="w-full max-w-3xl shrink-0 space-y-2 text-center">
+            <h2 className="text-display text-text-on-dark">{t("video.headline")}</h2>
+            <p className="mx-auto max-w-[42ch] text-body-lg text-text-primary-dark">
+              {t("video.subtitle")}
+            </p>
+          </ContainerAnimated>
 
-      <div className="container-main relative z-10 section-padding">
-        <div className="mx-auto max-w-3xl text-center">
-          <RevealOnScroll>
-            <button
-              type="button"
-              className="mx-auto mb-10 inline-flex items-center gap-3 font-mono-label text-text-on-dark interactive-press interactive-opacity"
-              aria-label={t("video.play")}
-            >
-              <span
-                aria-hidden
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-border-glass bg-surface-glass"
-              >
-                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden>
-                  <path d="M1 1L13 8L1 15V1Z" fill="currentColor" />
-                </svg>
-              </span>
-              {t("video.play")}
-            </button>
-          </RevealOnScroll>
-
-          <RevealOnScroll as="div" className="text-display text-text-on-dark" delay={0.08}>
-            {t("video.headline")}
-          </RevealOnScroll>
-          <RevealOnScroll
-            as="p"
-            className="mx-auto mt-6 max-w-2xl text-body-lg text-text-primary-dark"
-            delay={0.14}
+          <ContainerInset
+            insetYRange={[18, 0]}
+            insetXRange={[18, 0]}
+            className="relative mt-4 h-[min(54svh,520px)] w-full max-w-4xl shrink-0 md:mt-5"
           >
-            {t("video.subtitle")}
-          </RevealOnScroll>
-          <RevealOnScroll className="mt-10 flex justify-center" delay={0.2}>
-            <ArrowLink href="#contact" variant="light">
-              {t("video.requestDemo")}
-            </ArrowLink>
-          </RevealOnScroll>
-        </div>
-      </div>
+            <HeroVideo
+              ref={videoRef}
+              src={imageRegistry.heroVideo}
+              aria-label={t("video.imageAlt")}
+              scaleRange={[0.88, 1]}
+              autoPlay={!isFullPlay}
+              muted={!isFullPlay}
+              loop={!isFullPlay}
+              controls={isFullPlay}
+              onEnded={handleVideoEnded}
+            />
+            {!isFullPlay && (
+              <VideoPlayOverlay label={t("video.play")} onPlay={handlePlayFull} />
+            )}
+          </ContainerInset>
+        </ContainerSticky>
+      </ContainerScroll>
     </section>
   );
 }
