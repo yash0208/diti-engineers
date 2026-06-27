@@ -21,13 +21,22 @@
     "next": "Next slide"
   },
   "hero": {
+    "badgeLabel": "Rajkot",
+    "badgeText": "Direct manufacturer · Gujarat",
     "titleLine1": "Precision castings",
     "titleLine2": "for OEM partners",
     "subtitleLine1": "CI, aluminum and pressure die casting.",
     "subtitleLine2": "One roof. One manufacturing partner.",
+    "emailPlaceholder": "Your work email",
+    "submitLabel": "Get started",
+    "submitAria": "Submit email and go to contact",
+    "bullet1": "CI, aluminum and pressure die under one roof",
+    "bullet2": "Quote response within 24 hours",
+    "bullet3": "GST registered since 2017",
     "cta": "Contact us",
     "ctaSecondary": "Learn more",
     "imageAlt": "Diti Engineers factory floor",
+    "stripImageAlt": "Precision casting production",
     "galleryAlt": "Precision casting and manufacturing at Diti Engineers",
     "videoAlt": "Precision casting production at Diti Engineers"
   },

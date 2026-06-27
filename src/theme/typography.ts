@@ -48,6 +48,8 @@ export const spacing = {
   xxl: "40px",
   xxxl: "48px",
   xxxxl: "64px",
+  nav: "4rem",
+  navLg: "4.25rem",
 } as const;
 
 export const rounded = {

@@ -11,6 +11,8 @@ export { ArrowLink } from "./ArrowLink";
 export { Button, buttonVariants } from "./button";
 export { GlassPanel } from "./GlassPanel";
 export { HeroGalleryLayout } from "./hero-gallery-layout";
+export { HeroImageStrips, ImageAutoSlider } from "./image-auto-slider";
+export { HeroSection6 } from "./hero-section-6";
 export {
   HeroGalleryBackdrop,
   HeroGalleryCell,

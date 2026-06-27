@@ -21,13 +21,22 @@
     "next": "Diapositive suivante"
   },
   "hero": {
+    "badgeLabel": "Rajkot",
+    "badgeText": "Fabricant direct · Gujarat",
     "titleLine1": "Pièces moulées",
     "titleLine2": "pour partenaires OEM",
     "subtitleLine1": "Fonte, aluminium et moulage sous pression.",
     "subtitleLine2": "Un seul toit. Un seul partenaire.",
+    "emailPlaceholder": "Votre email professionnel",
+    "submitLabel": "Commencer",
+    "submitAria": "Envoyer l'email et aller au contact",
+    "bullet1": "Fonte, aluminium et sous pression sous un même toit",
+    "bullet2": "Réponse devis sous 24 heures",
+    "bullet3": "TPS enregistrée depuis 2017",
     "cta": "Nous contacter",
     "ctaSecondary": "En savoir plus",
     "imageAlt": "Atelier Diti Engineers",
+    "stripImageAlt": "Production de moulage de précision",
     "galleryAlt": "Moulage de précision et fabrication chez Diti Engineers",
     "videoAlt": "Production de moulage de précision chez Diti Engineers"
   },

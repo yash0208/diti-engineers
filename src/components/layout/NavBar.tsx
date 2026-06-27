@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { navLinks, sectionIds } from "@/data/navigation";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
-import { ArrowLink } from "@/components/ui";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function NavBar() {
@@ -31,125 +32,93 @@ export function NavBar() {
     localStorage.setItem("diti-engineers-lang", next);
   };
 
-  const onDark = false;
-
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 w-full border-b border-border-light bg-nav-bar backdrop-blur-md interactive-colors",
+        "group fixed inset-x-0 top-0 z-50 w-full border-b border-dashed border-border-light bg-nav-bar backdrop-blur-md interactive-colors",
         scrolled && "shadow-elevation-active",
       )}
     >
-      <div className="container-main flex h-16 items-center justify-between md:h-20">
-        <a
-          href="#top"
-          className={cn(
-            "font-display text-lg font-bold tracking-tight md:text-xl",
-            onDark ? "text-text-on-dark" : "text-text-heading-light",
-          )}
-        >
-          {t("brand.name")}
-        </a>
-
-        <nav className="hidden items-center gap-10 md:flex" aria-label={t("nav.primary")}>
-          {navLinks.map((link) => (
+      <div className="container-main py-3 lg:py-4">
+        <div className="flex flex-wrap items-center justify-between gap-6 lg:gap-0">
+          <div className="flex w-full justify-between lg:w-auto">
             <a
-              key={link.id}
-              href={link.href}
-              className={cn(
-                "relative text-sm interactive-opacity",
-                onDark ? "text-text-on-dark" : "text-text-heading-light",
-                activeId === link.id && "opacity-100",
-              )}
+              href="#top"
+              aria-label={t("brand.name")}
+              className="flex items-center font-display text-lg font-bold tracking-tight text-text-heading-light md:text-xl"
             >
-              {t(link.labelKey)}
+              {t("brand.name")}
             </a>
-          ))}
-        </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
-          <button
-            type="button"
-            onClick={toggleLang}
-            className={cn(
-              "text-xs font-medium uppercase tracking-wider interactive-opacity",
-              onDark ? "text-text-on-dark/70" : "text-text-muted",
-            )}
-            aria-label={t("nav.toggleLang")}
-          >
-            {i18n.language.startsWith("fr") ? "EN" : "FR"}
-          </button>
-          <ArrowLink href="#contact" variant="purple">
-            {t("nav.cta")}
-          </ArrowLink>
-        </div>
-
-        <button
-          type="button"
-          className={cn(
-            "inline-flex h-10 w-10 items-center justify-center rounded-xs interactive-press md:hidden",
-            onDark ? "text-text-on-dark" : "text-text-heading-light",
-          )}
-          aria-label={mobileOpen ? t("nav.close") : t("nav.open")}
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen((v) => !v)}
-        >
-          <span className="relative block h-3 w-5">
-            <span
-              className={cn(
-                "absolute left-0 top-0 block h-px w-5 bg-current interactive-transform",
-                mobileOpen && "translate-y-[6px] rotate-45",
-              )}
-            />
-            <span
-              className={cn(
-                "absolute left-0 top-[6px] block h-px w-5 bg-current transition-opacity duration-[var(--duration-fast)] ease-[var(--ease-out)]",
-                mobileOpen && "opacity-0",
-              )}
-            />
-            <span
-              className={cn(
-                "absolute left-0 top-[12px] block h-px w-5 bg-current interactive-transform",
-                mobileOpen && "-translate-y-[6px] -rotate-45",
-              )}
-            />
-          </span>
-        </button>
-      </div>
-
-      {mobileOpen && (
-        <div className="border-t border-border-light bg-canvas md:hidden">
-          <nav className="container-main flex flex-col gap-2 py-6" aria-label={t("nav.primary")}>
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
+            <button
+              type="button"
+              onClick={() => setMobileOpen((open) => !open)}
+              aria-label={mobileOpen ? t("nav.close") : t("nav.open")}
+              aria-expanded={mobileOpen}
+              data-state={mobileOpen ? "active" : undefined}
+              className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+            >
+              <Menu
                 className={cn(
-                  "rounded-xs px-3 py-3 text-base font-medium",
-                  activeId === link.id
-                    ? "bg-surface-muted text-accent-primary"
-                    : "text-text-heading-light",
+                  "m-auto size-6 duration-200",
+                  mobileOpen && "rotate-180 scale-0 opacity-0",
                 )}
-              >
-                {t(link.labelKey)}
-              </a>
-            ))}
-            <div className="mt-4 flex items-center justify-between border-t border-border-light pt-4">
-              <button
-                type="button"
-                onClick={toggleLang}
-                className="text-xs font-medium uppercase tracking-wider text-text-muted"
-              >
-                {i18n.language.startsWith("fr") ? "EN" : "FR"}
-              </button>
-              <ArrowLink href="#contact" variant="purple">
-                {t("nav.cta")}
-              </ArrowLink>
+              />
+              <X
+                className={cn(
+                  "absolute inset-0 m-auto size-6 duration-200",
+                  mobileOpen
+                    ? "rotate-0 scale-100 opacity-100"
+                    : "-rotate-180 scale-0 opacity-0",
+                )}
+              />
+            </button>
+          </div>
+
+          <div
+            data-state={mobileOpen ? "active" : undefined}
+            className={cn(
+              "mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border border-border-light bg-surface-card-light p-6 shadow-elevation-active md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none",
+              mobileOpen && "block",
+            )}
+          >
+            <div className="lg:pr-4">
+              <nav aria-label={t("nav.primary")}>
+                <ul className="space-y-6 text-base lg:flex lg:gap-8 lg:space-y-0 lg:text-sm">
+                  {navLinks.map((link) => (
+                    <li key={link.id}>
+                      <a
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        className={cn(
+                          "block duration-150 interactive-opacity",
+                          activeId === link.id
+                            ? "text-text-heading-light"
+                            : "text-text-muted hover:text-text-heading-light",
+                        )}
+                      >
+                        {t(link.labelKey)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
-          </nav>
+
+            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:border-border-light lg:pl-6">
+              <Button type="button" variant="outline" size="sm" onClick={toggleLang}>
+                {i18n.language.startsWith("fr") ? "EN" : "FR"}
+              </Button>
+
+              <Button asChild size="sm">
+                <a href="#contact" onClick={() => setMobileOpen(false)}>
+                  {t("nav.cta")}
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
