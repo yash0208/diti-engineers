@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#f2f4f6"/>
+  <rect x="100" y="100" width="200" height="200" rx="20" fill="#1e4d7b" opacity="0.2"/>
+  <rect x="130" y="130" width="140" height="140" rx="12" fill="#ece8e3" stroke="#1e4d7b" stroke-width="4"/>
+  <circle cx="200" cy="200" r="40" fill="#c45c00" opacity="0.5"/>
+  <text x="200" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="#1e4d7b">Motor Body</text>
+</svg>

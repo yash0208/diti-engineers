@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#e8ebef"/>
+  <path d="M80 300 L200 80 L320 300 Z" fill="#8fa8bc" opacity="0.5"/>
+  <rect x="130" y="200" width="140" height="100" rx="12" fill="#1e4d7b" opacity="0.35"/>
+  <rect x="150" y="160" width="100" height="50" rx="8" fill="#c45c00" opacity="0.6"/>
+  <text x="200" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="600" fill="#1e4d7b">Aluminum Die Casting</text>
+</svg>

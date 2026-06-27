@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-06-26",
+    "source": "IndiaMART company profile",
+    "locale": "en-IN"
+  },
+
+  "businessPersona": {
+    "brandName": "Diti Engineers",
+    "tagline": "Precision casting solutions for motors, pumps, and automotive applications",
+    "elevatorPitch": "Diti Engineers is a Rajkot-based manufacturing firm specializing in CI, aluminum, and pressure die castings for electric motors, submersible pumps, and automobile parts — delivering quality cast components backed by 13+ years of industry experience.",
+    "industry": "Metal Casting & Manufacturing",
+    "businessType": "Manufacturer",
+    "yearsInBusiness": 13,
+    "positioning": {
+      "primary": "Trusted casting manufacturer for OEM and industrial buyers",
+      "differentiators": [
+        "Wide product range across CI, aluminum, and pressure die casting",
+        "Specialization in motor body, pump parts, and auto component castings",
+        "Factory-based manufacturing in Rajkot, Gujarat — India's casting hub",
+        "Established GST-registered proprietorship with mid-scale turnover (5–25 Cr)"
+      ],
+      "valueProposition": "Reliable, application-specific castings for motors, pumps, and automotive sectors — from prototype to production volumes."
+    },
+    "targetAudience": {
+      "primary": [
+        "Electric motor manufacturers",
+        "Submersible pump OEMs",
+        "Automobile and auto parts manufacturers",
+        "Industrial equipment makers requiring custom cast components"
+      ],
+      "secondary": [
+        "Export buyers sourcing castings from India",
+        "Trading companies and distributors in Rajkot/Gujarat industrial belt",
+        "Maintenance and replacement parts buyers"
+      ],
+      "buyerPersona": {
+        "title": "Procurement / Purchase Manager or OEM Engineering Head",
+        "goals": [
+          "Source quality castings at competitive per-kg or per-unit pricing",
+          "Find a supplier with consistent material grades and repeat order capability",
+          "Reduce lead time with a local Gujarat-based manufacturer"
+        ],
+        "painPoints": [
+          "Inconsistent casting quality from small job shops",
+          "Limited suppliers who cover both CI and aluminum casting",
+          "Difficulty finding specialized motor and pump body castings"
+        ]
+      }
+    },
+    "brandVoice": {
+      "tone": ["Professional", "Reliable", "Industry-focused", "Straightforward"],
+      "keywords": [
+        "casting",
+        "manufacturing",
+        "precision",
+        "motor parts",
+        "pump parts",
+        "automotive",
+        "aluminum die casting",
+        "CI casting",
+        "Rajkot",
+        "OEM"
+      ],
+      "avoid": ["Overly casual language", "Unverified quality claims without certification data"]
+    },
+    "trustSignals": [
+      "13 years listed on IndiaMART",
+      "GST registered since July 2017",
+      "Annual turnover band: 5–25 Crore INR",
+      "Factory / manufacturing facility",
+      "Company photos and location images available"
+    ]
+  },
+
+  "company": {
+    "legalName": "Diti Engineers",
+    "displayName": "Diti Engineers",
+    "natureOfBusiness": "Manufacturer",
+    "additionalBusiness": "Factory / Manufacturing",
+    "legalStatus": "Proprietorship",
+    "proprietor": {
+      "name": "H Rangani",
+      "title": "Proprietor"
+    },
+    "ceo": "H Rangani",
+    "gst": {
+      "number": "24**********1Z3",
+      "registrationDate": "2017-07",
+      "displayNote": "Full GST number available on verified IndiaMART profile"
+    },
+    "annualTurnover": {
+      "range": "5 - 25 Cr",
+      "currency": "INR",
+      "period": "annual"
+    },
+    "location": {
+      "city": "Rajkot",
+      "state": "Gujarat",
+      "country": "India",
+      "regionLabel": "Rajkot, Gujarat"
+    },
+    "aboutUs": {
+      "summary": "Diti Engineers manufactures a broad range of castings including CI casting, aluminum casting, aluminum pressure die casting, and specialized components for electric motors, submersible pumps, and automobiles.",
+      "fullDescription": null,
+      "note": "Full About Us copy to be written for landing page — expand from product expertise and manufacturing capability."
+    }
+  },
+
+  "contact": {
+    "primaryActions": [
+      "viewMobileNumber",
+      "sendSms",
+      "sendEmail",
+      "contactSupplier"
+    ],
+    "channels": {
+      "mobile": {
+        "display": "View Mobile Number",
+        "value": null,
+        "note": "Available via IndiaMART contact flow — add when integrating lead capture"
+      },
+      "email": {
+        "display": "Send Email",
+        "value": null,
+        "note": "Add business email when available"
+      },
+      "indiaMartProfile": null
+    },
+    "leadCapture": {
+      "ctaPrimary": "Get Best Price",
+      "ctaSecondary": "Contact Supplier",
+      "quoteFormFields": ["productOrService", "email"]
+    }
+  },
+
+  "productsAndServices": {
+    "categories": [
+      {
+        "id": "ci-casting",
+        "name": "CI Casting",
+        "slug": "ci-casting",
+        "shortDescription": "Cast iron castings for industrial and automotive applications"
+      },
+      {
+        "id": "auto-parts-casting",
+        "name": "Auto Parts Casting",
+        "slug": "auto-parts-casting",
+        "shortDescription": "Automotive component castings for OEM and aftermarket use"
+      },
+      {
+        "id": "aluminum-motor-body-parts",
+        "name": "Aluminum Motor Body Parts",
+        "slug": "aluminum-motor-body-parts",
+        "shortDescription": "Aluminum cast motor body and housing components"
+      },
+      {
+        "id": "induction-motor-casting",
+        "name": "Induction Motor Casting",
+        "slug": "induction-motor-casting",
+        "shortDescription": "Castings for induction motor frames and related parts"
+      },
+      {
+        "id": "submersible-pump-parts-casting",
+        "name": "Submersible Pump Parts Casting",
+        "slug": "submersible-pump-parts-casting",
+        "shortDescription": "Cast components for submersible pump assemblies"
+      },
+      {
+        "id": "aluminum-pressure-die-casting",
+        "name": "Aluminum Pressure Die Casting",
+        "slug": "aluminum-pressure-die-casting",
+        "shortDescription": "High-pressure aluminum die cast parts with dimensional accuracy"
+      },
+      {
+        "id": "automobile-casting",
+        "name": "Automobile Casting",
+        "slug": "automobile-casting",
+        "shortDescription": "Automobile sector castings in various materials and grades"
+      },
+      {
+        "id": "aluminum-casting",
+        "name": "Aluminum Casting",
+        "slug": "aluminum-casting",
+        "shortDescription": "General aluminum casting for industrial components"
+      },
+      {
+        "id": "electric-motor-parts",
+        "name": "Electric Motor Parts",
+        "slug": "electric-motor-parts",
+        "shortDescription": "Cast and fabricated parts for electric motor production"
+      },
+      {
+        "id": "motorbody-casting",
+        "name": "Motorbody Casting",
+        "slug": "motorbody-casting",
+        "shortDescription": "Motor body and frame castings"
+      },
+      {
+        "id": "electric-motor-body-casting",
+        "name": "Electric Motor Body Casting",
+        "slug": "electric-motor-body-casting",
+        "shortDescription": "Dedicated electric motor body casting solutions"
+      },
+      {
+        "id": "pump-parts-casting",
+        "name": "Pump Parts Casting",
+        "slug": "pump-parts-casting",
+        "shortDescription": "Castings for pump housings, impellers, and related parts"
+      },
+      {
+        "id": "grill-design-casting",
+        "name": "Grill Design Casting",
+        "slug": "grill-design-casting",
+        "shortDescription": "Decorative and functional grill design castings"
+      },
+      {
+        "id": "casting",
+        "name": "Casting",
+        "slug": "casting",
+        "shortDescription": "General casting services across materials and applications"
+      },
+      {
+        "id": "electric-motor-parts-casting",
+        "name": "Electric Motor Parts Casting",
+        "slug": "electric-motor-parts-casting",
+        "shortDescription": "End-to-end casting for electric motor component lines"
+      }
+    ],
+    "featuredProductIds": [
+      "ci-casting",
+      "aluminum-pressure-die-casting",
+      "induction-motor-casting",
+      "submersible-pump-parts-casting",
+      "auto-parts-casting"
+    ],
+    "relatedIndustryCategories": [
+      "Iron Castings",
+      "SG Iron Castings",
+      "Steel Castings"
+    ]
+  },
+
+  "factsheet": {
+    "basicInformation": {
+      "natureOfBusiness": "Manufacturer",
+      "additionalBusiness": "Factory / Manufacturing",
+      "companyCeo": "H Rangani",
+      "gstRegistrationDate": "Jul'17",
+      "legalStatusOfFirm": "Proprietorship",
+      "annualTurnover": "5 - 25 Cr"
+    },
+    "statutoryProfile": {
+      "gstNo": "24**********1Z3"
+    }
+  },
+
+  "media": {
+    "companyAlbum": {
+      "hasImages": true,
+      "imageCount": 16,
+      "imageUrls": [],
+      "note": "Populate image URLs from IndiaMART or uploaded assets when building the landing page"
+    },
+    "assets": {
+      "logo": null,
+      "heroImage": null,
+      "factoryImages": [],
+      "productImages": []
+    }
+  },
+
+  "landingPage": {
+    "status": "planned",
+    "sections": [
+      "hero",
+      "about",
+      "products",
+      "factsheet",
+      "gallery",
+      "contact",
+      "quoteForm"
+    ],
+    "primaryCta": "Get Best Price",
+    "secondaryCta": "Contact Supplier",
+    "seo": {
+      "title": "Diti Engineers | CI & Aluminum Casting Manufacturer in Rajkot",
+      "description": "Manufacturer of CI casting, aluminum pressure die casting, motor body castings, pump parts, and auto component castings. Based in Rajkot, Gujarat.",
+      "keywords": [
+        "Diti Engineers",
+        "casting manufacturer Rajkot",
+        "CI casting Gujarat",
+        "aluminum die casting",
+        "motor body casting",
+        "pump parts casting",
+        "auto parts casting"
+      ]
+    }
+  }
+}

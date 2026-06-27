@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#ece8e3"/>
+  <rect x="60" y="220" width="280" height="100" fill="#1e4d7b" opacity="0.2"/>
+  <rect x="90" y="160" width="60" height="80" fill="#8fa8bc" opacity="0.5"/>
+  <rect x="170" y="140" width="60" height="100" fill="#8fa8bc" opacity="0.5"/>
+  <rect x="250" y="160" width="60" height="80" fill="#8fa8bc" opacity="0.5"/>
+  <rect x="120" y="100" width="160" height="20" rx="4" fill="#c45c00" opacity="0.6"/>
+  <text x="200" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="#1e4d7b">Factory</text>
+</svg>

@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", "DM Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-canvas: #fafafa;
+  --color-canvas-dark: #0a0a0a;
+  --color-canvas-light: #fafafa;
+  --color-surface-card-light: #ffffff;
+  --color-surface-card-dark: #171717;
+  --color-surface-muted: #f0f0f0;
+  --color-accent-primary: #4d00e5;
+  --color-accent-cta-light: #ffffff;
+  --color-accent-secondary: #4d00e5;
+  --color-accent-steel: #677489;
+  --color-text-heading-light: #1b1b1b;
+  --color-text-heading-dark: #ffffff;
+  --color-text-on-dark: #ffffff;
+  --color-text-on-light: #1b1b1b;
+  --color-text-primary-light: #374151;
+  --color-text-primary-dark: #e5e7eb;
+  --color-text-muted: #677489;
+  --color-border-light: #e4e7eb;
+  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-border-glass: rgba(255, 255, 255, 0.2);
+  --color-canvas-deep: #1a1028;
+  --color-sparkles-on-light: #677489;
+  --color-gradient-accent: #4d00e5;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --duration-fast: 160ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-exit: 180ms;
+
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-base: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  --shadow-elevation:
+    0 2px 6px -1px rgba(0, 0, 0, 0.16),
+    0 1px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-elevation-active:
+    0 0 8px -2px rgba(0, 0, 0, 0.1),
+    0 6px 20px -3px rgba(0, 0, 0, 0.2);
+}
+
+@layer base {
+  html {
+    width: 100%;
+  }
+
+  body {
+    @apply w-full overflow-x-hidden bg-canvas font-body text-text-on-light antialiased;
+    color: var(--color-text-on-light);
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-text-heading-light);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+
+  ::selection {
+    background: var(--color-accent-primary);
+    color: var(--color-text-on-dark);
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+
+  .container-main {
+    @apply mx-auto w-full max-w-[1305px] px-4 md:px-6;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-label {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .text-hero-display {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 8vw, 6.125rem);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .text-display {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .text-section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 1.92rem);
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .text-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .text-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .text-h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+
+  .text-body-lg {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+  }
+
+  .text-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-xs focus:bg-accent-primary focus:px-4 focus:py-2 focus:text-text-on-dark;
+  }
+
+  .bg-hero-ambient {
+    background-color: var(--color-canvas-dark);
+    background-image:
+      radial-gradient(
+        ellipse 90% 70% at 85% 35%,
+        color-mix(in srgb, var(--color-accent-primary) 22%, transparent),
+        transparent 65%
+      ),
+      radial-gradient(
+        ellipse 60% 50% at 15% 90%,
+        color-mix(in srgb, var(--color-accent-primary) 30%, var(--color-canvas-dark)),
+        transparent 55%
+      ),
+      linear-gradient(
+        160deg,
+        color-mix(in srgb, var(--color-canvas-dark) 70%, var(--color-accent-primary)) 0%,
+        var(--color-canvas-dark) 45%,
+        color-mix(in srgb, var(--color-canvas-dark) 85%, var(--color-canvas-deep)) 100%
+      );
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-accent-primary) 65%, var(--color-canvas-dark)) 0%,
+      color-mix(in srgb, var(--color-accent-primary) 35%, var(--color-canvas-dark)) 38%,
+      color-mix(in srgb, var(--color-canvas-dark) 75%, transparent) 58%,
+      transparent 100%
+    );
+  }
+
+  .bg-surface-glass {
+    background: linear-gradient(
+      130deg,
+      color-mix(in srgb, var(--color-surface-card-dark) 56%, transparent) 11%,
+      color-mix(in srgb, var(--color-surface-card-dark) 26%, transparent) 86%
+    );
+  }
+
+  .bg-cta-glow {
+    background: radial-gradient(
+      50% 60% at 50% 50%,
+      color-mix(in srgb, var(--color-accent-primary) 14%, transparent),
+      transparent 70%
+    );
+  }
+
+  .marquee-track {
+    animation: marquee var(--marquee-duration, 35s) linear infinite;
+  }
+
+  [data-pause-on-hover="true"]:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+
+  .interactive-opacity {
+    transition: opacity var(--duration-fast) var(--ease-out);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .interactive-opacity:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .interactive-press {
+    transition:
+      transform var(--duration-fast) var(--ease-out),
+      opacity var(--duration-fast) var(--ease-out);
+  }
+
+  .interactive-press:active {
+    transform: scale(0.97);
+  }
+
+  .interactive-colors {
+    transition:
+      background-color var(--duration-normal) var(--ease-out),
+      border-color var(--duration-normal) var(--ease-out),
+      color var(--duration-normal) var(--ease-out),
+      box-shadow var(--duration-normal) var(--ease-out);
+  }
+
+  .interactive-transform {
+    transition: transform var(--duration-normal) var(--ease-out);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .interactive-transform-hover:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xs bg-accent-primary px-6 py-3 text-sm font-semibold text-text-on-dark interactive-press interactive-colors;
+    box-shadow: var(--shadow-elevation);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover {
+      box-shadow: var(--shadow-elevation-active);
+    }
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xs border border-border-light bg-surface-card-light px-5 py-3 text-sm font-semibold text-text-heading-light interactive-press interactive-colors;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn-secondary:hover {
+      border-color: color-mix(in srgb, var(--color-accent-primary) 40%, var(--color-border-light));
+    }
+  }
+
+  .field-input {
+    @apply w-full rounded-lg border border-border-light bg-surface-card-light px-4 py-3 text-sm text-text-heading-light placeholder:text-text-muted focus:border-accent-primary focus:outline-none interactive-colors;
+  }
+
+  .choice-chip {
+    @apply rounded-lg border px-4 py-3 text-left text-sm font-medium interactive-colors interactive-press;
+  }
+
+  .choice-chip-selected {
+    @apply border-accent-primary bg-accent-primary/10 text-text-heading-light;
+  }
+
+  .choice-chip-default {
+    @apply border-border-light bg-surface-muted text-text-primary-light;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .choice-chip-default:hover {
+      border-color: color-mix(in srgb, var(--color-accent-primary) 40%, var(--color-border-light));
+    }
+  }
+}

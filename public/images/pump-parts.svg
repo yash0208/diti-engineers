@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#eef1f5"/>
+  <ellipse cx="200" cy="220" rx="110" ry="70" fill="#1e4d7b" opacity="0.25"/>
+  <rect x="160" y="100" width="80" height="120" rx="8" fill="#8fa8bc" opacity="0.6"/>
+  <circle cx="200" cy="250" r="35" fill="#c45c00" opacity="0.45"/>
+  <text x="200" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="#1e4d7b">Pump Parts</text>
+</svg>

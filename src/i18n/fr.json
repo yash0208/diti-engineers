@@ -1,0 +1,281 @@
+{
+  "brand": {
+    "name": "Diti Engineers",
+    "tagline": "Pièces moulées de précision pour moteurs, pompes, automobile"
+  },
+  "nav": {
+    "primary": "Principale",
+    "cta": "Nous contacter",
+    "open": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "toggleLang": "Changer de langue",
+    "links": {
+      "capabilities": "Capacités",
+      "products": "Produits",
+      "testimonials": "Clients",
+      "contact": "Contact"
+    }
+  },
+  "controls": {
+    "prev": "Diapositive précédente",
+    "next": "Diapositive suivante"
+  },
+  "hero": {
+    "title": "Pièces moulées pour OEM",
+    "subtitle": "Fonte, aluminium et moulage sous pression — un seul partenaire.",
+    "cta": "Nous contacter",
+    "imageAlt": "Atelier Diti Engineers",
+    "videoAlt": "Production de moulage de précision chez Diti Engineers"
+  },
+  "platform": {
+    "tabs": {
+      "ci": "01 fonte",
+      "aluminum": "02 moulage alu",
+      "die": "03 sous pression"
+    },
+    "slides": {
+      "ci": {
+        "eyebrow": "01 FONTE",
+        "title": "Fonte, prête pour la production",
+        "body": "Corps de moteurs, carters de pompes et composants industriels en fonte — usinés, contrôlés et expédiés pour volumes OEM récurrents.",
+        "cta": "En savoir plus"
+      },
+      "aluminum": {
+        "eyebrow": "02 MOULAGE ALUMINIUM",
+        "title": "Léger, dimensionnellement précis",
+        "body": "Pièces aluminium moulées sous haute pression pour boîtiers moteurs, composants auto et assemblages de précision — du prototype à la production.",
+        "cta": "En savoir plus"
+      },
+      "die": {
+        "eyebrow": "03 MOULAGE SOUS PRESSION",
+        "title": "Géométrie complexe, un seul site",
+        "body": "Moulage sous pression pour pièces aluminium complexes à tolérances serrées — réduisant les étapes d'assemblage et les délais pour les équipes ingénierie OEM.",
+        "cta": "En savoir plus"
+      }
+    },
+    "imageAlt": {
+      "ci": "Production fonte",
+      "aluminum": "Ligne moulage aluminium",
+      "die": "Processus moulage sous pression"
+    }
+  },
+  "marquee": {
+    "ariaLabel": "Marqueurs de confiance",
+    "items": {
+      "gst": "TPS enregistrée · 2017",
+      "indiamart": "13+ ans sur IndiaMART",
+      "rajkot": "Rajkot, Gujarat",
+      "proprietorship": "Entreprise individuelle établie",
+      "turnover": "5–25 Cr de chiffre d'affaires",
+      "manufacturer": "Fabricant direct"
+    }
+  },
+  "brands": {
+    "ariaLabel": "Secteurs et partenaires servis",
+    "eyebrow": "Partenaire de confiance",
+    "headlineLine1": "Au service des acheteurs OEM en Inde.",
+    "headlineLine2": "Conçu pour moteurs, pompes et automobile.",
+    "items": {
+      "motors": "OEM moteurs",
+      "pumps": "Fabricants de pompes",
+      "automotive": "OEM automobile",
+      "gst": "TPS enregistrée",
+      "indiamart": "Partenaire IndiaMART",
+      "manufacturer": "Fabricant direct"
+    }
+  },
+  "applications": {
+    "headline": "Développez votre chaîne d'approvisionnement avec un partenaire moulage conçu pour l'OEM",
+    "subtitle": "Des volumes récurrents au développement de nouvelles pièces — une usine Rajkot couvrant fonte, aluminium et sous pression sous un seul système qualité.",
+    "eyebrow": "Applications",
+    "learnMore": "En savoir plus",
+    "cards": {
+      "oem": {
+        "title": "Programmes OEM récurrents",
+        "body": "Grades matériaux constants, délais prévisibles et source unique fonte et aluminium — pour les équipes achats gérant des lignes moteur, pompe et auto.",
+        "stat1Value": "13+",
+        "stat1Suffix": " ans",
+        "stat1Label": "Expérience sectorielle",
+        "stat2Value": "24",
+        "stat2Suffix": " h",
+        "stat2Label": "Réponse devis"
+      },
+      "production": {
+        "title": "Prototype à volumes production",
+        "body": "Chaque nouvelle pièce peut démarrer avec la gamme complète Diti. Des premiers échantillons aux séries 10 000+ — documentation export et facturation TPS dès le premier jour.",
+        "stat1Value": "100%",
+        "stat1Suffix": "",
+        "stat1Label": "Fabrication interne",
+        "stat2Value": "5–25",
+        "stat2Suffix": " Cr",
+        "stat2Label": "Chiffre d'affaires annuel (INR)"
+      }
+    },
+    "imageAlt": {
+      "oem": "Ligne production OEM",
+      "production": "Développement et moulage de nouvelles pièces"
+    }
+  },
+  "stats": {
+    "headline": "Capacité prouvée, résultats mesurables",
+    "items": {
+      "years": {
+        "label": "Années d'activité",
+        "suffix": "+"
+      },
+      "turnover": {
+        "label": "Chiffre d'affaires annuel (Cr INR)",
+        "suffix": ""
+      },
+      "gstYear": {
+        "label": "TPS enregistrée depuis",
+        "suffix": ""
+      },
+      "products": {
+        "label": "Lignes de pièces moulées",
+        "suffix": "+"
+      }
+    }
+  },
+  "products": {
+    "headline": "Pièces moulées pour chaque application OEM",
+    "subtitle": "Des corps de moteurs aux pièces de pompes et composants auto — fonte, aluminium et sous pression.",
+    "tag": "Cas d'usage",
+    "learnMore": "En savoir plus",
+    "tags": {
+      "ci": "Fonte",
+      "aluminum": "Aluminium",
+      "pressureDie": "Sous pression",
+      "motor": "Moteur",
+      "pump": "Pompe",
+      "automotive": "Automobile"
+    },
+    "items": {
+      "ci-casting": {
+        "name": "Pièces moulées en fonte",
+        "description": "Composants en fonte pour applications industrielles et automobiles."
+      },
+      "aluminum-pressure-die-casting": {
+        "name": "Moulage sous pression aluminium",
+        "description": "Pièces aluminium moulées sous haute pression avec précision dimensionnelle."
+      },
+      "induction-motor-casting": {
+        "name": "Pièces moulées pour moteurs à induction",
+        "description": "Pièces moulées pour cadres et composants de moteurs à induction."
+      },
+      "submersible-pump-parts-casting": {
+        "name": "Pièces de pompes submersibles",
+        "description": "Composants moulés pour assemblages de pompes submersibles."
+      },
+      "auto-parts-casting": {
+        "name": "Pièces auto moulées",
+        "description": "Composants automobiles moulés pour OEM et rechange."
+      },
+      "aluminum-motor-body-parts": {
+        "name": "Corps de moteur en aluminium",
+        "description": "Corps et boîtiers de moteurs en aluminium moulé."
+      }
+    }
+  },
+  "testimonials": {
+    "headline": "La confiance des acheteurs OEM au Gujarat et au-delà",
+    "counter": "{{current}} / {{total}}",
+    "items": {
+      "placeholder1": {
+        "quote": "Qualité matériau constante et délais prévisibles — les deux choses qui comptent vraiment quand on monte en cadence sur une ligne moteur.",
+        "author": "Responsable achats",
+        "role": "OEM pompes submersibles, Gujarat"
+      },
+      "placeholder2": {
+        "quote": "Nous avons remplacé deux ateliers fournisseurs par Diti Engineers. Source unique fonte et aluminium, moins de retards.",
+        "author": "Chef des achats",
+        "role": "Fabricant de moteurs électriques"
+      }
+    },
+    "imageAlt": "Arrière-plan usine"
+  },
+  "video": {
+    "headline": "La précision en production",
+    "subtitle": "Découvrez comment Diti Engineers livre fonte, aluminium et pièces sous pression — de l'atelier Rajkot à l'expédition OEM.",
+    "play": "Voir la vidéo",
+    "requestDemo": "Demander un devis",
+    "imageAlt": "Affiche vidéo production usine"
+  },
+  "ctaBanner": {
+    "headline": "Prêt à lancer votre prochaine série moulée ?",
+    "subtitle": "Discutons de la façon dont Diti Engineers peut fournir fonte, aluminium ou pièces sous pression — avec un devis sous 24 heures.",
+    "cta": "Nous contacter"
+  },
+  "contact": {
+    "eyebrow": "Demande de devis",
+    "headline": "Parlez-nous de votre pièce.",
+    "subtitle": "Quatre étapes courtes. Réponse sous 24 heures.",
+    "openCta": "Démarrer une demande de devis",
+    "stepLabel": "Étape {{current}} sur {{total}}",
+    "next": "Continuer",
+    "back": "Retour",
+    "submit": "Envoyer la demande",
+    "close": "Fermer",
+    "steps": {
+      "product": {
+        "title": "Quelle pièce recherchez-vous ?",
+        "subtitle": "Choisissez la correspondance la plus proche — nous affinerons ensuite.",
+        "options": {
+          "ci": "Pièce en fonte",
+          "aluminum": "Pièce aluminium",
+          "pressureDie": "Aluminium sous pression",
+          "motor": "Corps / pièces moteur",
+          "pump": "Pièces de pompe",
+          "automotive": "Pièce automobile",
+          "other": "Autre chose"
+        }
+      },
+      "volume": {
+        "title": "Volume et matériau",
+        "subtitle": "Une estimation suffit — il nous faut juste l'ordre de grandeur.",
+        "volumeLabel": "Volume annuel approximatif",
+        "volumeOptions": {
+          "prototype": "Prototype / moins de 100",
+          "small": "100 – 1 000",
+          "medium": "1 000 – 10 000",
+          "large": "10 000+"
+        },
+        "materialLabel": "Matériau préféré",
+        "materialPlaceholder": "ex. fonte grade 250, aluminium ADC12…"
+      },
+      "contact": {
+        "title": "Comment vous joindre ?",
+        "subtitle": "Réponse sous un jour ouvré.",
+        "nameLabel": "Votre nom",
+        "namePlaceholder": "Nom complet",
+        "companyLabel": "Entreprise",
+        "companyPlaceholder": "Entreprise ou OEM",
+        "emailLabel": "Email professionnel",
+        "emailPlaceholder": "nom@entreprise.com",
+        "phoneLabel": "Téléphone (optionnel)",
+        "phonePlaceholder": "+91…"
+      },
+      "review": {
+        "title": "Prêt à envoyer ?",
+        "subtitle": "Nous répondrons sous 24 heures avec un prix indicatif ou une question.",
+        "summaryHeading": "Votre demande"
+      },
+      "done": {
+        "title": "Demande reçue.",
+        "subtitle": "Notre équipe répond sous 24 heures. Vérifiez votre boîte de réception.",
+        "cta": "Fermer"
+      }
+    },
+    "fieldRequired": "Requis"
+  },
+  "footer": {
+    "tagline": "Fonte, aluminium et moulage sous pression — conçus à Rajkot.",
+    "navHeading": "Site",
+    "contactHeading": "Contact",
+    "addressLabel": "Adresse",
+    "addressValue": "Rajkot, Gujarat, Inde",
+    "gstLabel": "TPS",
+    "gstValue": "Enregistrée depuis 2017",
+    "rights": "© {{year}} Diti Engineers. Tous droits réservés."
+  }
+}

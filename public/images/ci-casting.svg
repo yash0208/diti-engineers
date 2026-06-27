@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#eef1f5"/>
+  <rect x="40" y="280" width="320" height="60" rx="8" fill="#1e4d7b" opacity="0.15"/>
+  <circle cx="200" cy="180" r="90" fill="#1e4d7b" opacity="0.25"/>
+  <circle cx="200" cy="180" r="55" fill="#ece8e3"/>
+  <rect x="120" y="120" width="160" height="24" rx="4" fill="#c45c00" opacity="0.7"/>
+  <text x="200" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="#1e4d7b">CI Casting</text>
+</svg>

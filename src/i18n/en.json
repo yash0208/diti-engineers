@@ -1,0 +1,281 @@
+{
+  "brand": {
+    "name": "Diti Engineers",
+    "tagline": "Precision castings for motors, pumps, automotive"
+  },
+  "nav": {
+    "primary": "Primary",
+    "cta": "Contact us",
+    "open": "Open menu",
+    "close": "Close menu",
+    "toggleLang": "Toggle language",
+    "links": {
+      "capabilities": "Capabilities",
+      "products": "Products",
+      "testimonials": "Buyers",
+      "contact": "Contact"
+    }
+  },
+  "controls": {
+    "prev": "Previous slide",
+    "next": "Next slide"
+  },
+  "hero": {
+    "title": "Precision castings for OEMs",
+    "subtitle": "CI, aluminum and pressure die casting — one roof, one partner.",
+    "cta": "Contact us",
+    "imageAlt": "Diti Engineers factory floor",
+    "videoAlt": "Precision casting production at Diti Engineers"
+  },
+  "platform": {
+    "tabs": {
+      "ci": "01 ci casting",
+      "aluminum": "02 aluminum die casting",
+      "die": "03 pressure die casting"
+    },
+    "slides": {
+      "ci": {
+        "eyebrow": "01 CI CASTING",
+        "title": "Cast iron, production-ready",
+        "body": "Motor bodies, pump housings and industrial components in consistent CI grades — machined, inspected and shipped for repeat OEM volumes.",
+        "cta": "Learn more"
+      },
+      "aluminum": {
+        "eyebrow": "02 ALUMINUM DIE CASTING",
+        "title": "Lightweight, dimensionally tight",
+        "body": "High-pressure aluminum die cast parts for motor enclosures, auto components and precision assemblies — from prototype to full production runs.",
+        "cta": "Learn more"
+      },
+      "die": {
+        "eyebrow": "03 PRESSURE DIE CASTING",
+        "title": "Complex geometry, one roof",
+        "body": "Pressure die casting for intricate aluminum parts with tight tolerances — reducing assembly steps and lead time for OEM engineering teams.",
+        "cta": "Learn more"
+      }
+    },
+    "imageAlt": {
+      "ci": "CI casting production",
+      "aluminum": "Aluminum die casting line",
+      "die": "Pressure die casting process"
+    }
+  },
+  "marquee": {
+    "ariaLabel": "Trust badges",
+    "items": {
+      "gst": "GST Registered · 2017",
+      "indiamart": "13+ years on IndiaMART",
+      "rajkot": "Rajkot, Gujarat",
+      "proprietorship": "Established Proprietorship",
+      "turnover": "5–25 Cr Annual Turnover",
+      "manufacturer": "Direct Manufacturer"
+    }
+  },
+  "brands": {
+    "ariaLabel": "Industries and partners we serve",
+    "eyebrow": "Trusted partner",
+    "headlineLine1": "Serving OEM buyers across India.",
+    "headlineLine2": "Built for motors, pumps and automotive.",
+    "items": {
+      "motors": "Motor OEM",
+      "pumps": "Pump manufacturers",
+      "automotive": "Automotive OEM",
+      "gst": "GST Registered",
+      "indiamart": "IndiaMART Partner",
+      "manufacturer": "Direct Manufacturer"
+    }
+  },
+  "applications": {
+    "headline": "Scale your supply chain with a casting partner built for OEM programs",
+    "subtitle": "From repeat production volumes to new part development — one Rajkot factory covering CI, aluminum and pressure die under a single quality system.",
+    "eyebrow": "Applications",
+    "learnMore": "Learn more",
+    "cards": {
+      "oem": {
+        "title": "Repeat OEM production programs",
+        "body": "Consistent material grades, predictable lead times and a single source for CI and aluminum — built for procurement teams running motor, pump and auto lines.",
+        "stat1Value": "13+",
+        "stat1Suffix": " years",
+        "stat1Label": "Industry experience",
+        "stat2Value": "24",
+        "stat2Suffix": " hours",
+        "stat2Label": "Quote response"
+      },
+      "production": {
+        "title": "Prototype to production volumes",
+        "body": "Every new part can start with Diti's full material range. From first samples to 10,000+ unit runs — export-ready documentation and GST-registered invoicing from day one.",
+        "stat1Value": "100%",
+        "stat1Suffix": "",
+        "stat1Label": "In-house manufacturing",
+        "stat2Value": "5–25",
+        "stat2Suffix": " Cr",
+        "stat2Label": "Annual turnover band (INR)"
+      }
+    },
+    "imageAlt": {
+      "oem": "OEM production casting line",
+      "production": "New part development and casting"
+    }
+  },
+  "stats": {
+    "headline": "Proven capability, measurable results",
+    "items": {
+      "years": {
+        "label": "Years in business",
+        "suffix": "+"
+      },
+      "turnover": {
+        "label": "Annual turnover (INR Cr)",
+        "suffix": ""
+      },
+      "gstYear": {
+        "label": "GST registered since",
+        "suffix": ""
+      },
+      "products": {
+        "label": "Cast product lines",
+        "suffix": "+"
+      }
+    }
+  },
+  "products": {
+    "headline": "Castings for every OEM application",
+    "subtitle": "From motor bodies to pump parts and auto components — precision castings across CI, aluminum and pressure die.",
+    "tag": "Use cases",
+    "learnMore": "Learn more",
+    "tags": {
+      "ci": "Cast iron",
+      "aluminum": "Aluminum",
+      "pressureDie": "Pressure die",
+      "motor": "Motor",
+      "pump": "Pump",
+      "automotive": "Automotive"
+    },
+    "items": {
+      "ci-casting": {
+        "name": "CI Casting",
+        "description": "Cast iron components for industrial and automotive applications."
+      },
+      "aluminum-pressure-die-casting": {
+        "name": "Aluminum Pressure Die Casting",
+        "description": "High-pressure aluminum die cast parts with dimensional accuracy."
+      },
+      "induction-motor-casting": {
+        "name": "Induction Motor Casting",
+        "description": "Castings for induction motor frames and related parts."
+      },
+      "submersible-pump-parts-casting": {
+        "name": "Submersible Pump Parts",
+        "description": "Cast components for submersible pump assemblies."
+      },
+      "auto-parts-casting": {
+        "name": "Auto Parts Casting",
+        "description": "Automotive component castings for OEM and aftermarket use."
+      },
+      "aluminum-motor-body-parts": {
+        "name": "Aluminum Motor Body Parts",
+        "description": "Aluminum cast motor body and housing components."
+      }
+    }
+  },
+  "testimonials": {
+    "headline": "Trusted by OEM buyers across Gujarat and beyond",
+    "counter": "{{current}} / {{total}}",
+    "items": {
+      "placeholder1": {
+        "quote": "Consistent material quality and predictable lead times — the two things that actually matter when you're scaling a motor line.",
+        "author": "Procurement Manager",
+        "role": "Submersible pump OEM, Gujarat"
+      },
+      "placeholder2": {
+        "quote": "We replaced two job-shop suppliers with Diti Engineers. Single source for CI and aluminum, fewer late shipments.",
+        "author": "Purchase Head",
+        "role": "Electric motor manufacturer"
+      }
+    },
+    "imageAlt": "Factory background"
+  },
+  "video": {
+    "headline": "See precision in production",
+    "subtitle": "Watch how Diti Engineers delivers cast iron, aluminum and pressure die parts — from Rajkot factory floor to OEM shipment.",
+    "play": "Play full video",
+    "requestDemo": "Request a quote",
+    "imageAlt": "Factory production video poster"
+  },
+  "ctaBanner": {
+    "headline": "Ready to source your next casting run?",
+    "subtitle": "Let's discuss how Diti Engineers can supply CI, aluminum or pressure die parts — with a quote back in 24 hours.",
+    "cta": "Get in touch"
+  },
+  "contact": {
+    "eyebrow": "Request a quote",
+    "headline": "Tell us about your part.",
+    "subtitle": "Four short steps. We reply within 24 hours.",
+    "openCta": "Start a quote request",
+    "stepLabel": "Step {{current}} of {{total}}",
+    "next": "Continue",
+    "back": "Back",
+    "submit": "Submit request",
+    "close": "Close",
+    "steps": {
+      "product": {
+        "title": "What part are you sourcing?",
+        "subtitle": "Pick the closest match — we'll refine after.",
+        "options": {
+          "ci": "CI casting",
+          "aluminum": "Aluminum casting",
+          "pressureDie": "Aluminum pressure die",
+          "motor": "Motor body / parts",
+          "pump": "Pump parts",
+          "automotive": "Automotive part",
+          "other": "Something else"
+        }
+      },
+      "volume": {
+        "title": "Volume and material",
+        "subtitle": "A ballpark is fine — we just need a sense of the run.",
+        "volumeLabel": "Approximate annual volume",
+        "volumeOptions": {
+          "prototype": "Prototype / under 100",
+          "small": "100 – 1,000",
+          "medium": "1,000 – 10,000",
+          "large": "10,000+"
+        },
+        "materialLabel": "Preferred material",
+        "materialPlaceholder": "e.g. CI grade 250, ADC12 aluminum…"
+      },
+      "contact": {
+        "title": "How should we reach you?",
+        "subtitle": "We respond within one business day.",
+        "nameLabel": "Your name",
+        "namePlaceholder": "Full name",
+        "companyLabel": "Company",
+        "companyPlaceholder": "Company or OEM",
+        "emailLabel": "Work email",
+        "emailPlaceholder": "name@company.com",
+        "phoneLabel": "Phone (optional)",
+        "phonePlaceholder": "+91…"
+      },
+      "review": {
+        "title": "Ready to send?",
+        "subtitle": "We'll reply within 24 hours with a price guidance or a question.",
+        "summaryHeading": "Your request"
+      },
+      "done": {
+        "title": "Request received.",
+        "subtitle": "Our team replies within 24 hours. Check your inbox shortly.",
+        "cta": "Close"
+      }
+    },
+    "fieldRequired": "Required"
+  },
+  "footer": {
+    "tagline": "Cast iron, aluminum and pressure die castings — engineered in Rajkot.",
+    "navHeading": "Site",
+    "contactHeading": "Contact",
+    "addressLabel": "Address",
+    "addressValue": "Rajkot, Gujarat, India",
+    "gstLabel": "GST",
+    "gstValue": "Registered since 2017",
+    "rights": "© {{year}} Diti Engineers. All rights reserved."
+  }
+}
