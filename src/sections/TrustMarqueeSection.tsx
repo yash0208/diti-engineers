@@ -1,8 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { RevealOnScroll } from "@/components/motion";
-import { Sparkles } from "@/components/ui/sparkles";
 import { TestimonialV2 } from "@/components/ui/testimonial-v2";
-import { colors } from "@/theme/colors";
 
 export function TrustMarqueeSection() {
   const { t } = useTranslation();
@@ -25,19 +23,6 @@ export function TrustMarqueeSection() {
         <RevealOnScroll delay={0.08}>
           <TestimonialV2 />
         </RevealOnScroll>
-      </div>
-
-      <div
-        aria-hidden
-        className="pointer-events-none relative -mt-8 h-40 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)] md:h-48"
-      >
-        <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,var(--color-gradient-accent),transparent_70%)] before:opacity-20" />
-        <div className="absolute -left-1/2 top-1/2 z-10 aspect-[1/0.7] w-[200%] rounded-[100%] border-t border-border-light bg-canvas" />
-        <Sparkles
-          density={56}
-          color={colors.sparklesOnLight}
-          className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
-        />
       </div>
     </section>
   );

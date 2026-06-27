@@ -10,11 +10,18 @@
     "close": "Fermer le menu",
     "toggleLang": "Changer de langue",
     "links": {
+      "home": "Accueil",
+      "about": "À propos",
       "capabilities": "Capacités",
       "products": "Produits",
+      "services": "Services",
+      "blog": "Blog",
+      "machinery": "Machines",
+      "certificate": "Certificats",
       "testimonials": "Clients",
       "contact": "Contact"
-    }
+    },
+    "servicesOverview": "Tous les services"
   },
   "controls": {
     "prev": "Diapositive précédente",
@@ -356,6 +363,354 @@
     "addressValue": "Rajkot, Gujarat, Inde",
     "gstLabel": "TPS",
     "gstValue": "Enregistrée depuis 2017",
+    "hoursLabel": "Horaires",
+    "hoursValue": "Lun–Sam · 9h00 – 18h00",
+    "servicesHeading": "Services",
     "rights": "© {{year}} Diti Engineers. Tous droits réservés."
+  },
+  "pages": {
+    "about": {
+      "hero": {
+        "eyebrow": "À propos",
+        "headlineLine1": "Fondée sur l'excellence",
+        "headlineLine2": "technique à Rajkot",
+        "subtitle": "Diti Engineers fabrique des pièces en fonte, aluminium et moulage sous pression pour moteurs, pompes et OEM automobile — plus de 13 ans de production en usine."
+      },
+      "heroSection": {
+        "eyebrow": "À propos",
+        "headline": "Fondée sur l'excellence technique à Rajkot",
+        "imageAlt": "Installation de fabrication Diti Engineers",
+        "stats": {
+          "experience": {
+            "value": "13+",
+            "label": "ans d'expérience"
+          },
+          "turnover": {
+            "value": "5–25 Cr",
+            "label": "chiffre d'affaires annuel"
+          },
+          "quoteResponse": {
+            "labelHighlight": "Diti",
+            "labelRest": "Engineers"
+          }
+        },
+        "body1": "Diti Engineers fabrique des pièces en fonte, aluminium et moulage sous pression pour moteurs électriques, pompes submersibles et OEM automobile — avec précision dimensionnelle et grades matière fiables.",
+        "body2": "Depuis Rajkot, Gujarat — pôle de fonderie de l'Inde — nous combinons capacité de fabrication moderne et réactivité pour les équipes achats en montée en volume.",
+        "companyName": "Plateforme de fonderie",
+        "role": "Fabricant · Rajkot, Gujarat",
+        "ctaPrompt": "Prêt à vous associer à un fondeur ?",
+        "ctaButton": "Demander un devis",
+        "links": {
+          "services": "Voir les services",
+          "certificate": "Voir les certificats",
+          "contact": "Nous contacter"
+        }
+      },
+      "story": {
+        "eyebrow": "Notre histoire",
+        "headlineLine1": "Bienvenue chez",
+        "headlineLine2": "Diti Engineers",
+        "body": "Diti Engineers se spécialise dans la fabrication de pièces techniques pour moteurs électriques, pompes submersibles, automobiles et machines industrielles. De la fonte au moulage sous pression aluminium, nous livrons des composants adaptés avec précision dimensionnelle, grades matière fiables et prix compétitifs pour les acheteurs nationaux et export.",
+        "imageAlt": "Installation de fabrication Diti Engineers"
+      },
+      "whyChoose": {
+        "eyebrow": "Pourquoi nous choisir",
+        "headlineLine1": "La meilleure solution",
+        "headlineLine2": "pour les programmes OEM",
+        "subtitle": "Nous combinons capacité de fabrication moderne et réactivité pour les équipes achats en montée en volume.",
+        "items": {
+          "quality": {
+            "title": "Produit de qualité",
+            "body": "Grades fonte et aluminium constants, contrôle en cours de fabrication et fiabilité pour les lignes moteur, pompe et auto."
+          },
+          "pricing": {
+            "title": "Prix compétitifs",
+            "body": "Tarifs fabricant direct sans intermédiaire — structurés pour volumes OEM et accords d'approvisionnement long terme."
+          },
+          "delivery": {
+            "title": "Livraison rapide",
+            "body": "Production à Rajkot avec délais prévisibles et réponse devis sous 24 heures pour les nouvelles demandes."
+          },
+          "experience": {
+            "title": "13+ ans d'expérience",
+            "body": "Propriété établie avec enregistrement TPS depuis 2017 et historique prouvé sur IndiaMART."
+          }
+        }
+      },
+      "leadership": {
+        "eyebrow": "Direction",
+        "headlineLine1": "Usine dirigée",
+        "headlineLine2": "par une équipe expérimentée",
+        "role": "Propriétaire · Production",
+        "bio": "Sous la direction de H Rangani, Diti Engineers fonctionne comme une opération de fabrication directe axée sur la qualité de moulage, les expéditions à l'heure et les partenariats OEM durables en Inde."
+      },
+      "cta": {
+        "headline": "Prêt à vous associer à un fondeur ?",
+        "subtitle": "Partagez votre plan ou besoin — nous répondons sous un jour ouvré.",
+        "button": "Demander un devis"
+      }
+    },
+    "products": {
+      "hero": {
+        "eyebrow": "Produits",
+        "headlineLine1": "Pièces moulées",
+        "headlineLine2": "pour chaque application",
+        "subtitle": "Corps de moteur, pièces de pompe, composants auto et pièces industrielles — fonte, aluminium et sous pression."
+      },
+      "featured": {
+        "eyebrow": "Gamme phare",
+        "headlineLine1": "Lignes produits",
+        "headlineLine2": "principales"
+      },
+      "catalog": {
+        "eyebrow": "Catalogue complet",
+        "headlineLine1": "Portfolio produit",
+        "headlineLine2": "complet",
+        "subtitle": "Parcourez notre gamme complète de pièces moulées pour moteurs, pompes, automobile et industrie."
+      }
+    },
+    "services": {
+      "hero": {
+        "eyebrow": "Services",
+        "headlineLine1": "Solutions de moulage",
+        "headlineLine2": "de précision",
+        "subtitle": "Composants sur mesure et solutions innovantes pour automobile, agriculture et machines industrielles."
+      },
+      "intro": {
+        "eyebrow": "Ce que nous faisons",
+        "headlineLine1": "Solutions techniques",
+        "headlineLine2": "sous un même toit",
+        "body": "Des corps moteur en fonte aux pièces aluminium sous pression, Diti Engineers couvre tout le flux — de l'étude outillage à l'expédition production.",
+        "cta": "Devis gratuit",
+        "imageAlt": "Ligne de production moulage OEM"
+      },
+      "list": {
+        "eyebrow": "Nos services",
+        "headlineLine1": "Services de fabrication",
+        "headlineLine2": "proposés",
+        "subtitle": "Moulage spécialisé et support usinage pour programmes OEM récurrents et développement de nouvelles pièces."
+      },
+      "items": {
+        "ciCasting": {
+          "name": "Fonte (CI)",
+          "body": "Composants en fonte pour carters moteur, corps de pompe et applications industrielles."
+        },
+        "aluminumDie": {
+          "name": "Moulage alu sous pression",
+          "body": "Pièces aluminium légères pour carters moteur, composants auto et assemblages de précision."
+        },
+        "pressureDie": {
+          "name": "Moulage sous pression",
+          "body": "Moulage haute pression pour géométries aluminium complexes avec tolérances serrées."
+        },
+        "motorParts": {
+          "name": "Pièces moteur",
+          "body": "Moulage dédié pour carters moteur à induction, flasques et composants électriques."
+        },
+        "pumpParts": {
+          "name": "Pièces de pompe",
+          "body": "Corps de pompe submersible, roues et composants pour lignes d'assemblage OEM."
+        },
+        "autoParts": {
+          "name": "Pièces automobile",
+          "body": "Pièces moulées secteur auto en fonte et aluminium pour fournisseurs OEM."
+        }
+      },
+      "process": {
+        "eyebrow": "Notre méthode",
+        "headlineLine1": "De la demande",
+        "headlineLine2": "à l'expédition",
+        "steps": {
+          "step1": {
+            "title": "Partager le besoin",
+            "body": "Envoyez plan, échantillon ou cahier des charges — nous confirmons grade et procédé."
+          },
+          "step2": {
+            "title": "Devis & échantillon",
+            "body": "Prix indicatif sous 24 h. Échantillon ou série pilote si nécessaire avant production."
+          },
+          "step3": {
+            "title": "Série production",
+            "body": "Fonte, aluminium et sous pression en interne avec contrôle avant expédition."
+          },
+          "step4": {
+            "title": "Approvisionnement récurrent",
+            "body": "Commandes planifiées avec facturation TPS et documentation export."
+          }
+        }
+      }
+    },
+    "blog": {
+      "hero": {
+        "eyebrow": "Blog",
+        "headlineLine1": "Actualités",
+        "headlineLine2": "fabrication",
+        "subtitle": "Analyses sur le moulage de précision, l'écosystème industriel de Rajkot et l'approvisionnement OEM depuis l'Inde."
+      },
+      "latest": {
+        "eyebrow": "Articles récents",
+        "headlineLine1": "Actualités",
+        "headlineLine2": "et analyses"
+      },
+      "readMore": "Lire la suite",
+      "posts": {
+        "post1": {
+          "category": "Fabrication",
+          "title": "Rajkot, hub mondial du moulage",
+          "excerpt": "Rajkot reste une référence pour l'auto et l'industrie — fonderies modernes, main-d'œuvre qualifiée et production export compétitive."
+        },
+        "post2": {
+          "category": "Moulage",
+          "title": "Fonte de précision au Gujarat",
+          "excerpt": "Comment les fonderies de Rajkot livrent des pièces fonte de qualité pour moteurs et pompes avec équipements modernes."
+        },
+        "post3": {
+          "category": "Approvisionnement OEM",
+          "title": "Fabrication toujours précise",
+          "excerpt": "Pourquoi la précision dimensionnelle et la constance matière comptent pour choisir un partenaire fondeur en Inde."
+        }
+      }
+    },
+    "machinery": {
+      "hero": {
+        "eyebrow": "Machines",
+        "headlineLine1": "Équipements modernes",
+        "headlineLine2": "pour une production précise",
+        "subtitle": "Notre usine de Rajkot est équipée pour fonte, moulage alu, usinage et contrôle qualité."
+      },
+      "intro": {
+        "eyebrow": "Capacité usine",
+        "headlineLine1": "Installation",
+        "headlineLine2": "de haute technologie",
+        "body": "Diti Engineers investit dans l'équipement et la discipline process pour volumes OEM récurrents — du four à la finition et l'inspection.",
+        "imageAlt": "Machines et atelier de production"
+      },
+      "equipment": {
+        "eyebrow": "Équipement",
+        "headlineLine1": "Lignes de production",
+        "headlineLine2": "et inspection",
+        "subtitle": "Machines principales pour nos programmes fonte, aluminium et sous pression.",
+        "items": {
+          "ciLine": {
+            "title": "Ligne fonte",
+            "body": "Équipement fonderie pour carters moteur, corps de pompe et composants industriels."
+          },
+          "dieCasting": {
+            "title": "Presses moulage",
+            "body": "Moulage aluminium haute pression pour carters moteur et pièces automobile."
+          },
+          "machining": {
+            "title": "Usinage & finition",
+            "body": "Usinage post-moulage et finition pour pièces prêtes à expédier."
+          },
+          "inspection": {
+            "title": "Contrôle qualité",
+            "body": "Contrôles en cours et inspection finale avant expédition aux acheteurs OEM."
+          }
+        }
+      }
+    },
+    "certificate": {
+      "hero": {
+        "eyebrow": "Certificats",
+        "headlineLine1": "Accréditations",
+        "headlineLine2": "et conformité",
+        "subtitle": "Fabrication enregistrée TPS avec justificatifs pour l'onboarding fournisseur OEM."
+      },
+      "credentials": {
+        "eyebrow": "Certifications",
+        "headlineLine1": "Confiance et",
+        "headlineLine2": "conformité",
+        "subtitle": "Justificatifs clés pour validation achats et finance lors de nouveaux partenariats.",
+        "items": {
+          "gst": {
+            "title": "Enregistrement TPS",
+            "body": "Enregistrée depuis juillet 2017 — facturation conforme pour commandes nationales et export."
+          },
+          "quality": {
+            "title": "Engagement qualité",
+            "body": "Fabrication orientée process avec constance des grades et contrôle en cours."
+          },
+          "compliance": {
+            "title": "Conformité légale",
+            "body": "Propriété établie avec présence IndiaMART vérifiée et enregistrement statutaire."
+          }
+        }
+      },
+      "factsheet": {
+        "eyebrow": "Fiche entreprise",
+        "headlineLine1": "Profil",
+        "headlineLine2": "statutaire",
+        "fields": {
+          "nature": "Nature de l'activité",
+          "ceo": "Propriétaire",
+          "gstDate": "Enregistrement TPS",
+          "legal": "Statut juridique",
+          "turnover": "Chiffre d'affaires annuel",
+          "gstNo": "Numéro TPS"
+        }
+      }
+    },
+    "contact": {
+      "hero": {
+        "eyebrow": "Contact",
+        "headlineLine1": "Demande &",
+        "headlineLine2": "devis gratuit",
+        "subtitle": "Appelez, écrivez ou soumettez un devis — réponse sous 24 heures."
+      },
+      "details": {
+        "heading": "Contact bureau & usine",
+        "emailLabel": "Email",
+        "emailValue": "Via formulaire de devis",
+        "phoneLabel": "Téléphone",
+        "phoneValue": "Sur demande"
+      },
+      "quote": {
+        "heading": "Demander un devis",
+        "body": "Décrivez pièce, matière et volume. Quatre étapes — réponse sous un jour ouvré."
+      },
+      "hours": {
+        "eyebrow": "Horaires",
+        "headlineLine1": "Quand nous",
+        "headlineLine2": "sommes disponibles",
+        "items": {
+          "weekdays": {
+            "label": "Lun – Ven",
+            "value": "9h00 – 18h00"
+          },
+          "saturday": {
+            "label": "Samedi",
+            "value": "9h00 – 14h00"
+          },
+          "sunday": {
+            "label": "Dimanche",
+            "value": "Fermé"
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "headlineLine1": "Questions",
+        "headlineLine2": "fréquentes",
+        "items": {
+          "quote": {
+            "question": "Où demander un devis ?",
+            "answer": "Utilisez le formulaire sur cette page ou la section contact de l'accueil. Partagez plan, matière et volume — réponse sous 24 h."
+          },
+          "materials": {
+            "question": "Quelles matières moulez-vous ?",
+            "answer": "Fonte, aluminium et moulage sous pression pour moteurs, pompes, automobile et applications industrielles."
+          },
+          "leadTime": {
+            "question": "Quel délai typique ?",
+            "answer": "Le délai dépend de la complexité et du volume. Nous indiquons un délai avec chaque devis et planifions les séries récurrentes OEM."
+          },
+          "certifications": {
+            "question": "Êtes-vous enregistrés TPS ?",
+            "answer": "Oui. Diti Engineers est enregistrée TPS depuis juillet 2017 avec justificatifs pour l'onboarding fournisseur."
+          }
+        }
+      }
+    }
   }
 }

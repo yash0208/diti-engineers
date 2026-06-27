@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 
-export function useScrollSpy(sectionIds: string[], offset = 100) {
+export function useScrollSpy(sectionIds: string[], offset = 100, enabled = true) {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
+    if (!enabled) {
+      setActiveId("");
+      return;
+    }
+
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean) as HTMLElement[];
@@ -25,7 +30,7 @@ export function useScrollSpy(sectionIds: string[], offset = 100) {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, [sectionIds, offset]);
+  }, [sectionIds, offset, enabled]);
 
   return activeId;
 }

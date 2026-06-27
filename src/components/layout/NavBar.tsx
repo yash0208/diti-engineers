@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router-dom";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import { navLinks, sectionIds } from "@/data/navigation";
-import { useScrollSpy } from "@/hooks/useScrollSpy";
+import { navLinks } from "@/data/navigation";
+import { serviceItems } from "@/data/services";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function NavBar() {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const { scrollY } = useScroll();
-  const activeId = useScrollSpy(sectionIds, 120);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 80);
@@ -26,11 +28,23 @@ export function NavBar() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    setMobileOpen(false);
+    setServicesOpen(false);
+  }, [location.pathname]);
+
   const toggleLang = () => {
     const next = i18n.language.startsWith("fr") ? "en" : "fr";
     void i18n.changeLanguage(next);
     localStorage.setItem("diti-engineers-lang", next);
   };
+
+  const isActive = (path: string) => {
+    if (path === "/") return location.pathname === "/";
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
+  };
+
+  const primaryLinks = navLinks.filter((link) => link.id !== "contact");
 
   return (
     <header
@@ -42,13 +56,13 @@ export function NavBar() {
       <div className="container-main py-3 lg:py-4">
         <div className="flex flex-wrap items-center justify-between gap-6 lg:gap-0">
           <div className="flex w-full justify-between lg:w-auto">
-            <a
-              href="#top"
+            <Link
+              to="/"
               aria-label={t("brand.name")}
               className="flex items-center font-display text-lg font-bold tracking-tight text-text-heading-light md:text-xl"
             >
               {t("brand.name")}
-            </a>
+            </Link>
 
             <button
               type="button"
@@ -84,23 +98,83 @@ export function NavBar() {
           >
             <div className="lg:pr-4">
               <nav aria-label={t("nav.primary")}>
-                <ul className="space-y-6 text-base lg:flex lg:gap-8 lg:space-y-0 lg:text-sm">
-                  {navLinks.map((link) => (
-                    <li key={link.id}>
-                      <a
-                        href={link.href}
-                        onClick={() => setMobileOpen(false)}
-                        className={cn(
-                          "block text-sm duration-150 interactive-opacity",
-                          activeId === link.id
-                            ? "text-text-heading-light"
-                            : "text-text-muted hover:text-text-heading-light",
-                        )}
+                <ul className="space-y-6 text-base lg:flex lg:gap-6 lg:space-y-0 lg:text-sm xl:gap-8">
+                  {primaryLinks.map((link) =>
+                    link.id === "services" ? (
+                      <li
+                        key={link.id}
+                        className="group/services relative"
+                        onMouseEnter={() => setServicesOpen(true)}
+                        onMouseLeave={() => setServicesOpen(false)}
                       >
-                        {t(link.labelKey)}
-                      </a>
-                    </li>
-                  ))}
+                        <button
+                          type="button"
+                          onClick={() => setServicesOpen((open) => !open)}
+                          aria-expanded={servicesOpen}
+                          className={cn(
+                            "flex items-center gap-1 text-sm duration-150 interactive-opacity",
+                            isActive(link.path)
+                              ? "text-text-heading-light"
+                              : "text-text-muted hover:text-text-heading-light",
+                          )}
+                        >
+                          {t(link.labelKey)}
+                          <ChevronDown
+                            className={cn(
+                              "size-4 transition-transform",
+                              servicesOpen && "rotate-180",
+                            )}
+                            aria-hidden
+                          />
+                        </button>
+                        <ul
+                          className={cn(
+                            "space-y-2 rounded-base border border-border-light bg-surface-card-light p-3 shadow-elevation",
+                            "mt-3 lg:absolute lg:left-0 lg:top-full lg:mt-2 lg:min-w-56",
+                            servicesOpen
+                              ? "block"
+                              : "hidden lg:group-hover/services:block",
+                          )}
+                        >
+                          <li>
+                            <Link
+                              to="/services"
+                              onClick={() => setMobileOpen(false)}
+                              className="block rounded-sm px-3 py-2 text-sm text-text-heading-light interactive-opacity hover:bg-surface-muted"
+                            >
+                              {t("nav.servicesOverview")}
+                            </Link>
+                          </li>
+                          {serviceItems.map((service) => (
+                            <li key={service.id}>
+                              <Link
+                                to={`/services#${service.slug}`}
+                                onClick={() => setMobileOpen(false)}
+                                className="block rounded-sm px-3 py-2 text-sm text-text-primary-light interactive-opacity hover:bg-surface-muted hover:text-text-heading-light"
+                              >
+                                {t(service.nameKey)}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ) : (
+                      <li key={link.id}>
+                        <Link
+                          to={link.href}
+                          onClick={() => setMobileOpen(false)}
+                          className={cn(
+                            "block text-sm duration-150 interactive-opacity",
+                            isActive(link.path)
+                              ? "text-text-heading-light"
+                              : "text-text-muted hover:text-text-heading-light",
+                          )}
+                        >
+                          {t(link.labelKey)}
+                        </Link>
+                      </li>
+                    ),
+                  )}
                 </ul>
               </nav>
             </div>
@@ -111,9 +185,9 @@ export function NavBar() {
               </Button>
 
               <Button asChild size="sm">
-                <a href="#contact" onClick={() => setMobileOpen(false)}>
+                <Link to="/contact" onClick={() => setMobileOpen(false)}>
                   {t("nav.cta")}
-                </a>
+                </Link>
               </Button>
             </div>
           </div>

@@ -68,6 +68,25 @@
   --transition-move: transform var(--duration-normal) var(--ease-out);
 }
 
+@utility bg-accent-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-gradient-start) 0%,
+    var(--color-accent-gradient-end) 100%
+  );
+}
+
+@utility text-accent-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-gradient-start) 0%,
+    var(--color-accent-gradient-end) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 @layer base {
   html {
     width: 100%;
@@ -209,25 +228,6 @@
     font-weight: 500;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-  }
-
-  .text-accent-gradient {
-    background: linear-gradient(
-      135deg,
-      var(--color-accent-gradient-start) 0%,
-      var(--color-accent-gradient-end) 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .bg-accent-gradient {
-    background: linear-gradient(
-      135deg,
-      var(--color-accent-gradient-start) 0%,
-      var(--color-accent-gradient-end) 100%
-    );
   }
 
   .skip-link {

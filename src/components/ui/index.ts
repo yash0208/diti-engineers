@@ -7,6 +7,7 @@ export {
   HeroVideo,
   VideoPlayOverlay,
 } from "./animated-video-on-scroll";
+export { AboutSection } from "./about-section";
 export { ArrowLink } from "./ArrowLink";
 export { Button, buttonVariants } from "./button";
 export { GlassPanel } from "./GlassPanel";

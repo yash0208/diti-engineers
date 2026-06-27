@@ -1,35 +1,29 @@
-import { ScrollProgress, SmoothScrollProvider } from "@/components/motion";
-import { NavBar } from "@/components/layout/NavBar";
-import { Footer } from "@/components/layout/Footer";
-import { HeroSection } from "@/sections/HeroSection";
-import { PlatformCarouselSection } from "@/sections/PlatformCarouselSection";
-import { TrustMarqueeSection } from "@/sections/TrustMarqueeSection";
-import { ApplicationsSection } from "@/sections/ApplicationsSection";
-import { StatsSection } from "@/sections/StatsSection";
-import { ProductsSection } from "@/sections/ProductsSection";
-import { TestimonialsSection } from "@/sections/TestimonialsSection";
-import { VideoSection } from "@/sections/VideoSection";
-import { CtaBannerSection } from "@/sections/CtaBannerSection";
-import { ContactSection } from "@/sections/ContactSection";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { RootLayout } from "@/components/layout/RootLayout";
+import { AboutPage } from "@/pages/AboutPage";
+import { BlogPage } from "@/pages/BlogPage";
+import { CertificatePage } from "@/pages/CertificatePage";
+import { ContactPage } from "@/pages/ContactPage";
+import { HomePage } from "@/pages/HomePage";
+import { MachineryPage } from "@/pages/MachineryPage";
+import { ProductsPage } from "@/pages/ProductsPage";
+import { ServicesPage } from "@/pages/ServicesPage";
 
 export function App() {
   return (
-    <SmoothScrollProvider>
-      <ScrollProgress />
-      <NavBar />
-      <main id="main-content" className="w-full min-w-0 bg-canvas">
-        <HeroSection />
-        <PlatformCarouselSection />
-        <TrustMarqueeSection />
-        <ApplicationsSection />
-        <StatsSection />
-        <ProductsSection />
-        <TestimonialsSection />
-        <VideoSection />
-        <CtaBannerSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </SmoothScrollProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="products" element={<ProductsPage />} />
+          <Route path="services" element={<ServicesPage />} />
+          <Route path="blog" element={<BlogPage />} />
+          <Route path="machinery" element={<MachineryPage />} />
+          <Route path="certificate" element={<CertificatePage />} />
+          <Route path="contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }

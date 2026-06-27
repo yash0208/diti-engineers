@@ -10,11 +10,18 @@
     "close": "Close menu",
     "toggleLang": "Toggle language",
     "links": {
+      "home": "Home",
+      "about": "About",
       "capabilities": "Capabilities",
       "products": "Products",
+      "services": "Services",
+      "blog": "Blog",
+      "machinery": "Machinery",
+      "certificate": "Certificate",
       "testimonials": "Buyers",
       "contact": "Contact"
-    }
+    },
+    "servicesOverview": "All services"
   },
   "controls": {
     "prev": "Previous slide",
@@ -356,6 +363,354 @@
     "addressValue": "Rajkot, Gujarat, India",
     "gstLabel": "GST",
     "gstValue": "Registered since 2017",
+    "hoursLabel": "Hours",
+    "hoursValue": "Mon–Sat · 9:00 am – 6:00 pm",
+    "servicesHeading": "Services",
     "rights": "© {{year}} Diti Engineers. All rights reserved."
+  },
+  "pages": {
+    "about": {
+      "hero": {
+        "eyebrow": "About us",
+        "headlineLine1": "Built on engineering",
+        "headlineLine2": "excellence in Rajkot",
+        "subtitle": "Diti Engineers manufactures CI, aluminum and pressure die castings for motors, pumps and automotive OEMs — with 13+ years of factory-backed production."
+      },
+      "heroSection": {
+        "eyebrow": "About us",
+        "headline": "Built on engineering excellence in Rajkot",
+        "imageAlt": "Diti Engineers manufacturing facility",
+        "stats": {
+          "experience": {
+            "value": "13+",
+            "label": "years of experience"
+          },
+          "turnover": {
+            "value": "5–25 Cr",
+            "label": "annual turnover"
+          },
+          "quoteResponse": {
+            "labelHighlight": "Diti",
+            "labelRest": "Engineers"
+          }
+        },
+        "body1": "Diti Engineers manufactures CI, aluminum and pressure die castings for electric motors, submersible pumps and automotive OEMs — delivering application-specific components with dimensional accuracy and reliable material grades.",
+        "body2": "From Rajkot, Gujarat — India's casting hub — we combine modern manufacturing capability with the responsiveness procurement teams need when scaling production volumes.",
+        "companyName": "Casting Platform",
+        "role": "Manufacturer · Rajkot, Gujarat",
+        "ctaPrompt": "Ready to partner with a casting manufacturer?",
+        "ctaButton": "Request a quote",
+        "links": {
+          "services": "View services",
+          "certificate": "View certificates",
+          "contact": "Contact us"
+        }
+      },
+      "story": {
+        "eyebrow": "Our story",
+        "headlineLine1": "Welcome to",
+        "headlineLine2": "Diti Engineers",
+        "body": "Diti Engineers specializes in manufacturing engineering parts for electric motors, submersible pumps, automobiles and industrial machinery. From CI casting to aluminum pressure die, we deliver application-specific components with dimensional accuracy, reliable material grades and competitive pricing for domestic and export buyers.",
+        "imageAlt": "Diti Engineers manufacturing facility"
+      },
+      "whyChoose": {
+        "eyebrow": "Why choose us",
+        "headlineLine1": "The best solution",
+        "headlineLine2": "for OEM casting programs",
+        "subtitle": "We combine modern manufacturing capability with the responsiveness procurement teams need when scaling production.",
+        "items": {
+          "quality": {
+            "title": "Quality product",
+            "body": "Consistent CI and aluminum grades, in-process inspection and repeat-order reliability for motor, pump and auto lines."
+          },
+          "pricing": {
+            "title": "Competitive pricing",
+            "body": "Direct manufacturer pricing without trading markup — structured for OEM volumes and long-term supply agreements."
+          },
+          "delivery": {
+            "title": "Quick delivery",
+            "body": "Rajkot-based production with predictable lead times and quote response within 24 hours on new inquiries."
+          },
+          "experience": {
+            "title": "13+ years experience",
+            "body": "Established proprietorship with GST registration since 2017 and a proven track record on IndiaMART."
+          }
+        }
+      },
+      "leadership": {
+        "eyebrow": "Leadership",
+        "headlineLine1": "Factory-led",
+        "headlineLine2": "by experienced leadership",
+        "role": "Proprietor · Production",
+        "bio": "Led by H Rangani, Diti Engineers runs as a hands-on manufacturing operation focused on casting quality, on-time dispatch and long-term OEM partnerships across Gujarat and India."
+      },
+      "cta": {
+        "headline": "Ready to partner with a casting manufacturer?",
+        "subtitle": "Share your drawing or requirement — we respond within one business day.",
+        "button": "Request a quote"
+      }
+    },
+    "products": {
+      "hero": {
+        "eyebrow": "Products",
+        "headlineLine1": "Cast components",
+        "headlineLine2": "for every application",
+        "subtitle": "Motor bodies, pump parts, auto components and industrial castings — across CI, aluminum and pressure die."
+      },
+      "featured": {
+        "eyebrow": "Featured range",
+        "headlineLine1": "Core product",
+        "headlineLine2": "lines"
+      },
+      "catalog": {
+        "eyebrow": "Full catalog",
+        "headlineLine1": "Complete product",
+        "headlineLine2": "portfolio",
+        "subtitle": "Browse our full range of casting products for motors, pumps, automotive and general industrial use."
+      }
+    },
+    "services": {
+      "hero": {
+        "eyebrow": "Services",
+        "headlineLine1": "Precision casting",
+        "headlineLine2": "solutions",
+        "subtitle": "Delivering customized components and innovative solutions for automotive, agriculture and industrial machinery sectors."
+      },
+      "intro": {
+        "eyebrow": "What we do",
+        "headlineLine1": "Engineering solutions",
+        "headlineLine2": "under one roof",
+        "body": "From cast iron motor bodies to high-pressure aluminum die parts, Diti Engineers covers the full casting workflow — from tooling discussion through production dispatch.",
+        "cta": "Get a free quote",
+        "imageAlt": "OEM casting production line"
+      },
+      "list": {
+        "eyebrow": "Our services",
+        "headlineLine1": "Manufacturing services",
+        "headlineLine2": "we provide",
+        "subtitle": "Specialized casting and machining support for repeat OEM programs and new part development."
+      },
+      "items": {
+        "ciCasting": {
+          "name": "CI Casting",
+          "body": "Cast iron components for motor frames, pump housings and industrial applications with consistent grades and finish."
+        },
+        "aluminumDie": {
+          "name": "Aluminum Die Casting",
+          "body": "Lightweight aluminum die cast parts for motor enclosures, auto components and precision assemblies."
+        },
+        "pressureDie": {
+          "name": "Pressure Die Casting",
+          "body": "High-pressure die casting for complex aluminum geometry with tight tolerances and reduced assembly steps."
+        },
+        "motorParts": {
+          "name": "Motor Parts Casting",
+          "body": "Dedicated casting for induction motor bodies, end shields and related electric motor components."
+        },
+        "pumpParts": {
+          "name": "Pump Parts Casting",
+          "body": "Submersible pump housings, impellers and allied cast components for pump OEM assembly lines."
+        },
+        "autoParts": {
+          "name": "Auto Parts Casting",
+          "body": "Automotive sector castings in CI and aluminum for OEM suppliers and component manufacturers."
+        }
+      },
+      "process": {
+        "eyebrow": "How we work",
+        "headlineLine1": "From inquiry",
+        "headlineLine2": "to dispatch",
+        "steps": {
+          "step1": {
+            "title": "Share requirement",
+            "body": "Send drawing, sample or specification — we confirm material grade and process fit."
+          },
+          "step2": {
+            "title": "Quote & sampling",
+            "body": "Price guidance within 24 hours. Sample or pilot run when needed before production."
+          },
+          "step3": {
+            "title": "Production run",
+            "body": "In-house CI, aluminum and pressure die casting with inspection before dispatch."
+          },
+          "step4": {
+            "title": "Repeat supply",
+            "body": "Scheduled repeat orders with GST-registered invoicing and export documentation support."
+          }
+        }
+      }
+    },
+    "blog": {
+      "hero": {
+        "eyebrow": "Blog",
+        "headlineLine1": "Latest news",
+        "headlineLine2": "from manufacturing",
+        "subtitle": "Insights on precision casting, Rajkot's manufacturing ecosystem and OEM sourcing from India."
+      },
+      "latest": {
+        "eyebrow": "Recent articles",
+        "headlineLine1": "Industry updates",
+        "headlineLine2": "and insights"
+      },
+      "readMore": "Read more",
+      "posts": {
+        "post1": {
+          "category": "Manufacturing",
+          "title": "Rajkot as a global casting hub",
+          "excerpt": "Rajkot remains a powerhouse for auto and industrial manufacturing — with advanced foundries, skilled workers and competitive export-ready production."
+        },
+        "post2": {
+          "category": "Casting",
+          "title": "Precision CI casting in Gujarat",
+          "excerpt": "How Rajkot foundries deliver high-quality cast iron components for motors and pumps with modern equipment and process control."
+        },
+        "post3": {
+          "category": "OEM sourcing",
+          "title": "Always precise manufacturing",
+          "excerpt": "Why dimensional accuracy and material consistency matter when OEM buyers select a long-term casting partner in India."
+        }
+      }
+    },
+    "machinery": {
+      "hero": {
+        "eyebrow": "Machinery",
+        "headlineLine1": "Modern equipment",
+        "headlineLine2": "for precision output",
+        "subtitle": "Our Rajkot factory is equipped for CI casting, aluminum die casting, machining and quality inspection."
+      },
+      "intro": {
+        "eyebrow": "Factory capability",
+        "headlineLine1": "High-tech",
+        "headlineLine2": "manufacturing setup",
+        "body": "Diti Engineers invests in production equipment and process discipline to support repeat OEM volumes — from furnace and die casting lines through finishing and inspection.",
+        "imageAlt": "Factory machinery and production floor"
+      },
+      "equipment": {
+        "eyebrow": "Equipment",
+        "headlineLine1": "Production lines",
+        "headlineLine2": "and inspection",
+        "subtitle": "Core machinery supporting our CI, aluminum and pressure die casting programs.",
+        "items": {
+          "ciLine": {
+            "title": "CI casting line",
+            "body": "Foundry equipment for cast iron motor bodies, pump housings and industrial components."
+          },
+          "dieCasting": {
+            "title": "Die casting machines",
+            "body": "High-pressure aluminum die casting for motor enclosures and automotive parts."
+          },
+          "machining": {
+            "title": "Machining & finishing",
+            "body": "Post-casting machining and finishing for dimensionally accurate dispatch-ready parts."
+          },
+          "inspection": {
+            "title": "Quality inspection",
+            "body": "In-process checks and final inspection before shipment to OEM buyers."
+          }
+        }
+      }
+    },
+    "certificate": {
+      "hero": {
+        "eyebrow": "Certificate",
+        "headlineLine1": "Credentials",
+        "headlineLine2": "and compliance",
+        "subtitle": "GST-registered manufacturing with documented business credentials for OEM vendor onboarding."
+      },
+      "credentials": {
+        "eyebrow": "Certifications",
+        "headlineLine1": "Trust and",
+        "headlineLine2": "compliance",
+        "subtitle": "Key credentials supporting procurement and finance approval for new vendor partnerships.",
+        "items": {
+          "gst": {
+            "title": "GST registered",
+            "body": "Registered since July 2017 — GST-compliant invoicing for domestic and export orders."
+          },
+          "quality": {
+            "title": "Quality commitment",
+            "body": "Process-focused manufacturing with material grade consistency and in-process inspection."
+          },
+          "compliance": {
+            "title": "Business compliance",
+            "body": "Established proprietorship with verified IndiaMART presence and statutory registration."
+          }
+        }
+      },
+      "factsheet": {
+        "eyebrow": "Company factsheet",
+        "headlineLine1": "Statutory",
+        "headlineLine2": "profile",
+        "fields": {
+          "nature": "Nature of business",
+          "ceo": "Proprietor",
+          "gstDate": "GST registration",
+          "legal": "Legal status",
+          "turnover": "Annual turnover",
+          "gstNo": "GST number"
+        }
+      }
+    },
+    "contact": {
+      "hero": {
+        "eyebrow": "Contact",
+        "headlineLine1": "Inquiry &",
+        "headlineLine2": "free quote",
+        "subtitle": "Call, email or submit a quote request — our team responds within 24 hours."
+      },
+      "details": {
+        "heading": "Office & factory contact",
+        "emailLabel": "Email",
+        "emailValue": "Contact via quote form",
+        "phoneLabel": "Phone",
+        "phoneValue": "Available on request"
+      },
+      "quote": {
+        "heading": "Request a quote",
+        "body": "Tell us about your part, material and volume. Four short steps — we reply within one business day."
+      },
+      "hours": {
+        "eyebrow": "Opening hours",
+        "headlineLine1": "When we're",
+        "headlineLine2": "available",
+        "items": {
+          "weekdays": {
+            "label": "Mon – Fri",
+            "value": "9:00 am – 6:00 pm"
+          },
+          "saturday": {
+            "label": "Saturday",
+            "value": "9:00 am – 2:00 pm"
+          },
+          "sunday": {
+            "label": "Sunday",
+            "value": "Closed"
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "headlineLine1": "Answers &",
+        "headlineLine2": "questions",
+        "items": {
+          "quote": {
+            "question": "Where can I request a quotation?",
+            "answer": "Use our quote form on this page or the contact section on the homepage. Share your drawing, material and volume — we respond within 24 hours."
+          },
+          "materials": {
+            "question": "What materials do you cast?",
+            "answer": "We manufacture CI casting, aluminum casting and aluminum pressure die cast parts for motors, pumps, automotive and industrial applications."
+          },
+          "leadTime": {
+            "question": "What is the typical lead time?",
+            "answer": "Lead time depends on part complexity and volume. We provide guidance with every quote and support repeat production schedules for OEM programs."
+          },
+          "certifications": {
+            "question": "Are you GST registered?",
+            "answer": "Yes. Diti Engineers is GST registered since July 2017 with statutory credentials available for vendor onboarding."
+          }
+        }
+      }
+    }
   }
 }
