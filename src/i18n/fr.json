@@ -55,6 +55,16 @@
     "bullet1": "Fonte, aluminium et sous pression sous un même toit",
     "bullet2": "Réponse devis sous 24 heures",
     "bullet3": "TPS enregistrée depuis 2017",
+    "partnersAriaLabel": "Partenaires OEM auxquels nous fournissons des pièces moulées",
+    "partnersLabel": "Fourniture aux OEM moteurs, pompes et automobile — Kirloskar, Crompton, Havells, Siemens, ABB et autres.",
+    "partners": {
+      "kirloskar": "Kirloskar",
+      "crompton": "Crompton Greaves",
+      "havells": "Havells",
+      "siemens": "Siemens",
+      "abb": "ABB",
+      "vguard": "V-Guard"
+    },
     "cta": "Nous contacter",
     "ctaSecondary": "En savoir plus",
     "imageAlt": "Atelier Diti Engineers",

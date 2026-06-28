@@ -1,6 +1,7 @@
 import { ArrowRight, Mail, SendHorizonal } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import { HeroPartnerAvatars } from "@/components/ui/hero-partner-avatars";
 import { HeroImageStrips } from "@/components/ui/image-auto-slider";
 import {
   heroStripImagesBottom,
@@ -93,11 +94,7 @@ export function HeroSection6({ className }: HeroSection6Props) {
                 </div>
               </form>
 
-              <ul className="list-inside list-disc space-y-2 text-sm text-text-muted">
-                <li>{t("hero.bullet1")}</li>
-                <li>{t("hero.bullet2")}</li>
-                <li>{t("hero.bullet3")}</li>
-              </ul>
+              <HeroPartnerAvatars className="mt-2" />
             </div>
             </div>
           </div>

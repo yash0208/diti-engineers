@@ -22,6 +22,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
+import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -172,9 +173,15 @@ export function NavBar() {
           <Link
             to="/"
             aria-label={t("brand.name")}
-            className="flex shrink-0 items-center font-display text-lg font-bold tracking-tight text-text-heading-light md:text-xl"
+            className="flex shrink-0 items-center"
           >
-            {t("brand.name")}
+            <AnimatedText
+              text={t("brand.name")}
+              className="items-start justify-start gap-0"
+              textClassName="font-display text-lg font-bold tracking-tight text-text-heading-light md:text-xl text-left"
+              underlineClassName="text-accent-primary -bottom-1.5"
+              underlineDuration={1.2}
+            />
           </Link>
 
           <DesktopMenu

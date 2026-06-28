@@ -55,6 +55,16 @@
     "bullet1": "CI, aluminum and pressure die under one roof",
     "bullet2": "Quote response within 24 hours",
     "bullet3": "GST registered since 2017",
+    "partnersAriaLabel": "OEM partners we supply castings to",
+    "partnersLabel": "Supplying motor, pump and automotive OEMs including Kirloskar, Crompton, Havells, Siemens, ABB and more.",
+    "partners": {
+      "kirloskar": "Kirloskar",
+      "crompton": "Crompton Greaves",
+      "havells": "Havells",
+      "siemens": "Siemens",
+      "abb": "ABB",
+      "vguard": "V-Guard"
+    },
     "cta": "Contact us",
     "ctaSecondary": "Learn more",
     "imageAlt": "Diti Engineers factory floor",

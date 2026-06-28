@@ -1,3 +1,5 @@
+export { Avatar, AvatarFallback, AvatarImage } from "./avatar";
+export { AnimatedText } from "./animated-underline-text-one";
 export {
   ContainerAnimated,
   ContainerInset,
@@ -36,6 +38,7 @@ export { GalleryHoverCarousel, type GalleryHoverCarouselItem, type GalleryMedia 
 export { GlassPanel } from "./GlassPanel";
 export { HeroGalleryLayout } from "./hero-gallery-layout";
 export { HeroImageStrips, ImageAutoSlider } from "./image-auto-slider";
+export { HeroPartnerAvatars } from "./hero-partner-avatars";
 export { HeroSection6 } from "./hero-section-6";
 export {
   HeroGalleryBackdrop,

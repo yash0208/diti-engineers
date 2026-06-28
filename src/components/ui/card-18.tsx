@@ -151,7 +151,7 @@ const BlogPostCard = React.forwardRef<HTMLDivElement, BlogPostCardProps>(
             <p
               className={cn(
                 "text-text-primary-light",
-                !isFeatured && "line-clamp-3",
+                !isFeatured && "line-clamp-2",
               )}
             >
               {description}
