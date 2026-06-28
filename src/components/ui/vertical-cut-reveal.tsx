@@ -10,7 +10,6 @@ import {
 } from "react";
 import {
   motion,
-  type DynamicAnimationOptions,
   type Transition,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -18,7 +17,7 @@ import { cn } from "@/lib/utils";
 interface TextProps {
   children: ReactNode;
   reverse?: boolean;
-  transition?: DynamicAnimationOptions;
+  transition?: Transition;
   splitBy?: "words" | "characters" | "lines" | string;
   staggerDuration?: number;
   staggerFrom?: "first" | "last" | "center" | "random" | number;

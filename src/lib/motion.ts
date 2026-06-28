@@ -42,6 +42,6 @@ export function getMotionTransition(
   if (reduced) return { duration: 0 };
   return {
     duration: motionTokens.duration[durationKey],
-    ease: [...motionTokens.ease[easeKey]],
+    ease: motionTokens.ease[easeKey],
   };
 }

@@ -32,7 +32,7 @@ export function enterTransition(
   if (reduced) return { duration: 0 };
   return {
     duration: motionTokens.duration[durationKey],
-    ease: [...motionTokens.ease[easeKey]],
+    ease: motionTokens.ease[easeKey],
   };
 }
 
@@ -40,7 +40,7 @@ export function exitTransition(reduced: boolean) {
   if (reduced) return { duration: 0 };
   return {
     duration: motionTokens.duration.exit,
-    ease: [...motionTokens.ease.out],
+    ease: motionTokens.ease.out,
   };
 }
 
@@ -50,6 +50,6 @@ export function panelTransition(reduced: boolean, entering: boolean) {
     duration: entering
       ? motionTokens.duration.slow
       : motionTokens.duration.exit,
-    ease: [...motionTokens.ease.out],
+    ease: motionTokens.ease.out,
   };
 }

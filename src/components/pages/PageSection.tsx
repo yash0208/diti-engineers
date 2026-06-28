@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 import { RevealOnScroll } from "@/components/motion";
 import { SectionHeader } from "@/components/ui";
 import { cn } from "@/lib/utils";

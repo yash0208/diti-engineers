@@ -205,6 +205,7 @@ export function NavBar() {
               serviceLinks={serviceLinks}
               companyLinks={companyLinks}
               companySidebarLinks={companySidebarLinks}
+              isActive={isActive}
               onToggleLang={toggleLang}
               langLabel={i18n.language.startsWith("fr") ? "EN" : "FR"}
             />
@@ -306,6 +307,7 @@ function MobileNav({
   serviceLinks,
   companyLinks,
   companySidebarLinks,
+  isActive: _isActive,
   onToggleLang,
   langLabel,
 }: MobileNavProps) {
