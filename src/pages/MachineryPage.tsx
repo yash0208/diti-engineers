@@ -1,9 +1,15 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+
 import { GalleryHoverCarousel } from "@/components/ui";
 import { machineryCards } from "@/data/machinery";
+import {
+  viewportPageContainerClassName,
+  viewportPageSectionClassName,
+  type EmbeddedPageProps,
+} from "@/lib/page-shell";
 
-export function MachineryPage() {
+export function MachineryPage({ embedded = false }: EmbeddedPageProps) {
   const { t } = useTranslation();
 
   const carouselItems = useMemo(
@@ -27,8 +33,11 @@ export function MachineryPage() {
   );
 
   return (
-    <section className="h-[100svh] overflow-hidden bg-canvas pt-nav lg:pt-nav-lg">
-      <div className="container-main flex h-full min-h-0 flex-col py-6 md:py-8 lg:py-10">
+    <section
+      id={embedded ? "machinery" : undefined}
+      className={viewportPageSectionClassName(embedded)}
+    >
+      <div className={viewportPageContainerClassName(embedded)}>
         <GalleryHoverCarousel
           fillViewport
           eyebrow={t("pages.machinery.eyebrow")}

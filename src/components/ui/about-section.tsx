@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 type AboutSectionProps = {
   className?: string;
   variant?: "about" | "services";
+  embedded?: boolean;
+  id?: string;
 };
 
 type HeroVariantConfig = {
@@ -103,7 +105,12 @@ function QuoteResponseLabel({
   );
 }
 
-export function AboutSection({ className, variant = "about" }: AboutSectionProps) {
+export function AboutSection({
+  className,
+  variant = "about",
+  embedded = false,
+  id,
+}: AboutSectionProps) {
   const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -121,8 +128,10 @@ export function AboutSection({ className, variant = "about" }: AboutSectionProps
 
   return (
     <section
+      id={id}
       className={cn(
-        "border-b border-border-light bg-canvas pt-nav lg:pt-nav-lg",
+        "border-border-light bg-canvas",
+        embedded ? "border-y" : "border-b pt-nav lg:pt-nav-lg",
         className,
       )}
       ref={heroRef}

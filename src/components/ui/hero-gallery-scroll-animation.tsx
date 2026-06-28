@@ -196,10 +196,34 @@ const HeroGalleryBackdrop = React.forwardRef<
 });
 HeroGalleryBackdrop.displayName = "HeroGalleryBackdrop";
 
+const HeroGalleryScrollFade = ({
+  children,
+  className,
+  enabled = false,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  enabled?: boolean;
+}) => {
+  const { scrollYProgress } = useHeroGalleryScrollContext();
+  const opacity = useTransform(scrollYProgress, [0.8, 0.98], [1, 0]);
+
+  if (!enabled) {
+    return <>{children}</>;
+  }
+
+  return (
+    <motion.div className={className} style={{ opacity }}>
+      {children}
+    </motion.div>
+  );
+};
+
 export {
   HeroGalleryScroll,
   HeroGalleryGrid,
   HeroGalleryCell,
   HeroGalleryContent,
   HeroGalleryBackdrop,
+  HeroGalleryScrollFade,
 };

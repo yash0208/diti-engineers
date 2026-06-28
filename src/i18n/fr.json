@@ -410,14 +410,38 @@
     "tagline": "Fonte, aluminium et moulage sous pression — conçus à Rajkot.",
     "navHeading": "Site",
     "contactHeading": "Contact",
+    "quickLinksHeading": "Liens rapides",
+    "followHeading": "Suivez-nous",
     "addressLabel": "Adresse",
     "addressValue": "Rajkot, Gujarat, Inde",
+    "phoneLabel": "Téléphone",
+    "phoneValue": "Sur demande",
+    "emailLabel": "E-mail",
+    "emailValue": "Via le formulaire de devis",
     "gstLabel": "TPS",
     "gstValue": "Enregistrée depuis 2017",
     "hoursLabel": "Horaires",
     "hoursValue": "Lun–Sam · 9h00 – 18h00",
     "servicesHeading": "Services",
-    "rights": "© {{year}} Diti Engineers. Tous droits réservés."
+    "rights": "© {{year}} Diti Engineers. Tous droits réservés.",
+    "legalNavLabel": "Mentions légales",
+    "newsletter": {
+      "heading": "Restez informé",
+      "description": "Inscrivez-vous à notre newsletter pour les dernières actualités et offres exclusives.",
+      "emailPlaceholder": "Entrez votre e-mail",
+      "subscribe": "S'abonner"
+    },
+    "social": {
+      "facebook": "Suivez-nous sur Facebook",
+      "twitter": "Suivez-nous sur Twitter",
+      "instagram": "Suivez-nous sur Instagram",
+      "linkedin": "Connectez-vous sur LinkedIn"
+    },
+    "legal": {
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "cookies": "Paramètres des cookies"
+    }
   },
   "pages": {
     "about": {
@@ -582,34 +606,42 @@
       },
       "list": {
         "eyebrow": "Nos services",
-        "headlineLine1": "Services de fabrication",
-        "headlineLine2": "proposés",
-        "subtitle": "Moulage spécialisé et support usinage pour programmes OEM récurrents et développement de nouvelles pièces."
+        "headlineLine1": "Moulage de précision et usinage.",
+        "headlineLine2": "Fonte, aluminium et sous pression sous un même toit."
+      },
+      "carousel": {
+        "liveBadge": "Ligne de production"
       },
       "items": {
         "ciCasting": {
           "name": "Fonte (CI)",
-          "body": "Composants en fonte pour carters moteur, corps de pompe et applications industrielles."
+          "body": "Composants en fonte pour carters moteur, corps de pompe et applications industrielles.",
+          "imageAlt": "Production fonte chez Diti Engineers"
         },
         "aluminumDie": {
           "name": "Moulage alu sous pression",
-          "body": "Pièces aluminium légères pour carters moteur, composants auto et assemblages de précision."
+          "body": "Pièces aluminium légères pour carters moteur, composants auto et assemblages de précision.",
+          "imageAlt": "Ligne moulage aluminium chez Diti Engineers"
         },
         "pressureDie": {
           "name": "Moulage sous pression",
-          "body": "Moulage haute pression pour géométries aluminium complexes avec tolérances serrées."
+          "body": "Moulage haute pression pour géométries aluminium complexes avec tolérances serrées.",
+          "imageAlt": "Processus moulage sous pression chez Diti Engineers"
         },
         "motorParts": {
           "name": "Pièces moteur",
-          "body": "Moulage dédié pour carters moteur à induction, flasques et composants électriques."
+          "body": "Moulage dédié pour carters moteur à induction, flasques et composants électriques.",
+          "imageAlt": "Moulage pièces moteur chez Diti Engineers"
         },
         "pumpParts": {
           "name": "Pièces de pompe",
-          "body": "Corps de pompe submersible, roues et composants pour lignes d'assemblage OEM."
+          "body": "Corps de pompe submersible, roues et composants pour lignes d'assemblage OEM.",
+          "imageAlt": "Moulage pièces de pompe chez Diti Engineers"
         },
         "autoParts": {
           "name": "Pièces automobile",
-          "body": "Pièces moulées secteur auto en fonte et aluminium pour fournisseurs OEM."
+          "body": "Pièces moulées secteur auto en fonte et aluminium pour fournisseurs OEM.",
+          "imageAlt": "Moulage pièces automobile chez Diti Engineers"
         }
       },
       "process": {
@@ -745,6 +777,34 @@
         "subtitle": "Fabrication enregistrée TPS avec justificatifs pour l'onboarding fournisseur OEM."
       },
       "galleryAlt": "Certification qualité et conformité chez Diti Engineers",
+      "gallery": {
+        "closeDialog": "Fermer l'image",
+        "prevImage": "Image précédente",
+        "nextImage": "Image suivante",
+        "viewImageAria": "Voir {{title}}",
+        "items": {
+          "qualityInspection": {
+            "title": "Contrôle qualité",
+            "description": "Contrôles dimensionnels et visuels en cours de fabrication avant expédition depuis Rajkot."
+          },
+          "factoryFloor": {
+            "title": "Atelier de production",
+            "description": "Environnement de fabrication documenté pour l'onboarding fournisseur OEM et les audits."
+          },
+          "productionFloor": {
+            "title": "Opérations de production",
+            "description": "Processus de fonderie et usinage maîtrisés avec grades matière traçables."
+          },
+          "ciCasting": {
+            "title": "Fonderie CI",
+            "description": "Composants fonte grise et ductile pour moteurs, pompes et applications industrielles."
+          },
+          "cncMachining": {
+            "title": "Usinage CNC",
+            "description": "Usinage de finition et contrôle pour programmes OEM à tolérances serrées."
+          }
+        }
+      },
       "credentials": {
         "eyebrow": "Certifications",
         "headlineLine1": "Confiance et",
@@ -796,6 +856,22 @@
       "quote": {
         "heading": "Demander un devis",
         "body": "Décrivez pièce, matière et volume. Quatre étapes — réponse sous un jour ouvré."
+      },
+      "card": {
+        "title": "Contactez-nous",
+        "description": "Partagez votre plan, matière et volume — ou envoyez un message rapide. Réponse sous un jour ouvré.",
+        "nameLabel": "Votre nom",
+        "namePlaceholder": "Nom complet",
+        "emailLabel": "Email professionnel",
+        "emailPlaceholder": "nom@entreprise.com",
+        "phoneLabel": "Téléphone",
+        "phonePlaceholder": "+91…",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Type de pièce, matière, volume ou question…",
+        "submit": "Envoyer le message",
+        "quoteCta": "Besoin d'un devis détaillé ?",
+        "quoteLink": "Ouvrir le formulaire de devis",
+        "videoAlt": "Production moulage aluminium chez Diti Engineers"
       },
       "hours": {
         "eyebrow": "Horaires",

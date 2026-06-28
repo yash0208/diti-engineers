@@ -13,9 +13,15 @@ import { cn } from "@/lib/utils";
 
 type VideoSectionProps = {
   standalone?: boolean;
+  embedded?: boolean;
+  id?: string;
 };
 
-export function VideoSection({ standalone = false }: VideoSectionProps) {
+export function VideoSection({
+  standalone = false,
+  embedded = false,
+  id,
+}: VideoSectionProps) {
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isFullPlay, setIsFullPlay] = useState(false);
@@ -48,14 +54,17 @@ export function VideoSection({ standalone = false }: VideoSectionProps) {
 
   return (
     <section
-      id={standalone ? undefined : "video"}
-      className="relative isolate z-10 w-full bg-canvas-dark"
+      id={id ?? (standalone ? undefined : "video")}
+      className={cn(
+        "relative isolate z-10 w-full bg-canvas-dark",
+        embedded && "border-y border-border-light",
+      )}
     >
       <ContainerScroll className="h-[350vh]">
         <ContainerSticky
           className={cn(
             "flex h-svh flex-col bg-canvas-dark text-text-on-dark",
-            standalone ? "pt-nav lg:pt-nav-lg" : "pt-20 md:pt-24",
+            standalone && !embedded ? "pt-nav lg:pt-nav-lg" : "pt-20 md:pt-24",
           )}
         >
           <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-5 px-6 pb-8 md:gap-6 md:px-8">

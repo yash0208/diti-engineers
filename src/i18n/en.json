@@ -410,14 +410,38 @@
     "tagline": "Cast iron, aluminum and pressure die castings — engineered in Rajkot.",
     "navHeading": "Site",
     "contactHeading": "Contact",
+    "quickLinksHeading": "Quick Links",
+    "followHeading": "Follow Us",
     "addressLabel": "Address",
     "addressValue": "Rajkot, Gujarat, India",
+    "phoneLabel": "Phone",
+    "phoneValue": "Available on request",
+    "emailLabel": "Email",
+    "emailValue": "Contact via quote form",
     "gstLabel": "GST",
     "gstValue": "Registered since 2017",
     "hoursLabel": "Hours",
     "hoursValue": "Mon–Sat · 9:00 am – 6:00 pm",
     "servicesHeading": "Services",
-    "rights": "© {{year}} Diti Engineers. All rights reserved."
+    "rights": "© {{year}} Diti Engineers. All rights reserved.",
+    "legalNavLabel": "Legal",
+    "newsletter": {
+      "heading": "Stay Connected",
+      "description": "Join our newsletter for the latest updates and exclusive offers.",
+      "emailPlaceholder": "Enter your email",
+      "subscribe": "Subscribe"
+    },
+    "social": {
+      "facebook": "Follow us on Facebook",
+      "twitter": "Follow us on Twitter",
+      "instagram": "Follow us on Instagram",
+      "linkedin": "Connect with us on LinkedIn"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Settings"
+    }
   },
   "pages": {
     "about": {
@@ -582,34 +606,42 @@
       },
       "list": {
         "eyebrow": "Our services",
-        "headlineLine1": "Manufacturing services",
-        "headlineLine2": "we provide",
-        "subtitle": "Specialized casting and machining support for repeat OEM programs and new part development."
+        "headlineLine1": "Precision casting and machining.",
+        "headlineLine2": "CI, aluminum and pressure die under one roof."
+      },
+      "carousel": {
+        "liveBadge": "Production line"
       },
       "items": {
         "ciCasting": {
           "name": "CI Casting",
-          "body": "Cast iron components for motor frames, pump housings and industrial applications with consistent grades and finish."
+          "body": "Cast iron components for motor frames, pump housings and industrial applications with consistent grades and finish.",
+          "imageAlt": "CI casting production at Diti Engineers"
         },
         "aluminumDie": {
           "name": "Aluminum Die Casting",
-          "body": "Lightweight aluminum die cast parts for motor enclosures, auto components and precision assemblies."
+          "body": "Lightweight aluminum die cast parts for motor enclosures, auto components and precision assemblies.",
+          "imageAlt": "Aluminum die casting line at Diti Engineers"
         },
         "pressureDie": {
           "name": "Pressure Die Casting",
-          "body": "High-pressure die casting for complex aluminum geometry with tight tolerances and reduced assembly steps."
+          "body": "High-pressure die casting for complex aluminum geometry with tight tolerances and reduced assembly steps.",
+          "imageAlt": "Pressure die casting process at Diti Engineers"
         },
         "motorParts": {
           "name": "Motor Parts Casting",
-          "body": "Dedicated casting for induction motor bodies, end shields and related electric motor components."
+          "body": "Dedicated casting for induction motor bodies, end shields and related electric motor components.",
+          "imageAlt": "Motor parts casting at Diti Engineers"
         },
         "pumpParts": {
           "name": "Pump Parts Casting",
-          "body": "Submersible pump housings, impellers and allied cast components for pump OEM assembly lines."
+          "body": "Submersible pump housings, impellers and allied cast components for pump OEM assembly lines.",
+          "imageAlt": "Pump parts casting at Diti Engineers"
         },
         "autoParts": {
           "name": "Auto Parts Casting",
-          "body": "Automotive sector castings in CI and aluminum for OEM suppliers and component manufacturers."
+          "body": "Automotive sector castings in CI and aluminum for OEM suppliers and component manufacturers.",
+          "imageAlt": "Auto parts casting at Diti Engineers"
         }
       },
       "process": {
@@ -745,6 +777,34 @@
         "subtitle": "GST-registered manufacturing with documented business credentials for OEM vendor onboarding."
       },
       "galleryAlt": "Quality certification and compliance at Diti Engineers",
+      "gallery": {
+        "closeDialog": "Close image",
+        "prevImage": "View previous image",
+        "nextImage": "View next image",
+        "viewImageAria": "View {{title}}",
+        "items": {
+          "qualityInspection": {
+            "title": "Quality inspection",
+            "description": "In-process dimensional and visual checks before parts leave the Rajkot facility."
+          },
+          "factoryFloor": {
+            "title": "Factory floor",
+            "description": "Documented manufacturing environment supporting OEM vendor onboarding and audits."
+          },
+          "productionFloor": {
+            "title": "Production operations",
+            "description": "Controlled casting and machining workflows with traceable material grades."
+          },
+          "ciCasting": {
+            "title": "CI casting",
+            "description": "Gray and ductile iron components for motors, pumps and industrial applications."
+          },
+          "cncMachining": {
+            "title": "CNC machining",
+            "description": "Finish machining and inspection for tight-tolerance OEM programs."
+          }
+        }
+      },
       "credentials": {
         "eyebrow": "Certifications",
         "headlineLine1": "Trust and",
@@ -796,6 +856,22 @@
       "quote": {
         "heading": "Request a quote",
         "body": "Tell us about your part, material and volume. Four short steps — we reply within one business day."
+      },
+      "card": {
+        "title": "Get in touch",
+        "description": "Share your drawing, material and volume — or send a quick message. We reply within one business day.",
+        "nameLabel": "Your name",
+        "namePlaceholder": "Full name",
+        "emailLabel": "Work email",
+        "emailPlaceholder": "name@company.com",
+        "phoneLabel": "Phone",
+        "phonePlaceholder": "+91…",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Part type, material, volume or any question…",
+        "submit": "Send message",
+        "quoteCta": "Need a detailed quote?",
+        "quoteLink": "Open multi-step quote form",
+        "videoAlt": "Aluminum die casting production at Diti Engineers"
       },
       "hours": {
         "eyebrow": "Opening hours",

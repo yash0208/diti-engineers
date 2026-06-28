@@ -5,17 +5,27 @@ import { cn } from "@/lib/utils";
 
 type TrustMarqueeSectionProps = {
   fillViewport?: boolean;
+  embedded?: boolean;
+  id?: string;
 };
 
-export function TrustMarqueeSection({ fillViewport = false }: TrustMarqueeSectionProps) {
+export function TrustMarqueeSection({
+  fillViewport = false,
+  embedded = false,
+  id,
+}: TrustMarqueeSectionProps) {
   const { t } = useTranslation();
 
   return (
     <section
+      id={id}
       className={cn(
         "relative overflow-hidden bg-canvas",
         fillViewport
-          ? "flex h-[100svh] flex-col overflow-hidden pt-nav lg:pt-nav-lg"
+          ? cn(
+              "flex h-[100svh] flex-col overflow-hidden",
+              embedded ? "border-y border-border-light" : "pt-nav lg:pt-nav-lg",
+            )
           : "border-y border-border-light py-12 md:py-16",
       )}
       aria-label={t("brands.ariaLabel")}
@@ -23,7 +33,7 @@ export function TrustMarqueeSection({ fillViewport = false }: TrustMarqueeSectio
       <div
         className={cn(
           "container-main relative z-10",
-          fillViewport && "flex min-h-0 flex-1 flex-col py-6 md:py-8 lg:py-10",
+          fillViewport && "flex h-full min-h-0 flex-1 flex-col py-6 md:py-8 lg:py-10",
         )}
       >
         <div className="mx-auto max-w-2xl shrink-0 text-center">

@@ -14,6 +14,12 @@ export const certificateGalleryImages = [
   "/images/cnc-machining.png",
 ] as const;
 
+export {
+  certificateGalleryKeys,
+  certificateGallerySources,
+  type CertificateGalleryKey,
+} from "./certificateGallery";
+
 export const heroStripImagesTop = [
   "/images/hero-strip-01.png",
   "/images/hero-strip-02.png",
@@ -101,6 +107,10 @@ export const imageRegistry = {
     featuredVideo: "/videos/platform-ci-casting.mp4",
     featuredPoster: "/videos/platform-ci-casting-poster.jpg",
     post3Image: "/images/quality-inspection.png",
+  },
+  contact: {
+    backgroundVideo: "/videos/platform-aluminium-die.mp4",
+    backgroundPoster: "/videos/platform-aluminium-die-poster.jpg",
   },
   social: {
     og: "/images/og-banner.png",

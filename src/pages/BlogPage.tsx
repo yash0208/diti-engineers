@@ -3,6 +3,12 @@ import { useTranslation } from "react-i18next";
 
 import { BlogPostCard } from "@/components/ui/card-18";
 import { imageRegistry } from "@/data/images";
+import {
+  viewportPageContainerClassName,
+  viewportPageSectionClassName,
+  type EmbeddedPageProps,
+} from "@/lib/page-shell";
+import { cn } from "@/lib/utils";
 
 const postKeys = ["post1", "post2", "post3"] as const;
 
@@ -35,12 +41,15 @@ const itemVariants = {
   },
 };
 
-export function BlogPage() {
+export function BlogPage({ embedded = false }: EmbeddedPageProps) {
   const { t } = useTranslation();
 
   return (
-    <section className="h-[100svh] overflow-hidden bg-canvas pt-nav lg:pt-nav-lg">
-      <div className="container-main flex h-full min-h-0 flex-col overflow-hidden py-6 md:py-8 lg:py-10">
+    <section
+      id={embedded ? "blog" : undefined}
+      className={cn(viewportPageSectionClassName(embedded), embedded && "overflow-hidden")}
+    >
+      <div className={cn(viewportPageContainerClassName(embedded), "overflow-hidden")}>
         <motion.div
           className="isolate grid min-h-0 flex-1 grid-cols-1 gap-6 overflow-hidden md:grid-cols-2 lg:grid-cols-6 lg:grid-rows-[minmax(0,auto)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-8 lg:items-stretch"
           variants={containerVariants}

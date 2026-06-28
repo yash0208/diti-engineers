@@ -12,9 +12,15 @@ export { AboutSection } from "./about-section";
 export { ArrowLink } from "./ArrowLink";
 export { Badge, badgeVariants } from "./badge";
 export { Button, buttonVariants } from "./button";
+export { Input } from "./input";
+export { Label } from "./label";
+export { Textarea } from "./textarea";
 export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./card";
+export { ContactCard, type ContactCardProps } from "./contact-card";
 export { ProductCard12 } from "./card-12";
 export { BlogPostCard, type BlogPostCardProps } from "./card-18";
+export { FooterSection } from "./footer-section";
+export { FeatureCarousel, type FeatureCarouselItem } from "./feature-carousel";
 export {
   Carousel,
   CarouselContent,
@@ -70,4 +76,10 @@ export { SlideControls } from "./SlideControls";
 export { Sparkles } from "./sparkles";
 export { SplitStat } from "./SplitStat";
 export { TestimonialV2 } from "./testimonial-v2";
-export { Threads } from "./threads";
+export { Switch } from "./switch";
+export {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./tooltip";

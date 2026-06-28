@@ -28,8 +28,12 @@ export const footerNavLinks = navLinks.filter(
 export const sectionIds = [
   "capabilities",
   "products",
-  "applications",
-  "stats",
-  "testimonials",
+  "services",
+  "about",
+  "blog",
+  "machinery",
+  "certificate",
+  "buyers",
+  "factory",
   "contact",
 ];
