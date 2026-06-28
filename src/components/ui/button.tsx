@@ -5,16 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-xs text-sm font-semibold transition-[transform,background-color,border-color,color,box-shadow,opacity] duration-[var(--duration-normal)] ease-[var(--ease-out)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 interactive-press",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-sm text-sm font-semibold transition-[transform,background-color,border-color,color,box-shadow,opacity] duration-[var(--duration-normal)] ease-[var(--ease-out)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 interactive-press",
   {
     variants: {
       variant: {
         default:
-          "bg-accent-gradient text-text-on-dark shadow-elevation hover:brightness-105 hover:shadow-elevation-active",
+          "bg-accent-gradient text-text-on-dark shadow-card hover:brightness-[1.08] hover:shadow-card-hover",
         destructive:
           "bg-red-600 text-white hover:bg-red-600/90",
         outline:
-          "border border-border-light bg-surface-card-light text-text-heading-light hover:border-accent-primary/40",
+          "border border-border-light bg-surface-card-light text-text-heading-light hover:border-accent-primary/40 hover:bg-accent-muted/40",
         secondary:
           "bg-surface-muted text-text-heading-light hover:bg-surface-muted/80",
         ghost:
@@ -24,8 +24,8 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-xs px-3",
-        lg: "h-11 rounded-xs px-8",
+        sm: "h-9 rounded-sm px-3",
+        lg: "h-11 rounded-sm px-8",
         icon: "h-10 w-10",
       },
     },

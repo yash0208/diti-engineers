@@ -164,7 +164,7 @@ export function AboutSection({
                   customVariants={revealVariants}
                   to={href}
                   aria-label={t(labelKey)}
-                  className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-base border border-border-light bg-surface-card-light text-text-muted transition-[transform,border-color,color] duration-[160ms] ease-out hover:border-accent-primary/30 hover:text-accent-primary active:scale-[0.97] sm:h-9 sm:w-9 md:h-10 md:w-10"
+                  className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-sm border border-border-light bg-surface-card-light text-text-muted transition-[transform,border-color,color] duration-[160ms] ease-out hover:border-accent-primary/30 hover:text-accent-primary active:scale-[0.97] sm:h-9 sm:w-9 md:h-10 md:w-10"
                 >
                   <Icon className="size-3.5 sm:size-4" aria-hidden />
                 </TimelineContent>
@@ -356,7 +356,7 @@ export function AboutSection({
                 timelineRef={heroRef}
                 customVariants={revealVariants}
                 to="/contact"
-                className="mb-6 flex w-full items-center justify-center gap-2 rounded-base border border-border-light bg-text-heading-light px-5 py-3 font-semibold text-text-on-dark shadow-elevation transition-[transform,background-color,gap] duration-[160ms] ease-out hover:gap-3 hover:bg-canvas-dark active:scale-[0.97] md:ml-auto md:w-fit"
+                className="mb-6 flex w-full items-center justify-center gap-2 rounded-sm border border-border-light bg-text-heading-light px-5 py-3 font-semibold text-text-on-dark shadow-card transition-[transform,background-color,gap] duration-[160ms] ease-out hover:gap-3 hover:bg-canvas-dark active:scale-[0.97] md:ml-auto md:w-fit"
               >
                 {t(`${translationPrefix}.ctaButton`)}
                 <ArrowRight aria-hidden />

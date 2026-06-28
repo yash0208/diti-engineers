@@ -23,12 +23,12 @@ export function ShowcaseCard({
   return (
     <article
       className={cn(
-        "group flex flex-col overflow-hidden rounded-xs border border-border-light bg-surface-card-light",
+        "group flex flex-col overflow-hidden rounded-md border border-border-light bg-surface-card-light",
         className,
       )}
     >
       <div className="p-5">
-        <div className="aspect-[625/298] overflow-hidden rounded-xs bg-surface-muted">
+        <div className="aspect-[625/298] overflow-hidden rounded-sm bg-surface-muted">
           <img
             src={imageSrc}
             alt={imageAlt}
@@ -54,14 +54,14 @@ export function ShowcaseCard({
       </div>
       <div className="grid grid-cols-2 border-t border-border-light">
         <div className="border-r border-border-light p-6">
-          <p className="font-display text-4xl font-bold text-text-heading-light md:text-5xl">
+          <p className="font-display text-3xl font-bold text-text-heading-light sm:text-4xl md:text-5xl">
             {t(`${translationPrefix}.stat1Value`)}
             <span className="text-accent-primary">{t(`${translationPrefix}.stat1Suffix`)}</span>
           </p>
           <p className="mt-2 text-sm text-text-muted">{t(`${translationPrefix}.stat1Label`)}</p>
         </div>
         <div className="p-6">
-          <p className="font-display text-4xl font-bold text-text-heading-light md:text-5xl">
+          <p className="font-display text-3xl font-bold text-text-heading-light sm:text-4xl md:text-5xl">
             {t(`${translationPrefix}.stat2Value`)}
             <span className="text-accent-primary">{t(`${translationPrefix}.stat2Suffix`)}</span>
           </p>

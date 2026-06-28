@@ -10,6 +10,7 @@ import {
 } from "@/lib/motion-presets";
 import { useScrollCarousel } from "@/components/motion/useScrollCarousel";
 import { ArrowLink, GlassPanel, SlideControls } from "@/components/ui";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import {
   imageRegistry,
   isPlaceholderImage,
@@ -166,6 +167,7 @@ function ActiveSlideContent({
 
 export function PlatformCarouselSection() {
   const { t } = useTranslation();
+  const isMobile = useMediaQuery("(max-width: 767px)");
   const {
     scrollRef,
     index,
@@ -173,7 +175,10 @@ export function PlatformCarouselSection() {
     scrollToSlide,
     enabled,
     wrapperHeightVh,
-  } = useScrollCarousel({ slideCount: slideKeys.length });
+  } = useScrollCarousel({
+    slideCount: slideKeys.length,
+    slideHeightVh: isMobile ? 70 : 100,
+  });
 
   const activeKey = slideKeys[index];
 
@@ -183,10 +188,10 @@ export function PlatformCarouselSection() {
   const section = (
     <section
       id="capabilities"
-      className="relative h-[100svh] min-h-[828px] max-h-[100svh] overflow-hidden bg-canvas-dark"
+      className="relative h-[100svh] min-h-0 max-h-[100svh] overflow-hidden bg-canvas-dark md:min-h-[600px]"
     >
       <motion.div
-        className="absolute inset-0 flex"
+        className="absolute inset-0 flex max-w-full"
         style={enabled ? { x: backgroundX } : undefined}
       >
         {(enabled ? slideKeys : [activeKey]).map((key) => (
@@ -198,9 +203,9 @@ export function PlatformCarouselSection() {
         ))}
       </motion.div>
 
-      <div className="container-main relative z-10 flex h-full flex-col pt-24 md:pt-28">
+      <div className="container-main relative z-10 flex h-full flex-col pt-20 md:pt-24 lg:pt-28">
         <div
-          className="inline-flex max-w-full flex-wrap items-stretch overflow-hidden rounded-xs border border-border-glass bg-surface-glass backdrop-blur-md"
+          className="inline-flex max-w-full flex-wrap items-stretch overflow-hidden rounded-md border border-border-glass bg-surface-glass backdrop-blur-md"
           role="tablist"
           aria-label={t("platform.tabsAriaLabel")}
         >
@@ -218,7 +223,7 @@ export function PlatformCarouselSection() {
                 aria-selected={i === index}
                 onClick={() => scrollToSlide(i)}
                 className={cn(
-                  "font-mono-label interactive-opacity interactive-press px-4 py-2.5 text-sm uppercase transition-colors md:px-5",
+                  "font-mono-label interactive-opacity interactive-press px-3 py-2.5 text-xs uppercase transition-colors sm:px-4 sm:text-sm md:px-5",
                   i === index
                     ? "bg-white/10 text-text-on-dark opacity-100"
                     : "text-text-on-dark opacity-20 hover:bg-white/5 hover:opacity-40",
@@ -230,8 +235,8 @@ export function PlatformCarouselSection() {
           ))}
         </div>
 
-        <div className="mt-auto mb-24 pb-6 md:mb-32 md:pb-8">
-          <GlassPanel className="max-w-[452px]">
+        <div className="mt-auto mb-8 pb-4 md:mb-24 md:pb-8">
+          <GlassPanel className="w-full max-w-[452px]">
             <ActiveSlideContent
               slideKey={activeKey}
               onPrev={goPrev}

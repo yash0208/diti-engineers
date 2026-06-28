@@ -96,7 +96,7 @@ export function GalleryImageLightbox({
             <img
               src={selectedItem.src}
               alt={selectedItem.alt}
-              className="mx-auto max-h-[70vh] w-auto rounded-xs object-contain"
+              className="mx-auto max-h-[70vh] w-auto rounded-md object-contain"
             />
 
             <div

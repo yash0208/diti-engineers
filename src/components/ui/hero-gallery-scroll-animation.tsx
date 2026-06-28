@@ -186,7 +186,7 @@ const HeroGalleryBackdrop = React.forwardRef<
     <motion.div
       ref={ref}
       className={cn(
-        "inset-x-0 top-16 z-[5] h-[calc(100svh-4rem)] w-full md:top-20 md:h-[calc(100svh-5rem)]",
+        "inset-x-0 top-16 z-[5] h-[calc(100svh-4rem)] w-full lg:top-[4.25rem] lg:h-[calc(100svh-4.25rem)]",
         className,
       )}
       style={{ position, opacity, ...style }}

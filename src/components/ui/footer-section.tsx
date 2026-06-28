@@ -52,7 +52,7 @@ function FooterSection() {
               <Button
                 type="submit"
                 size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full"
+                className="absolute right-1 top-1/2 h-10 w-10 -translate-y-1/2 rounded-full touch-manipulation"
                 aria-label={t("footer.newsletter.subscribe")}
               >
                 <Send className="h-4 w-4" />

@@ -1,0 +1,305 @@
+/* Shared client handoff PDF styles — Diti Engineers */
+
+@page {
+  size: A4;
+  margin: 20mm 16mm 22mm 16mm;
+
+  @bottom-left {
+    content: "Diti Engineers";
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 8pt;
+    color: #7a8696;
+  }
+
+  @bottom-right {
+    content: counter(page);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 8pt;
+    color: #7a8696;
+  }
+}
+
+@page :first {
+  margin: 0;
+
+  @bottom-left {
+    content: none;
+  }
+
+  @bottom-right {
+    content: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10.5pt;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  color: #3d4b5c;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Cover page ── */
+.cover {
+  page-break-after: always;
+  min-height: 297mm;
+  padding: 28mm 22mm;
+  background: linear-gradient(165deg, #0b1929 0%, #141414 55%, #0d0d0d 100%);
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover-top {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 12mm;
+}
+
+.cover-brand {
+  font-size: 11pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #eef2ff;
+  margin: 0 0 4mm 0;
+}
+
+.cover-doc-type {
+  font-size: 28pt;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.cover-tagline {
+  font-size: 12pt;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 6mm 0 0 0;
+  max-width: 120mm;
+  line-height: 1.5;
+}
+
+.cover-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 10mm;
+}
+
+.cover-meta {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+}
+
+.cover-meta td {
+  padding: 2mm 0;
+  vertical-align: top;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cover-meta td:first-child {
+  width: 32mm;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 8pt;
+}
+
+.cover-accent {
+  display: inline-block;
+  width: 14mm;
+  height: 2px;
+  background: #1b4fd8;
+  margin-bottom: 8mm;
+}
+
+.page-break {
+  page-break-after: always;
+}
+
+/* ── Body content ── */
+.content {
+  padding: 0;
+}
+
+h2 {
+  font-size: 15pt;
+  font-weight: 700;
+  color: #141414;
+  margin: 1.8em 0 0.6em 0;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #1b4fd8;
+  page-break-after: avoid;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: #141414;
+  margin: 1.4em 0 0.5em 0;
+  page-break-after: avoid;
+}
+
+h4 {
+  font-size: 10pt;
+  font-weight: 600;
+  color: #3d4b5c;
+  margin: 1em 0 0.4em 0;
+}
+
+p {
+  margin: 0.5em 0 0.8em 0;
+}
+
+strong {
+  color: #141414;
+  font-weight: 600;
+}
+
+a {
+  color: #1b4fd8;
+  text-decoration: none;
+}
+
+.lead {
+  font-size: 11pt;
+  color: #3d4b5c;
+  line-height: 1.6;
+  margin-bottom: 1.2em;
+}
+
+.note {
+  background: #eef2ff;
+  border-left: 3px solid #1b4fd8;
+  padding: 0.7em 1em;
+  margin: 1em 0;
+  font-size: 9.5pt;
+  color: #3d4b5c;
+  page-break-inside: avoid;
+}
+
+.note-warn {
+  background: #fff8f0;
+  border-left-color: #e07a20;
+}
+
+.note strong {
+  color: #141414;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8em 0 1.2em 0;
+  font-size: 9pt;
+  page-break-inside: avoid;
+}
+
+th {
+  background: #141414;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.45em 0.6em;
+  font-size: 8.5pt;
+}
+
+td {
+  border: 1px solid #e2e4e8;
+  padding: 0.4em 0.6em;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: #f8f8f7;
+}
+
+pre {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 7pt;
+  line-height: 1.35;
+  background: #f1f1f0;
+  border: 1px solid #e2e4e8;
+  border-radius: 3px;
+  padding: 0.65em 0.75em;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  page-break-inside: avoid;
+  color: #141414;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e2e4e8;
+  margin: 1.5em 0;
+}
+
+ul, ol {
+  padding-left: 1.3em;
+  margin: 0.4em 0 0.8em 0;
+}
+
+li {
+  margin-bottom: 0.25em;
+}
+
+code {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f1f1f0;
+  padding: 0.08em 0.3em;
+  border-radius: 2px;
+  color: #141414;
+}
+
+.color-swatch {
+  display: inline-block;
+  width: 10mm;
+  height: 5mm;
+  border: 1px solid #e2e4e8;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 2mm;
+}
+
+.section-intro {
+  color: #7a8696;
+  font-size: 9.5pt;
+  margin: -0.2em 0 1em 0;
+}
+
+.toc {
+  page-break-after: always;
+}
+
+.toc h2 {
+  border-bottom: none;
+  font-size: 13pt;
+  margin-bottom: 0.8em;
+}
+
+.toc ol {
+  font-size: 10pt;
+  line-height: 1.8;
+}
+
+.toc a {
+  color: #141414;
+}

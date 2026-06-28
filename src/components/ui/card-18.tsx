@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const cardVariants = cva(
-  "group relative isolate flex h-full flex-col overflow-hidden rounded-xs border border-border-light bg-surface-card-light text-text-heading-light shadow-elevation transition-shadow duration-300 ease-in-out hover:shadow-elevation-active",
+  "group relative isolate flex h-full flex-col overflow-hidden rounded-md border border-border-light bg-surface-card-light text-text-heading-light shadow-card transition-shadow duration-300 ease-in-out hover:shadow-card-hover",
   {
     variants: {
       variant: {

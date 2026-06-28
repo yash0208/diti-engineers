@@ -64,7 +64,7 @@ function TestimonialsColumn({
                 tabIndex={setIndex === 1 ? -1 : 0}
                 whileHover={reduced ? undefined : cardLift}
                 whileFocus={reduced ? undefined : cardLift}
-                className="group w-full max-w-xs cursor-default select-none rounded-xl border border-border-light bg-surface-card-light p-8 shadow-elevation transition-shadow duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/30 md:p-10"
+                className="group w-full max-w-xs cursor-default select-none rounded-md border border-border-light bg-surface-card-light p-8 shadow-card transition-shadow duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/30 md:p-10"
               >
                 <blockquote className="m-0 p-0">
                   <p className="m-0 font-normal leading-relaxed text-text-primary-light">

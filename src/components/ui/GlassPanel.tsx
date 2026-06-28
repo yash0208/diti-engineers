@@ -10,7 +10,7 @@ export function GlassPanel({ children, className }: GlassPanelProps) {
   return (
     <div
       className={cn(
-        "relative rounded-xs border border-border-glass bg-surface-glass p-6 md:p-8",
+        "relative rounded-md border border-border-glass bg-surface-glass p-6 md:p-8",
         className,
       )}
     >

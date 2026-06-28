@@ -131,7 +131,7 @@ export function QuoteSheet({ open, onClose }: QuoteSheetProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%", transition: panelTransition(reduced, false) }}
             transition={panelTransition(reduced, true)}
-            className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col bg-surface-card-light shadow-elevation-active md:border-l md:border-border-light"
+            className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col bg-surface-card-light shadow-card-hover md:border-l md:border-border-light"
           >
             <div className="flex items-center justify-between border-b border-border-light px-6 py-5 md:px-8">
               <div>
@@ -149,7 +149,7 @@ export function QuoteSheet({ open, onClose }: QuoteSheetProps) {
                 type="button"
                 onClick={onClose}
                 aria-label={t("contact.close")}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-base text-text-muted interactive-press interactive-colors hover:bg-surface-muted hover:text-text-heading-light"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-text-muted interactive-press interactive-colors hover:bg-surface-muted hover:text-text-heading-light"
               >
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
                   <path
@@ -349,7 +349,7 @@ export function QuoteSheet({ open, onClose }: QuoteSheetProps) {
                             {t("contact.steps.review.subtitle")}
                           </p>
                         </header>
-                        <div className="rounded-lg border border-border-light bg-surface-muted p-5">
+                        <div className="rounded-md border border-border-light bg-surface-muted p-5">
                           <p className="text-eyebrow text-text-muted">
                             {t("contact.steps.review.summaryHeading")}
                           </p>

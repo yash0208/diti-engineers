@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { GalleryHoverCarousel } from "@/components/ui";
 import { machineryCards } from "@/data/machinery";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import {
   viewportPageContainerClassName,
   viewportPageSectionClassName,
@@ -11,6 +12,7 @@ import {
 
 export function MachineryPage({ embedded = false }: EmbeddedPageProps) {
   const { t } = useTranslation();
+  const isMobile = useMediaQuery("(max-width: 767px)");
 
   const carouselItems = useMemo(
     () =>
@@ -39,7 +41,7 @@ export function MachineryPage({ embedded = false }: EmbeddedPageProps) {
     >
       <div className={viewportPageContainerClassName(embedded)}>
         <GalleryHoverCarousel
-          fillViewport
+          fillViewport={embedded && !isMobile}
           eyebrow={t("pages.machinery.eyebrow")}
           headlineLine1={t("pages.machinery.headlineLine1")}
           headlineLine2={t("pages.machinery.headlineLine2")}

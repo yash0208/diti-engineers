@@ -348,7 +348,7 @@ export function GalleryGridBlock({
                   key={selectedProduct.id}
                   src={selectedProduct.url}
                   alt={selectedProduct.title}
-                  className="max-h-[80vh] w-auto rounded-xs"
+                  className="max-h-[80vh] w-auto rounded-md"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}

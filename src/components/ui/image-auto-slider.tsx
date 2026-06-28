@@ -29,7 +29,7 @@ function StripCards({
     <div
       key={`${segmentKey}-${src}-${index}`}
       className={cn(
-        "hero-strip-card shrink-0 overflow-hidden rounded-xl bg-surface-muted shadow-elevation-active",
+        "hero-strip-card shrink-0 overflow-hidden rounded-md bg-surface-muted shadow-card",
         cardClassName,
       )}
     >

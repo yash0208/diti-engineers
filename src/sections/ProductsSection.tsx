@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState, type RefObject } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { getMotionTransition, useReducedMotion } from "@/lib/motion";
@@ -7,22 +7,31 @@ import { SectionHeader, SlideControls } from "@/components/ui";
 import { businessProfile } from "@/data/profile";
 import { imageRegistry, type ProductImageKey } from "@/data/images";
 
-const CARD_WIDTH = 347;
+const MAX_CARD_WIDTH = 347;
 const CARD_GAP = 64;
 
-function ProductCarouselCard({ id }: { id: ProductImageKey }) {
+function ProductCarouselCard({
+  id,
+  measureRef,
+}: {
+  id: ProductImageKey;
+  measureRef?: RefObject<HTMLElement | null>;
+}) {
   const { t } = useTranslation();
 
   return (
-    <article className="w-[347px] shrink-0">
-      <div className="relative aspect-[347/359] overflow-hidden rounded-xs bg-surface-muted">
+    <article
+      ref={measureRef}
+      className="w-[min(347px,calc(100vw-2rem))] shrink-0"
+    >
+      <div className="relative aspect-[347/359] overflow-hidden rounded-md bg-surface-muted">
         <img
           src={imageRegistry.product[id]}
           alt={t(`products.items.${id}.name`)}
           loading="lazy"
           className="h-full w-full object-cover"
         />
-        <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-base border border-border-light bg-surface-card-light/90 px-4 py-1.5 font-mono-label text-xs text-text-muted">
+        <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-sm border border-border-light bg-surface-card-light/90 px-4 py-1.5 font-mono-label text-xs text-text-muted">
           {t("products.tag")}
         </span>
       </div>
@@ -47,7 +56,9 @@ export function ProductsSection() {
   const { t } = useTranslation();
   const reduced = useReducedMotion();
   const trackRef = useRef<HTMLDivElement>(null);
+  const firstCardRef = useRef<HTMLElement>(null);
   const [offset, setOffset] = useState(0);
+  const [cardWidth, setCardWidth] = useState(MAX_CARD_WIDTH);
 
   const productIds = businessProfile.productsAndServices.featuredProductIds.filter(
     (id): id is ProductImageKey => id in imageRegistry.product,
@@ -56,7 +67,23 @@ export function ProductsSection() {
   const ids = Array.from(new Set([...productIds, ...extras])) as ProductImageKey[];
 
   const maxOffset = Math.max(0, ids.length - 1);
-  const step = CARD_WIDTH + CARD_GAP;
+  const step = cardWidth + CARD_GAP;
+
+  useEffect(() => {
+    const element = firstCardRef.current;
+    if (!element) {
+      return;
+    }
+
+    const updateWidth = () => {
+      setCardWidth(element.getBoundingClientRect().width);
+    };
+
+    updateWidth();
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [ids.length]);
 
   const goPrev = () => setOffset((o) => Math.max(0, o - 1));
   const goNext = () => setOffset((o) => Math.min(maxOffset, o + 1));
@@ -106,8 +133,12 @@ export function ProductsSection() {
                 else if (info.offset.x > 80 && offset > 0) goPrev();
               }}
             >
-              {ids.map((id) => (
-                <ProductCarouselCard key={id} id={id} />
+              {ids.map((id, index) => (
+                <ProductCarouselCard
+                  key={id}
+                  id={id}
+                  measureRef={index === 0 ? firstCardRef : undefined}
+                />
               ))}
             </motion.div>
           </div>

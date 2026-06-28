@@ -1,6 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -72,15 +73,12 @@ export function HomeEmbeddedPageReveal({
   children,
 }: HomeEmbeddedPageRevealProps) {
   const reduced = useReducedMotion();
+  const isMobile = useMediaQuery("(max-width: 767px)");
 
   const layerClassName = cn("relative isolate bg-canvas");
 
-  if (reduced || revealMode === "none") {
-    return (
-      <div className={layerClassName} style={{ zIndex: layerIndex }}>
-        {children}
-      </div>
-    );
+  if (reduced || revealMode === "none" || isMobile) {
+    return <div className={layerClassName}>{children}</div>;
   }
 
   const variants =

@@ -12,7 +12,6 @@ import {
   viewportPageSectionClassName,
   type EmbeddedPageProps,
 } from "@/lib/page-shell";
-import { cn } from "@/lib/utils";
 
 const serviceIcons: Record<ServiceItem["id"], typeof Layers> = {
   ciCasting: Layers,
@@ -43,9 +42,9 @@ export function ServicesPage({ embedded = false }: EmbeddedPageProps) {
   return (
     <section
       id={embedded ? "services" : undefined}
-      className={cn(viewportPageSectionClassName(embedded), "relative flex flex-col overflow-hidden")}
+      className={viewportPageSectionClassName(embedded)}
     >
-      <div className={cn(viewportPageContainerClassName(embedded), "relative z-10 flex-1")}>
+      <div className={viewportPageContainerClassName(embedded)}>
         <div className="mx-auto max-w-2xl shrink-0 text-center">
           <p className="text-eyebrow text-text-muted">{t("pages.services.list.eyebrow")}</p>
           <h1 className="mt-4 text-section-title text-text-heading-light">

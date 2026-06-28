@@ -40,13 +40,13 @@ function useControllableState<T>({
 }
 
 export const cutoutCardSurfaceShadowClassName = cn(
-  "border border-border-light shadow-elevation",
+  "border border-border-light shadow-card",
   "transition-[box-shadow,border-color] duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]",
-  "hover:border-accent-primary/40 hover:shadow-elevation-active",
+  "hover:border-accent-primary/40 hover:shadow-card-hover",
 );
 
 export const cutoutCardSurfaceClassName = cn(
-  "group/cutout relative cursor-pointer overflow-hidden rounded-xl bg-surface-card-light text-text-heading-light",
+  "group/cutout relative cursor-pointer overflow-hidden rounded-md bg-surface-card-light text-text-heading-light",
   cutoutCardSurfaceShadowClassName,
 );
 

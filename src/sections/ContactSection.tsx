@@ -39,7 +39,7 @@ export function ContactSection() {
             </RevealOnScroll>
           </div>
           <RevealOnScroll
-            className="rounded-xs border border-border-light bg-surface-card-light p-7 shadow-elevation"
+            className="rounded-md border border-border-light bg-surface-card-light p-7 shadow-card"
             delay={0.18}
           >
             <dl className="space-y-5 text-sm">

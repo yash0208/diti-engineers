@@ -37,14 +37,14 @@ export function ShowcaseSection() {
           </RevealOnScroll>
           <RevealOnScroll
             as="div"
-            className="mt-5 text-h1 text-text-heading-dark"
+            className="mt-5 text-h1 text-text-heading-light"
             delay={0.08}
           >
             {t("showcase.headline")}
           </RevealOnScroll>
           <RevealOnScroll
             as="p"
-            className="mt-6 max-w-xl text-body-lg text-text-primary-dark"
+            className="mt-6 max-w-xl text-body-lg text-text-primary-light"
             delay={0.14}
           >
             {t("showcase.subtitle")}
@@ -54,7 +54,7 @@ export function ShowcaseSection() {
             {metricKeys.map((key, idx) => (
               <RevealOnScroll
                 key={key}
-                className="rounded-lg border border-border-dark bg-surface-card-dark p-5"
+                className="rounded-md border border-border-dark bg-surface-card-dark p-5"
                 delay={0.18 + idx * 0.06}
               >
                 <p className="font-display text-2xl font-semibold text-text-heading-dark md:text-3xl">
@@ -70,7 +70,7 @@ export function ShowcaseSection() {
 
         <div className="relative">
           <RevealOnScroll duration="hero" delay={0.1}>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-card-dark">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-surface-card-dark">
               <Parallax y={[-30, 30]} className="absolute inset-0">
                 <img
                   src={imageRegistry.showcase.factory}

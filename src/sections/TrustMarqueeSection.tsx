@@ -23,7 +23,7 @@ export function TrustMarqueeSection({
         "relative overflow-hidden bg-canvas",
         fillViewport
           ? cn(
-              "flex h-[100svh] flex-col overflow-hidden",
+              "flex min-h-[100svh] flex-col overflow-y-auto md:h-[100svh] md:overflow-hidden",
               embedded ? "border-y border-border-light" : "pt-nav lg:pt-nav-lg",
             )
           : "border-y border-border-light py-12 md:py-16",

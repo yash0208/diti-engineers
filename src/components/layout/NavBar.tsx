@@ -164,7 +164,7 @@ export function NavBar() {
     <header
       className={cn(
         "group fixed inset-x-0 top-0 z-50 w-full border-b border-dashed border-border-light bg-nav-bar backdrop-blur-md interactive-colors",
-        scrolled && "shadow-elevation-active",
+        scrolled && "shadow-card",
       )}
     >
       <div className="container-main py-3 lg:py-4">
@@ -351,10 +351,10 @@ function MobileNav({
         </Button>
       </SheetTrigger>
       <SheetContent
-        className="w-full gap-0 bg-surface-card-light/95 backdrop-blur-lg supports-[backdrop-filter]:bg-surface-card-light/80"
+        className="w-full gap-0 overflow-hidden bg-surface-card-light/95 backdrop-blur-lg supports-[backdrop-filter]:bg-surface-card-light/80"
         showClose={false}
       >
-        <div className="flex h-14 items-center justify-end border-b border-border-light px-4">
+        <div className="flex h-14 shrink-0 items-center justify-end border-b border-border-light px-4">
           <SheetClose asChild>
             <Button size="icon" variant="ghost" className="rounded-full">
               <XIcon className="size-5" />
@@ -363,7 +363,7 @@ function MobileNav({
           </SheetClose>
         </div>
 
-        <div className="grid gap-y-2 overflow-y-auto px-4 pt-5 pb-12">
+        <div className="flex min-h-0 flex-1 flex-col gap-y-2 overflow-y-auto px-4 pt-5">
           <ul className="mb-2 grid gap-1 border-b border-border-light pb-4">
             {simpleLinks.map((link) => (
               <li key={link.href}>
@@ -394,17 +394,17 @@ function MobileNav({
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
 
-          <div className="mt-6 flex flex-col gap-3 border-t border-border-light pt-6">
-            <Button type="button" variant="outline" onClick={onToggleLang}>
-              {langLabel}
+        <div className="flex shrink-0 flex-col gap-3 border-t border-border-light px-4 py-4">
+          <Button type="button" variant="outline" onClick={onToggleLang}>
+            {langLabel}
+          </Button>
+          <SheetClose asChild>
+            <Button asChild>
+              <Link to="/contact">{t("nav.cta")}</Link>
             </Button>
-            <SheetClose asChild>
-              <Button asChild>
-                <Link to="/contact">{t("nav.cta")}</Link>
-              </Button>
-            </SheetClose>
-          </div>
+          </SheetClose>
         </div>
       </SheetContent>
     </Sheet>

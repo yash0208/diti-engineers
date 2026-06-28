@@ -8,7 +8,6 @@ import {
   viewportPageSectionClassName,
   type EmbeddedPageProps,
 } from "@/lib/page-shell";
-import { cn } from "@/lib/utils";
 
 const postKeys = ["post1", "post2", "post3"] as const;
 
@@ -47,11 +46,11 @@ export function BlogPage({ embedded = false }: EmbeddedPageProps) {
   return (
     <section
       id={embedded ? "blog" : undefined}
-      className={cn(viewportPageSectionClassName(embedded), embedded && "overflow-hidden")}
+      className={viewportPageSectionClassName(embedded)}
     >
-      <div className={cn(viewportPageContainerClassName(embedded), "overflow-hidden")}>
+      <div className={viewportPageContainerClassName(embedded)}>
         <motion.div
-          className="isolate grid min-h-0 flex-1 grid-cols-1 gap-6 overflow-hidden md:grid-cols-2 lg:grid-cols-6 lg:grid-rows-[minmax(0,auto)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-8 lg:items-stretch"
+          className="grid grid-cols-1 gap-6 md:min-h-0 md:flex-1 md:grid-cols-2 md:overflow-hidden lg:grid-cols-6 lg:grid-rows-[minmax(0,auto)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-8 lg:items-stretch"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

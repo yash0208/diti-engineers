@@ -50,7 +50,7 @@ export function SlideControls({
         onClick={onPrev}
         aria-label={ariaLabelPrev}
         className={cn(
-          "flex h-8 w-5 items-center justify-center interactive-press interactive-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary",
+          "flex h-11 w-11 touch-manipulation items-center justify-center rounded-full border border-current/20 interactive-press interactive-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary",
           light ? "text-text-on-dark" : "text-text-heading-light",
         )}
       >
@@ -68,7 +68,7 @@ export function SlideControls({
         onClick={onNext}
         aria-label={ariaLabelNext}
         className={cn(
-          "flex h-8 w-5 items-center justify-center interactive-press interactive-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary",
+          "flex h-11 w-11 touch-manipulation items-center justify-center rounded-full border border-current/20 interactive-press interactive-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary",
           light ? "text-text-on-dark" : "text-text-heading-light",
         )}
       >

@@ -9,6 +9,7 @@ import {
   VideoPlayOverlay,
 } from "@/components/ui/animated-video-on-scroll";
 import { imageRegistry } from "@/data/images";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 
 type VideoSectionProps = {
@@ -25,6 +26,7 @@ export function VideoSection({
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isFullPlay, setIsFullPlay] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 767px)");
 
   const handlePlayFull = () => {
     const video = videoRef.current;
@@ -52,12 +54,62 @@ export function VideoSection({
     setIsFullPlay(false);
   };
 
+  if (embedded && isMobile) {
+    return (
+      <section
+        id={id ?? (standalone ? undefined : "video")}
+        className={cn(
+          "relative isolate w-full border-y border-border-light bg-canvas-dark",
+        )}
+      >
+        <div className="container-main flex flex-col gap-6 py-8 text-text-on-dark">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-eyebrow text-text-muted">{t("video.eyebrow")}</p>
+            <h2 className="mt-4 text-section-title text-text-on-dark">
+              <span className="text-accent-primary">{t("video.headlineLine1")}</span>
+              <br />
+              <span>{t("video.headlineLine2")}</span>
+            </h2>
+          </div>
+
+          <div className="relative mx-auto aspect-video w-full max-w-4xl overflow-hidden rounded-md bg-canvas-dark">
+            <video
+              ref={videoRef}
+              src={imageRegistry.heroVideo}
+              aria-label={t("video.imageAlt")}
+              autoPlay={!isFullPlay}
+              muted={!isFullPlay}
+              loop={!isFullPlay}
+              playsInline
+              controls={isFullPlay}
+              onEnded={handleVideoEnded}
+              className="size-full object-cover"
+            />
+            {!isFullPlay && (
+              <button
+                type="button"
+                onClick={handlePlayFull}
+                className="absolute inset-0 flex items-center justify-center bg-canvas-dark/30"
+                aria-label={t("video.play")}
+              >
+                <span className="rounded-full border border-border-glass bg-canvas-dark/60 px-5 py-2.5 font-mono-label text-sm text-text-on-dark">
+                  {t("video.play")}
+                </span>
+              </button>
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       id={id ?? (standalone ? undefined : "video")}
       className={cn(
-        "relative isolate z-10 w-full bg-canvas-dark",
+        "relative isolate w-full bg-canvas-dark",
         embedded && "border-y border-border-light",
+        !(embedded && isMobile) && "z-10",
       )}
     >
       <ContainerScroll className="h-[350vh]">

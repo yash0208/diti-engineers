@@ -90,8 +90,8 @@ export function FeatureCarousel({
 
   return (
     <div className={cn("mx-auto flex w-full max-w-7xl flex-col", className)}>
-      <div className="relative flex min-h-[600px] flex-1 flex-col overflow-hidden rounded-[2.5rem] border border-border-light/40 lg:aspect-auto lg:min-h-0 lg:flex-row lg:rounded-[4rem]">
-        <div className="relative z-30 flex min-h-[350px] w-full flex-col items-start justify-center overflow-hidden bg-surface-card-light px-8 md:min-h-[450px] md:px-16 lg:h-full lg:w-[40%] lg:pl-16">
+      <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl border border-border-light/40 sm:min-h-[400px] md:flex-row lg:aspect-auto lg:min-h-0">
+        <div className="relative z-30 flex min-h-[200px] w-full flex-col items-start justify-center overflow-hidden bg-surface-card-light px-6 sm:px-8 md:min-h-[280px] md:w-[40%] md:px-12 md:h-full lg:pl-16">
           <div className="absolute inset-x-0 top-0 z-40 h-12 bg-gradient-to-b from-surface-card-light via-surface-card-light/80 to-transparent md:h-20 lg:h-16" />
           <div className="absolute inset-x-0 bottom-0 z-40 h-12 bg-gradient-to-t from-surface-card-light via-surface-card-light/80 to-transparent md:h-20 lg:h-16" />
           <div className="relative z-20 flex h-full w-full items-center justify-center lg:justify-start">
@@ -157,8 +157,8 @@ export function FeatureCarousel({
           </div>
         </div>
 
-        <div className="relative flex min-h-[500px] flex-1 items-center justify-center overflow-hidden border-t border-border-light/20 bg-surface-muted/30 px-6 py-16 md:min-h-[600px] md:px-12 md:py-24 lg:h-full lg:border-t-0 lg:border-l lg:py-16 lg:px-10">
-          <div className="relative flex aspect-[4/5] w-full max-w-[420px] items-center justify-center">
+        <div className="relative flex min-h-[240px] flex-1 items-center justify-center overflow-hidden border-t border-border-light/20 bg-surface-muted/30 px-6 py-8 sm:min-h-[300px] sm:py-12 md:min-h-[360px] md:border-t-0 md:border-l md:px-12 md:py-20 md:h-full lg:py-16 lg:px-10">
+          <div className="relative flex aspect-[4/5] w-full max-w-[360px] items-center justify-center sm:max-w-[420px]">
             {items.map((feature, index) => {
               const status = getCardStatus(index);
               const isActive = status === "active";
@@ -188,7 +188,7 @@ export function FeatureCarousel({
                           mass: 0.8,
                         }
                   }
-                  className="absolute inset-0 origin-center overflow-hidden rounded-[2rem] border-4 border-background bg-background md:rounded-[2.8rem] md:border-8"
+                  className="absolute inset-0 origin-center overflow-hidden rounded-xl border-4 border-background bg-background md:rounded-2xl md:border-8"
                 >
                   <img
                     src={feature.image}

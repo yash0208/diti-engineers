@@ -263,7 +263,7 @@ function NavItemMobile({
       )}
       {...props}
     >
-      <div className="flex size-10 items-center justify-center rounded-lg border border-border-light bg-surface-muted/20">
+      <div className="flex size-10 items-center justify-center rounded-md border border-border-light bg-accent-muted/40">
         {item.icon && <item.icon />}
       </div>
       <div className="flex h-10 flex-col justify-center">

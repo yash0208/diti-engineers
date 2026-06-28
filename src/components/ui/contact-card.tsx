@@ -37,7 +37,7 @@ export function ContactCard({
   return (
     <div
       className={cn(
-        "relative grid w-full max-h-[min(82svh,640px)] rounded-xs border border-border-light bg-surface-card-light shadow-elevation md:grid-cols-2 lg:grid-cols-3",
+        "relative grid w-full rounded-md border border-border-light bg-surface-card-light shadow-card md:grid-cols-2 md:max-h-[min(82svh,640px)] lg:grid-cols-3",
         className,
       )}
       {...props}
@@ -109,7 +109,7 @@ function ContactInfo({
 }: ContactInfoProps) {
   return (
     <div className={cn("flex items-center gap-2.5 py-1.5", className)} {...props}>
-      <div className="rounded-xs bg-surface-muted/60 p-2">
+      <div className="rounded-sm bg-accent-muted p-2">
         <Icon className="size-4 text-accent-primary" aria-hidden />
       </div>
       <div>

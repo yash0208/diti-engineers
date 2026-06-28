@@ -20,7 +20,7 @@ export function SplitStat({
     <div className={cn("flex flex-col", className)}>
       <div
         className={cn(
-          "flex items-baseline font-display text-5xl font-bold md:text-6xl",
+          "flex items-baseline font-display text-4xl font-bold sm:text-5xl md:text-6xl",
           light ? "text-text-heading-light" : "text-text-on-dark",
         )}
       >

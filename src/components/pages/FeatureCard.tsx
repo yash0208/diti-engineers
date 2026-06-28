@@ -19,8 +19,8 @@ export function FeatureCard({
 }: FeatureCardProps) {
   return (
     <RevealOnScroll delay={delay} className={cn("h-full", className)}>
-      <article className="flex h-full flex-col rounded-xs border border-border-light bg-surface-card-light p-6 shadow-elevation">
-        <div className="flex size-11 items-center justify-center rounded-base bg-surface-muted text-accent-primary">
+      <article className="flex h-full flex-col rounded-md border border-border-light bg-surface-card-light p-6 shadow-card">
+        <div className="flex size-11 items-center justify-center rounded-md bg-accent-muted text-accent-primary">
           <Icon className="size-5" aria-hidden />
         </div>
         <h3 className="mt-5 text-h3 text-text-heading-light">{title}</h3>

@@ -93,13 +93,18 @@ function GalleryCarouselProgress({ className }: { className?: string }) {
             aria-selected={slideIndex === index}
             aria-label={t("pages.machinery.slideGoTo", { number: slideIndex + 1 })}
             onClick={() => setIndex(slideIndex)}
-            className={cn(
-              "h-2 rounded-full transition-all duration-300",
-              slideIndex === index
-                ? "w-8 bg-accent-primary"
-                : "w-2 bg-text-muted/40 hover:bg-text-muted/60",
-            )}
-          />
+            className="flex min-h-11 min-w-11 touch-manipulation items-center justify-center"
+          >
+            <span
+              aria-hidden
+              className={cn(
+                "block h-3 rounded-full transition-all duration-300",
+                slideIndex === index
+                  ? "w-8 bg-accent-primary"
+                  : "w-3 bg-text-muted/40 hover:bg-text-muted/60",
+              )}
+            />
+          </button>
         ))}
       </div>
     </div>
@@ -216,18 +221,48 @@ function GalleryCarouselMedia({ media, alt, isHovered }: GalleryCarouselMediaPro
 
 function GalleryCarouselCard({ item }: { item: GalleryHoverCarouselItem }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const showExpanded = isExpanded || isHovered;
 
   return (
     <article
-      className="group/card flex h-full max-h-full flex-col overflow-hidden rounded-xs border border-border-light bg-surface-card-light transition-[overflow] duration-500 group-hover/card:overflow-y-auto"
+      className={cn(
+        "flex h-full max-h-full flex-col overflow-hidden rounded-md border border-border-light bg-surface-card-light transition-[overflow] duration-500",
+        showExpanded && "overflow-y-auto",
+      )}
+      onClick={() => setIsExpanded((previous) => !previous)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          setIsExpanded((previous) => !previous);
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-expanded={showExpanded}
     >
-      <div className="relative flex min-h-[220px] flex-1 flex-col overflow-hidden transition-all duration-500 ease-out group-hover/card:flex-none group-hover/card:shrink-0 group-hover/card:p-5">
-        <div className="relative h-full min-h-[220px] w-full overflow-hidden bg-surface-muted transition-all duration-500 ease-out group-hover/card:aspect-[4/3] group-hover/card:h-auto group-hover/card:max-h-[240px] group-hover/card:rounded-xs">
-          <GalleryCarouselMedia media={item.media} alt={item.imageAlt} isHovered={isHovered} />
+      <div
+        className={cn(
+          "relative flex min-h-[220px] flex-1 flex-col overflow-hidden transition-all duration-500 ease-out",
+          showExpanded && "shrink-0 flex-none p-5",
+        )}
+      >
+        <div
+          className={cn(
+            "relative h-full min-h-[220px] w-full overflow-hidden bg-surface-muted transition-all duration-500 ease-out",
+            showExpanded && "aspect-[4/3] h-auto max-h-[240px] rounded-sm",
+          )}
+        >
+          <GalleryCarouselMedia media={item.media} alt={item.imageAlt} isHovered={isHovered || isExpanded} />
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-canvas-deep/90 via-canvas-deep/55 to-transparent px-5 pb-5 pt-20 transition-opacity duration-500 group-hover/card:opacity-0">
+          <div
+            className={cn(
+              "pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-canvas-deep/90 via-canvas-deep/55 to-transparent px-5 pb-5 pt-20 transition-opacity duration-500",
+              showExpanded && "opacity-0",
+            )}
+          >
             <h3 className="text-h3 text-text-on-dark">{item.title}</h3>
             <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-text-on-dark/90">
               {item.summary}
@@ -236,9 +271,19 @@ function GalleryCarouselCard({ item }: { item: GalleryHoverCarouselItem }) {
         </div>
       </div>
 
-      <div className="grid shrink-0 grid-rows-[1fr] border-t border-border-light transition-[grid-template-rows] duration-500 ease-out group-hover/card:grid-rows-[0fr] group-hover/card:border-transparent">
+      <div
+        className={cn(
+          "grid shrink-0 border-t border-border-light transition-[grid-template-rows] duration-500 ease-out",
+          showExpanded ? "grid-rows-[0fr] border-transparent" : "grid-rows-[1fr]",
+        )}
+      >
         <div className="min-h-0 overflow-hidden">
-          <dl className="grid grid-cols-2 opacity-100 transition-opacity duration-500 group-hover/card:opacity-0">
+          <dl
+            className={cn(
+              "grid grid-cols-2 transition-opacity duration-500",
+              showExpanded ? "opacity-0" : "opacity-100",
+            )}
+          >
             <div className="border-r border-border-light p-4 md:p-5">
               <dt className="sr-only">{item.stat1Label}</dt>
               <dd className="font-display text-3xl font-bold text-text-heading-light md:text-4xl">
@@ -259,9 +304,19 @@ function GalleryCarouselCard({ item }: { item: GalleryHoverCarouselItem }) {
         </div>
       </div>
 
-      <div className="grid min-h-0 grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover/card:grid-rows-[1fr]">
+      <div
+        className={cn(
+          "grid min-h-0 transition-[grid-template-rows] duration-500 ease-out",
+          showExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+        )}
+      >
         <div className="min-h-0 overflow-hidden">
-          <div className="flex flex-col px-5 pb-5 opacity-0 transition-opacity duration-500 ease-out group-hover/card:opacity-100">
+          <div
+            className={cn(
+              "flex flex-col px-5 pb-5 transition-opacity duration-500 ease-out",
+              showExpanded ? "opacity-100" : "opacity-0",
+            )}
+          >
             <h3 className="text-h3 text-text-heading-light">{item.title}</h3>
             <p className="mt-4 flex-1 text-sm leading-relaxed text-text-primary-light">
               {item.summary}
@@ -269,6 +324,7 @@ function GalleryCarouselCard({ item }: { item: GalleryHoverCarouselItem }) {
             <div className="mt-6">
               <Link
                 to={item.url}
+                onClick={(event) => event.stopPropagation()}
                 className="inline-flex items-center gap-2 font-mono-label text-sm text-text-heading-light interactive-opacity"
               >
                 {item.learnMoreLabel}
@@ -279,9 +335,19 @@ function GalleryCarouselCard({ item }: { item: GalleryHoverCarouselItem }) {
         </div>
       </div>
 
-      <div className="grid shrink-0 grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover/card:grid-rows-[1fr]">
+      <div
+        className={cn(
+          "grid shrink-0 transition-[grid-template-rows] duration-500 ease-out",
+          showExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+        )}
+      >
         <div className="min-h-0 overflow-hidden">
-          <div className="grid grid-cols-2 overflow-hidden border-t border-border-light opacity-0 transition-opacity duration-500 ease-out group-hover/card:opacity-100">
+          <div
+            className={cn(
+              "grid grid-cols-2 overflow-hidden border-t border-border-light transition-opacity duration-500 ease-out",
+              showExpanded ? "opacity-100" : "opacity-0",
+            )}
+          >
             <div className="border-r border-border-light p-6">
               <p className="font-display text-4xl font-bold text-text-heading-light md:text-5xl">
                 {item.stat1Value}
