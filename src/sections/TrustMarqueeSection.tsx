@@ -1,17 +1,32 @@
 import { useTranslation } from "react-i18next";
 import { RevealOnScroll } from "@/components/motion";
 import { TestimonialV2 } from "@/components/ui/testimonial-v2";
+import { cn } from "@/lib/utils";
 
-export function TrustMarqueeSection() {
+type TrustMarqueeSectionProps = {
+  fillViewport?: boolean;
+};
+
+export function TrustMarqueeSection({ fillViewport = false }: TrustMarqueeSectionProps) {
   const { t } = useTranslation();
 
   return (
     <section
-      className="relative overflow-hidden border-y border-border-light bg-canvas py-12 md:py-16"
+      className={cn(
+        "relative overflow-hidden bg-canvas",
+        fillViewport
+          ? "flex h-[100svh] flex-col overflow-hidden pt-nav lg:pt-nav-lg"
+          : "border-y border-border-light py-12 md:py-16",
+      )}
       aria-label={t("brands.ariaLabel")}
     >
-      <div className="container-main relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+      <div
+        className={cn(
+          "container-main relative z-10",
+          fillViewport && "flex min-h-0 flex-1 flex-col py-6 md:py-8 lg:py-10",
+        )}
+      >
+        <div className="mx-auto max-w-2xl shrink-0 text-center">
           <p className="text-eyebrow text-text-muted">{t("brands.eyebrow")}</p>
           <h2 className="mt-4 text-section-title text-text-heading-light">
             <span className="text-accent-primary">{t("brands.headlineLine1")}</span>
@@ -20,8 +35,15 @@ export function TrustMarqueeSection() {
           </h2>
         </div>
 
-        <RevealOnScroll delay={0.08}>
-          <TestimonialV2 />
+        <RevealOnScroll
+          delay={0.08}
+          className={fillViewport ? "flex min-h-0 flex-1 flex-col" : undefined}
+        >
+          <TestimonialV2
+            className={
+              fillViewport ? "mt-6 min-h-0 flex-1 max-h-none md:mt-8" : undefined
+            }
+          />
         </RevealOnScroll>
       </div>
     </section>

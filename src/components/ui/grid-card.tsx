@@ -42,8 +42,19 @@ export function GridCard({
 }
 
 function getRandomPattern(length = 5): [x: number, y: number][] {
-  return Array.from({ length }, () => [
-    Math.floor(Math.random() * 4) + 7,
-    Math.floor(Math.random() * 6) + 1,
-  ]);
+  const seen = new Set<string>();
+  const pattern: [x: number, y: number][] = [];
+
+  while (pattern.length < length) {
+    const x = Math.floor(Math.random() * 4) + 7;
+    const y = Math.floor(Math.random() * 6) + 1;
+    const key = `${x}-${y}`;
+
+    if (seen.has(key)) continue;
+
+    seen.add(key);
+    pattern.push([x, y]);
+  }
+
+  return pattern;
 }

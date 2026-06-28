@@ -14,6 +14,8 @@ export const navLinks: RouteNavLink[] = [
   { id: "products", path: "/products", href: "/products", labelKey: "nav.links.products" },
   { id: "services", path: "/services", href: "/services", labelKey: "nav.links.services" },
   { id: "blog", path: "/blog", href: "/blog", labelKey: "nav.links.blog" },
+  { id: "buyers", path: "/buyers", href: "/buyers", labelKey: "nav.links.testimonials" },
+  { id: "factory", path: "/factory", href: "/factory", labelKey: "nav.links.factoryTour" },
   { id: "machinery", path: "/machinery", href: "/machinery", labelKey: "nav.links.machinery" },
   { id: "certificate", path: "/certificate", href: "/certificate", labelKey: "nav.links.certificate" },
   { id: "contact", path: "/contact", href: "/contact", labelKey: "nav.links.contact" },
@@ -29,6 +31,5 @@ export const sectionIds = [
   "applications",
   "stats",
   "testimonials",
-  "video",
   "contact",
 ];

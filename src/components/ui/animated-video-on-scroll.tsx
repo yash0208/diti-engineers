@@ -22,6 +22,7 @@ interface ContainerInsetProps extends HTMLMotionProps<"div"> {
   roundednessRange?: [number, number];
   progressRange?: [number, number];
   roundednessProgressRange?: [number, number];
+  scaleRange?: [number, number];
 }
 
 const SPRING_TRANSITION_CONFIG = {
@@ -187,6 +188,10 @@ type VideoPlayOverlayProps = {
   className?: string;
   revealAt?: number;
   hideAt?: number;
+  labelFadeStart?: number;
+  labelFadeEnd?: number;
+  progressRange?: [number, number];
+  scaleRange?: [number, number];
 };
 
 export function VideoPlayOverlay({
@@ -195,6 +200,10 @@ export function VideoPlayOverlay({
   className,
   revealAt = 0.48,
   hideAt = 0.78,
+  labelFadeStart = 0.54,
+  labelFadeEnd = 0.68,
+  progressRange = [0, 0.85],
+  scaleRange = [0.8, 1],
 }: VideoPlayOverlayProps) {
   const { scrollYProgress } = useContainerScrollContext();
   const opacity = useTransform(
@@ -202,7 +211,12 @@ export function VideoPlayOverlay({
     [0, revealAt - 0.06, revealAt, hideAt, hideAt + 0.08],
     [0, 0, 1, 1, 0],
   );
-  const scale = useTransform(scrollYProgress, [revealAt, revealAt + 0.12], [0.92, 1]);
+  const scale = useTransform(scrollYProgress, progressRange, scaleRange);
+  const labelOpacity = useTransform(
+    scrollYProgress,
+    [revealAt, revealAt + 0.04, labelFadeStart, labelFadeEnd],
+    [0, 1, 1, 0],
+  );
 
   return (
     <motion.button
@@ -223,7 +237,9 @@ export function VideoPlayOverlay({
           <path d="M1 1L13 8L1 15V1Z" fill="currentColor" />
         </svg>
       </span>
-      <span className="font-mono-label normal-case">{label}</span>
+      <motion.span className="font-mono-label normal-case" style={{ opacity: labelOpacity }}>
+        {label}
+      </motion.span>
     </motion.button>
   );
 }
@@ -284,6 +300,7 @@ export const ContainerInset = React.forwardRef<
       roundednessRange = [1000, 16],
       progressRange = [0, 0.8],
       roundednessProgressRange = [0, 1],
+      scaleRange,
       ...props
     },
     ref,
@@ -297,6 +314,7 @@ export const ContainerInset = React.forwardRef<
       roundednessProgressRange,
       roundednessRange,
     );
+    const scale = useTransform(scrollYProgress, progressRange, scaleRange ?? [1, 1]);
 
     const clipPath = useMotionTemplate`inset(${insetY}% ${insetX}% ${insetY}% ${insetX}% round ${roundedness}px)`;
 
@@ -306,6 +324,8 @@ export const ContainerInset = React.forwardRef<
         className={cn("relative mx-auto w-full overflow-hidden", className)}
         style={{
           clipPath,
+          ...(scaleRange ? { scale } : {}),
+          transformOrigin: "center center",
           ...style,
         }}
         {...props}

@@ -5,8 +5,8 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { cn } from "@/lib/utils";
 
-const FOOTERLESS_ROUTES = ["/about", "/machinery", "/products", "/blog"] as const;
-const LOCKED_SCROLL_ROUTES = ["/machinery", "/products", "/blog"] as const;
+const FOOTERLESS_ROUTES = ["/about", "/machinery", "/products", "/blog", "/buyers", "/factory"] as const;
+const LOCKED_SCROLL_ROUTES = ["/machinery", "/products", "/blog", "/buyers"] as const;
 
 export function RootLayout() {
   const { pathname } = useLocation();

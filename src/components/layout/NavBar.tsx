@@ -132,12 +132,12 @@ export function NavBar() {
       },
       {
         title: t("nav.links.testimonials"),
-        href: "/#testimonials",
+        href: "/buyers",
         icon: Star,
       },
       {
         title: t("nav.links.factoryTour"),
-        href: "/#video",
+        href: "/factory",
         icon: Play,
       },
     ],
