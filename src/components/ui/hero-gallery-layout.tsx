@@ -16,6 +16,7 @@ type HeroGalleryLayoutProps = {
   children: ReactNode;
   className?: string;
   containInSection?: boolean;
+  contentClassName?: string;
 };
 
 const navAwareStickyStageClassName =
@@ -73,6 +74,7 @@ export function HeroGalleryLayout({
   children,
   className,
   containInSection = false,
+  contentClassName,
 }: HeroGalleryLayoutProps) {
   const layers = (
     <>
@@ -86,7 +88,12 @@ export function HeroGalleryLayout({
         }
       />
       <GalleryThreads containInSection={containInSection} />
-      <HeroGalleryContent className={containInSection ? undefined : "z-10 px-4 text-center"}>
+      <HeroGalleryContent
+        className={cn(
+          containInSection ? undefined : "z-10 px-4 text-center",
+          contentClassName,
+        )}
+      >
         {children}
       </HeroGalleryContent>
     </>

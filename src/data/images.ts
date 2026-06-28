@@ -6,6 +6,14 @@ export const heroGalleryImages = [
   "/images/quality-inspection.png",
 ] as const;
 
+export const certificateGalleryImages = [
+  "/images/quality-inspection.png",
+  "/images/factory-floor.png",
+  "/images/hero-factory.png",
+  "/images/product-ci-casting.png",
+  "/images/cnc-machining.png",
+] as const;
+
 export const heroStripImagesTop = [
   "/images/hero-strip-01.png",
   "/images/hero-strip-02.png",
