@@ -12,6 +12,7 @@ import { imageRegistry, type ProductImageKey } from "@/data/images";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Grid, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -79,6 +80,14 @@ export function GalleryGridBlock({
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
   const [filter, setFilter] = useState<"all" | ProductFilterKey>("all");
 
+  const MOBILE_PAGE_SIZE = 3;
+  const [mobilePage, setMobilePage] = useState(0);
+  const isMobileGrid = useMediaQuery("(max-width: 639px)");
+
+  useEffect(() => {
+    setMobilePage(0);
+  }, [filter]);
+
   const defaultProductIds = useMemo(() => {
     const featuredIds = businessProfile.productsAndServices.featuredProductIds;
     const allIds = businessProfile.productsAndServices.categories.map(
@@ -100,6 +109,14 @@ export function GalleryGridBlock({
       : galleryProducts.filter((product) => product.category === filter);
 
   const activeProducts = filteredProducts.length > 0 ? filteredProducts : galleryProducts;
+
+  const mobilePageCount = Math.ceil(activeProducts.length / MOBILE_PAGE_SIZE);
+  const displayedProducts = isMobileGrid
+    ? activeProducts.slice(
+        mobilePage * MOBILE_PAGE_SIZE,
+        mobilePage * MOBILE_PAGE_SIZE + MOBILE_PAGE_SIZE,
+      )
+    : activeProducts;
 
   const selectedProduct = galleryProducts.find(
     (product) => product.id === selectedProductId,
@@ -260,7 +277,7 @@ export function GalleryGridBlock({
             aria-label={t("pages.products.gallery.itemsAriaLabel")}
           >
             <AnimatePresence mode="popLayout">
-              {filteredProducts.map((product, index) => (
+              {displayedProducts.map((product, index) => (
                 <motion.div
                   key={product.id}
                   layout
@@ -287,6 +304,59 @@ export function GalleryGridBlock({
             </AnimatePresence>
           </motion.div>
         </div>
+
+        {isMobileGrid && mobilePageCount > 1 && (
+          <div className="mt-4 flex shrink-0 items-center justify-between gap-4 border-t border-border-light pt-4 sm:hidden">
+            <p className="font-mono-label text-sm text-text-muted">
+              {String(mobilePage + 1).padStart(2, "0")} / {String(mobilePageCount).padStart(2, "0")}
+            </p>
+            <div className="flex items-center gap-2">
+              {Array.from({ length: mobilePageCount }, (_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setMobilePage(i)}
+                  aria-label={`Page ${i + 1}`}
+                  className="flex min-h-11 min-w-11 touch-manipulation items-center justify-center"
+                >
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "block h-3 rounded-full transition-all duration-300",
+                      i === mobilePage
+                        ? "w-8 bg-accent-primary"
+                        : "w-3 bg-text-muted/40 hover:bg-text-muted/60",
+                    )}
+                  />
+                </button>
+              ))}
+            </div>
+            <div className="flex gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                aria-label="Previous page"
+                onClick={() => setMobilePage((p) => Math.max(p - 1, 0))}
+                disabled={mobilePage === 0}
+                className="h-10 w-10 rounded-full"
+              >
+                <ChevronLeft className="size-4" />
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                aria-label="Next page"
+                onClick={() => setMobilePage((p) => Math.min(p + 1, mobilePageCount - 1))}
+                disabled={mobilePage + 1 >= mobilePageCount}
+                className="h-10 w-10 rounded-full"
+              >
+                <ChevronRight className="size-4" />
+              </Button>
+            </div>
+          </div>
+        )}
 
         <AnimatePresence>
           {selectedProductId !== null && selectedProduct ? (
