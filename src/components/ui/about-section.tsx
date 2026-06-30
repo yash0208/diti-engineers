@@ -54,8 +54,8 @@ const revealVariants = {
     opacity: 1,
     filter: "blur(0px)",
     transition: {
-      delay: index * 0.4,
-      duration: 0.5,
+      delay: index * 0.12,
+      duration: 0.4,
     },
   }),
   hidden: {
@@ -70,8 +70,8 @@ const scaleVariants = {
     opacity: 1,
     filter: "blur(0px)",
     transition: {
-      delay: index * 0.4,
-      duration: 0.5,
+      delay: index * 0.12,
+      duration: 0.4,
     },
   }),
   hidden: {
@@ -278,7 +278,7 @@ export function AboutSection({
                   type: "spring",
                   stiffness: 250,
                   damping: 30,
-                  delay: 0.8,
+                  delay: 0.25,
                 }}
               >
                 {t(`${translationPrefix}.headline`)}
