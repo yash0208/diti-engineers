@@ -17,7 +17,7 @@ const postGridClasses: Record<(typeof postKeys)[number], string> = {
   post2:
     "relative z-0 min-h-0 h-full hover:z-10 lg:col-span-3 lg:row-start-3",
   post3:
-    "relative z-0 min-h-0 h-full hover:z-10 md:col-span-2 lg:col-span-3 lg:col-start-4 lg:row-span-2 lg:row-start-2",
+    "relative z-0 min-h-[320px] hover:z-10 md:col-span-2 md:min-h-0 md:h-full lg:col-span-3 lg:col-start-4 lg:row-span-2 lg:row-start-2",
 };
 
 const containerVariants = {

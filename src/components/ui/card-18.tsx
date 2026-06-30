@@ -77,7 +77,7 @@ const BlogPostCard = React.forwardRef<HTMLDivElement, BlogPostCardProps>(
     const featuredContentClassName = "md:col-span-2";
 
     const defaultMediaPanelClassName =
-      "relative min-h-0 w-full flex-1 overflow-hidden";
+      "relative h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:min-h-0 sm:flex-1";
 
     const content = (
       <>
