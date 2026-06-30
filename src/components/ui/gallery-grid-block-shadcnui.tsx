@@ -30,6 +30,8 @@ type GalleryGridBlockProps = {
   productIds?: string[];
 };
 
+const MOBILE_PAGE_SIZE = 3;
+
 function getProductImage(id: string): string {
   if (id in imageRegistry.product) {
     return imageRegistry.product[id as ProductImageKey];
@@ -80,13 +82,12 @@ export function GalleryGridBlock({
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
   const [filter, setFilter] = useState<"all" | ProductFilterKey>("all");
 
-  const MOBILE_PAGE_SIZE = 3;
   const [mobilePage, setMobilePage] = useState(0);
   const isMobileGrid = useMediaQuery("(max-width: 639px)");
 
   useEffect(() => {
     setMobilePage(0);
-  }, [filter]);
+  }, [filter, isMobileGrid]);
 
   const defaultProductIds = useMemo(() => {
     const featuredIds = businessProfile.productsAndServices.featuredProductIds;
@@ -316,7 +317,7 @@ export function GalleryGridBlock({
                   key={i}
                   type="button"
                   onClick={() => setMobilePage(i)}
-                  aria-label={`Page ${i + 1}`}
+                  aria-label={t("pages.machinery.slideGoTo", { number: i + 1 })}
                   className="flex min-h-11 min-w-11 touch-manipulation items-center justify-center"
                 >
                   <span
@@ -336,7 +337,7 @@ export function GalleryGridBlock({
                 type="button"
                 variant="outline"
                 size="icon"
-                aria-label="Previous page"
+                aria-label={t("controls.prev")}
                 onClick={() => setMobilePage((p) => Math.max(p - 1, 0))}
                 disabled={mobilePage === 0}
                 className="h-10 w-10 rounded-full"
@@ -347,7 +348,7 @@ export function GalleryGridBlock({
                 type="button"
                 variant="outline"
                 size="icon"
-                aria-label="Next page"
+                aria-label={t("controls.next")}
                 onClick={() => setMobilePage((p) => Math.min(p + 1, mobilePageCount - 1))}
                 disabled={mobilePage + 1 >= mobilePageCount}
                 className="h-10 w-10 rounded-full"
