@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && firebase deploy --only hosting",
-    "deploy:preview": "npm run build && firebase hosting:channel:deploy preview"
+    "deploy": "npm run build && npx firebase deploy --only hosting",
+    "deploy:preview": "npm run build && npx firebase hosting:channel:deploy preview"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
@@ -37,6 +37,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
+    "firebase-tools": "^14.9.0",
     "tailwindcss": "^4.1.12",
     "tw-animate-css": "^1.3.5",
     "typescript": "~5.8.3",
