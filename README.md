@@ -1,22 +1,38 @@
-# Diti Engineers — Landing Page
+# Diti Engineers
 
-React + TypeScript landing page for **Diti Engineers**, a casting manufacturer in Rajkot, Gujarat.
-
-Built following the [Landing Page Planner](file:///Users/I770238/cursor-planners/landing%20page%20planner/LANDING_PAGE_PLANNER.md) design system (Souvenir / Cavada pattern).
+Marketing website for **Diti Engineers**, a casting manufacturer in Rajkot, Gujarat. Multi-page React app with English and French localization, industrial design system, and Firebase Hosting deployment.
 
 ## Stack
 
 - **Vite 7** + **React 19** + **TypeScript**
+- **React Router 7** — multi-page routing
 - **Tailwind CSS 4** — design tokens in `@theme`
-- **Framer Motion** — hero collage, scroll progress, section fades
+- **Framer Motion** — scroll progress, section reveals, carousels
+- **Radix UI** + **Lucide** — accessible primitives and icons
 - **i18next** — English & French (`src/i18n/en.json`, `fr.json`)
-- **Business data** — `data/business-profile.json`
+- **Firebase Hosting** — production deploy (`firebase.json`)
+
+## Pages
+
+| Route | Page |
+|-------|------|
+| `/` | Home — hero, platform carousel, embedded page previews |
+| `/about` | Company story and capabilities |
+| `/products` | Product categories and gallery |
+| `/services` | Manufacturing services |
+| `/factory` | Factory overview |
+| `/machinery` | Equipment and capacity |
+| `/certificate` | Quality certificates |
+| `/buyers` | Buyer information |
+| `/blog` | Articles and updates |
+| `/contact` | Contact and quote request |
 
 ## Design
 
-- **Typography:** IBM Plex Sans (headings) + Inter (body)
-- **Colors:** `src/theme/colors.ts` — industrial palette (steel blue + copper accent)
-- **Layout:** Sticky nav, hero collage, split about, product cards, CTA banner, factsheet, contact form
+- **Typography:** IBM Plex Sans (headings) + Inter (body) — `src/theme/typography.ts`
+- **Colors:** Industrial palette (steel blue + copper accent) — `src/theme/colors.ts`
+- **Content:** Business copy and metadata — `data/business-profile.json`
+- **Media:** Product photos, factory imagery, and process videos under `public/`
 
 ## Getting started
 
@@ -25,22 +41,40 @@ npm install
 npm run dev
 ```
 
+Build for production:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deploy
+
+Requires Firebase CLI access to the `diti-engineers` project (configured in `.firebaserc`).
+
+```bash
+npm run deploy           # production
+npm run deploy:preview   # preview channel
+```
+
 ## Project structure
 
 ```
-data/business-profile.json
-public/images/              Placeholder SVGs (replace with real photos)
+data/business-profile.json     Business copy, products, contact metadata
+public/images/                 Product and factory imagery
+public/videos/                 Process and platform videos
 src/
-  sections/                 Hero, About, Products, CTA, Factsheet, Contact
-  components/layout/        NavBar, Footer, SectionWrapper
-  components/ui/            Button, Sheet, Hero collage, Footer
-  theme/                    colors.ts, typography.ts
-  i18n/                     en.json, fr.json
+  pages/                       Route-level page components
+  sections/                    Home and shared page sections
+  components/layout/           NavBar, Footer, RootLayout, PageHero
+  components/ui/               Reusable UI primitives and blocks
+  components/motion/             Scroll, parallax, and animation helpers
+  data/                        Typed content modules (machinery, services, etc.)
+  theme/                       colors.ts, typography.ts
+  i18n/                        en.json, fr.json
+docs/client-handoff/           Wireframe, theme, and content references
 ```
 
-## Next steps
+## Client handoff
 
-- Replace placeholder SVGs with factory/product photos
-- Add mobile number and email to `business-profile.json`
-- Wire contact form to email/API
-- Optional: Business Manager CMS integration per planner Phase 5
+Design and content references for stakeholders live in [`docs/client-handoff/`](docs/client-handoff/README.md) (wireframe, theme, and content PDFs).
