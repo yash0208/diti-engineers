@@ -1,16 +1,19 @@
 # Diti Engineers
 
-Marketing website for **Diti Engineers**, a casting manufacturer in Rajkot, Gujarat. Multi-page React app with English and French localization, industrial design system, and Firebase Hosting deployment.
+Marketing website for **Diti Engineers** — a precision casting manufacturer in Rajkot, Gujarat (CI, aluminum, and pressure die casting for motor, pump, and automotive OEMs).
+
+**Live:** [diti-engineers.web.app](https://diti-engineers.web.app)
 
 ## Stack
 
 - **Vite 7** + **React 19** + **TypeScript**
 - **React Router 7** — multi-page routing
-- **Tailwind CSS 4** — design tokens in `@theme`
+- **Tailwind CSS 4** — design tokens in `src/index.css` (`@theme`)
 - **Framer Motion** — scroll progress, section reveals, carousels
-- **Radix UI** + **Lucide** — accessible primitives and icons
+- **Radix UI** + shadcn-style components in `src/components/ui/`
+- **Lucide** — icons
 - **i18next** — English & French (`src/i18n/en.json`, `fr.json`)
-- **Firebase Hosting** — production deploy (`firebase.json`)
+- **Firebase Hosting** — production deploy to `dist/`
 
 ## Pages
 
@@ -23,15 +26,15 @@ Marketing website for **Diti Engineers**, a casting manufacturer in Rajkot, Guja
 | `/factory` | Factory overview |
 | `/machinery` | Equipment and capacity |
 | `/certificate` | Quality certificates |
-| `/buyers` | Buyer information |
+| `/buyers` | Buyer testimonials |
 | `/blog` | Articles and updates |
 | `/contact` | Contact and quote request |
 
 ## Design
 
-- **Typography:** IBM Plex Sans (headings) + Inter (body) — `src/theme/typography.ts`
-- **Colors:** Industrial palette (steel blue + copper accent) — `src/theme/colors.ts`
-- **Content:** Business copy and metadata — `data/business-profile.json`
+- **Typography:** Outfit (display), DM Sans (body), IBM Plex Mono (labels) — `src/theme/typography.ts`
+- **Colors:** Steel blue accent on warm off-white canvas — `src/theme/colors.ts`
+- **Content:** `data/business-profile.json` + i18n JSON files
 - **Media:** Product photos, factory imagery, and process videos under `public/`
 
 ## Getting started
@@ -41,18 +44,25 @@ npm install
 npm run dev
 ```
 
-Build for production:
+Open [http://localhost:5173](http://localhost:5173).
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Local dev server |
+| `npm run build` | Typecheck + production build to `dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run deploy` | Build and deploy to Firebase Hosting |
+| `npm run deploy:preview` | Deploy to a Firebase preview channel |
+
+### Deploy
+
+Requires Firebase CLI access to the `diti-engineers` project (configured in `.firebaserc`, included as a dev dependency):
 
 ```bash
-npm run build
-npm run preview
-```
-
-## Deploy
-
-Requires Firebase CLI access to the `diti-engineers` project (configured in `.firebaserc`).
-
-```bash
+npm install
+npx firebase login   # first time only
 npm run deploy           # production
 npm run deploy:preview   # preview channel
 ```
@@ -66,14 +76,22 @@ public/videos/                 Process and platform videos
 src/
   pages/                       Route-level page components
   sections/                    Home and shared page sections
-  components/layout/           NavBar, Footer, RootLayout, PageHero
-  components/ui/               Reusable UI primitives and blocks
-  components/motion/             Scroll, parallax, and animation helpers
-  data/                        Typed content modules (machinery, services, etc.)
+  components/
+    layout/                    NavBar, Footer, RootLayout, PageHero
+    ui/                        shadcn-style primitives and blocks
+    motion/                    Scroll, parallax, and animation helpers
+  data/                        Navigation, services, images, partners
   theme/                       colors.ts, typography.ts
   i18n/                        en.json, fr.json
 docs/client-handoff/           Wireframe, theme, and content references
+firebase.json                  Hosting config (SPA rewrites → index.html)
 ```
+
+## Conventions
+
+- **Colors** — add tokens in `src/theme/colors.ts` and mirror in `src/index.css` `@theme`
+- **Copy** — all user-facing strings in `src/i18n/en.json` and `fr.json`
+- **UI components** — reusable blocks live in `src/components/ui/`
 
 ## Client handoff
 
