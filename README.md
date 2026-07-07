@@ -99,6 +99,19 @@ firebase.json                  Hosting config (SPA rewrites → index.html)
 - **Copy** — all user-facing strings in `src/i18n/en.json` and `fr.json`
 - **UI components** — reusable blocks live in `src/components/ui/`
 
+## Internationalization
+
+The site supports **English** and **French**. All user-facing copy lives in:
+
+- `src/i18n/en.json`
+- `src/i18n/fr.json`
+
+When adding or changing UI text:
+
+1. Add the key to both `en.json` and `fr.json`
+2. Use `useTranslation()` and `t("your.key")` in components
+3. Language preference is stored in `localStorage` under `diti-engineers-lang`
+
 ## Client handoff
 
 Design and content references for stakeholders live in [`docs/client-handoff/`](docs/client-handoff/README.md) (wireframe, theme, and content PDFs).
