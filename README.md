@@ -4,6 +4,12 @@ Marketing website for **Diti Engineers** — a precision casting manufacturer in
 
 **Live:** [diti-engineers.web.app](https://diti-engineers.web.app)
 
+## Prerequisites
+
+- **Node.js** 20+ (LTS recommended)
+- **npm** 10+
+- Firebase project access for deploy (`diti-engineers`)
+
 ## Stack
 
 - **Vite 7** + **React 19** + **TypeScript**
