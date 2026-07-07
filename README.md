@@ -43,7 +43,10 @@ Marketing website for **Diti Engineers** — a precision casting manufacturer in
 - **Content:** `data/business-profile.json` + i18n JSON files
 - **Media:** Product photos, factory imagery, and process videos under `public/`
 
-Design references and implementation notes are in `docs/design/` (brand perception, theme tokens, wireframes).
+Design references and implementation notes:
+
+- [`docs/design/brand-perception-and-visuals.md`](docs/design/brand-perception-and-visuals.md) — brand voice, visual system, layout rules
+- [`docs/design/image-generation-prompts.md`](docs/design/image-generation-prompts.md) — asset generation prompts
 
 ## Getting started
 
@@ -100,13 +103,17 @@ src/
   data/                        Navigation, services, images, partners
   theme/                       colors.ts, typography.ts
   i18n/                        en.json, fr.json
-docs/client-handoff/           Wireframe, theme, and content references
+docs/
+  design/                      Brand perception, theme notes, image prompts
+  client-handoff/              Wireframe, theme, and content PDFs for stakeholders
 firebase.json                  Hosting config (SPA rewrites → index.html)
 ```
 
 ## Conventions
 
+- **Path aliases** — `@/` → `src/`, `@data/` → `data/` (see `vite.config.ts` and `tsconfig.app.json`)
 - **Colors** — add tokens in `src/theme/colors.ts` and mirror in `src/index.css` `@theme`
+- **Typography** — font families and scale in `src/theme/typography.ts`; mirror font tokens in `src/index.css`
 - **Copy** — all user-facing strings in `src/i18n/en.json` and `fr.json`
 - **UI components** — reusable blocks live in `src/components/ui/`
 
@@ -123,6 +130,10 @@ When adding or changing UI text:
 2. Use `useTranslation()` and `t("your.key")` in components
 3. Language preference is stored in `localStorage` under `diti-engineers-lang`
 
-## Client handoff
+## Documentation
 
-Design and content references for stakeholders live in [`docs/client-handoff/`](docs/client-handoff/README.md) (wireframe, theme, and content PDFs).
+| Folder | Purpose |
+|--------|---------|
+| [`docs/design/`](docs/design/brand-perception-and-visuals.md) | Brand, visual system, and implementation notes for developers |
+| [`docs/client-handoff/`](docs/client-handoff/README.md) | Wireframe, theme, and content PDFs for stakeholder review |
+| [`docs/superpowers/specs/`](docs/superpowers/specs/2026-06-26-phase-1-foundation-design.md) | Phase 1 foundation design spec |
