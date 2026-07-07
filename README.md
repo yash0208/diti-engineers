@@ -75,6 +75,15 @@ npm run deploy           # production
 npm run deploy:preview   # preview channel
 ```
 
+### Troubleshooting
+
+| Issue | Fix |
+|-------|-----|
+| `firebase: command not found` | Run `npm install` — CLI is a dev dependency; scripts use `npx firebase` |
+| Deploy auth errors | Run `npx firebase login` and confirm access to the `diti-engineers` project |
+| Blank page after deploy | Ensure `firebase.json` rewrites all routes to `/index.html` (SPA) |
+| Missing translations | Add keys to both `en.json` and `fr.json` before shipping UI copy |
+
 ## Project structure
 
 ```
