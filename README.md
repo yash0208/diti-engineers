@@ -43,6 +43,8 @@ Marketing website for **Diti Engineers** — a precision casting manufacturer in
 - **Content:** `data/business-profile.json` + i18n JSON files
 - **Media:** Product photos, factory imagery, and process videos under `public/`
 
+Design references and implementation notes are in `docs/design/` (brand perception, theme tokens, wireframes).
+
 ## Getting started
 
 ```bash
