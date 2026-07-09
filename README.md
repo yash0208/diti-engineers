@@ -97,6 +97,8 @@ npm run deploy:preview   # preview channel
 | Deploy auth errors | Run `npx firebase login` and confirm access to the `diti-engineers` project |
 | Blank page after deploy | Ensure `firebase.json` rewrites all routes to `/index.html` (SPA) |
 | Missing translations | Add keys to both `en.json` and `fr.json` before shipping UI copy |
+| Large JS bundle warning on build | Informational only — does not block deploy; split routes or lazy-load heavy sections if needed |
+| `.firebase/` folder after deploy | Local Firebase cache — safe to ignore; not committed to git |
 
 ## Project structure
 
