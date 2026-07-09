@@ -130,6 +130,17 @@ firebase.json                  Hosting config (SPA rewrites → index.html)
 - **Copy** — all user-facing strings in `src/i18n/en.json` and `fr.json`
 - **UI components** — reusable blocks live in `src/components/ui/`
 
+## Responsive design
+
+Mobile behavior uses the shared `useMediaQuery` hook (`src/hooks/useMediaQuery.ts`):
+
+- **Products gallery** — paginates 3 items per page below `639px` (`gallery-grid-block-shadcnui.tsx`)
+- **About hero** — static image fallback instead of clipped video on mobile
+- **Home embedded pages** — simplified scroll reveal below `767px`
+- **Platform carousel** — touch-friendly swipe on small screens
+
+When adding layout changes, prefer `useMediaQuery` over ad-hoc `window.innerWidth` checks so breakpoints stay consistent.
+
 ## Internationalization
 
 The site supports **English** and **French**. All user-facing copy lives in:
