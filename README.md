@@ -98,9 +98,11 @@ src/
   sections/                    Home and shared page sections
   components/
     layout/                    NavBar, Footer, RootLayout, PageHero
+    contact/                   Quote sheet and contact helpers
     ui/                        shadcn-style primitives and blocks
     motion/                    Scroll, parallax, and animation helpers
-  data/                        Navigation, services, images, partners
+  hooks/                       useMediaQuery, useScrollSpy
+  data/                        Navigation, services, images, partner-companies
   theme/                       colors.ts, typography.ts
   i18n/                        en.json, fr.json
 docs/
