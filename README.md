@@ -48,6 +48,17 @@ Design references and implementation notes:
 - [`docs/design/brand-perception-and-visuals.md`](docs/design/brand-perception-and-visuals.md) — brand voice, visual system, layout rules
 - [`docs/design/image-generation-prompts.md`](docs/design/image-generation-prompts.md) — asset generation prompts
 
+## Data sources
+
+| Source | Purpose |
+|--------|---------|
+| `data/business-profile.json` | Company profile, products, contact metadata |
+| `src/data/*.ts` | Navigation, services, machinery, certificates, partner companies |
+| `src/i18n/en.json` / `fr.json` | All user-facing copy (EN + FR) |
+| `public/images/` / `public/videos/` | Static media served at build time |
+
+Partner OEM names in the hero avatar stack are defined in `src/data/partner-companies.ts` with matching i18n keys under `hero.partners.*`.
+
 ## Getting started
 
 ```bash
